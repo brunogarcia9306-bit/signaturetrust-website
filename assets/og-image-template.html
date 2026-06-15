@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    background: #060504;
+    font-family: Arial, sans-serif;
+    position: relative;
+  }
+
+  /* Top gold gradient line */
+  .top-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent 0%, #C9A96E 20%, #F0D080 50%, #C9A96E 80%, transparent 100%);
+    z-index: 10;
+  }
+
+  /* Animated perspective grid */
+  canvas {
+    position: absolute;
+    top: 0; left: 0;
+    width: 1200px;
+    height: 630px;
+    z-index: 1;
+  }
+
+  /* Radial vignette overlay */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 30%, rgba(6,5,4,0.7) 100%);
+    z-index: 2;
+  }
+
+  /* Dark overlay to mute grid */
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(6,5,4,0.55);
+    z-index: 3;
+  }
+
+  /* Main content */
+  .content {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 60px 20px;
+  }
+
+  .brand-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 18px;
+  }
+
+  .brand-name {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 82px;
+    font-weight: normal;
+    letter-spacing: 6px;
+    color: #F5F0E8;
+    line-height: 1;
+    text-shadow: 0 2px 30px rgba(201,169,110,0.25);
+  }
+
+  .brand-name .trust {
+    color: #C9A96E;
+    font-style: italic;
+  }
+
+  .brand-sub {
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    letter-spacing: 10px;
+    color: #9A8A72;
+    font-variant: small-caps;
+    margin-top: 6px;
+    text-transform: uppercase;
+  }
+
+  /* Location row */
+  .location-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .loc-line {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #C9A96E);
+  }
+
+  .loc-line.right {
+    background: linear-gradient(90deg, #C9A96E, transparent);
+  }
+
+  .location-text {
+    font-size: 13px;
+    letter-spacing: 5px;
+    color: #C9A96E;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  /* Tagline */
+  .tagline {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 21px;
+    color: #D0C4B0;
+    font-style: italic;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  /* Trust strip */
+  .trust-strip {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: rgba(201,169,110,0.08);
+    border: 1px solid rgba(201,169,110,0.2);
+    border-radius: 2px;
+    padding: 10px 30px;
+  }
+
+  .trust-item {
+    font-size: 12px;
+    letter-spacing: 2.5px;
+    color: #C0B090;
+    text-transform: uppercase;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .trust-dot {
+    width: 5px;
+    height: 5px;
+    background: #C9A96E;
+    border-radius: 50%;
+    margin: 0 20px;
+    flex-shrink: 0;
+  }
+
+  /* Bottom bar */
+  .bottom-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 52px;
+    background: rgba(201,169,110,0.07);
+    border-top: 1px solid rgba(201,169,110,0.18);
+    z-index: 6;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+  }
+
+  .bottom-url {
+    flex: 1;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #7A6E5E;
+    text-transform: lowercase;
+  }
+
+  .bottom-phone {
+    font-family: Georgia, serif;
+    font-size: 17px;
+    color: #C9A96E;
+    letter-spacing: 2px;
+    font-weight: bold;
+  }
+
+  .bottom-cities {
+    flex: 1;
+    text-align: right;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: #7A6E5E;
+  }
+</style>
+</head>
+<body>
+
+<div class="top-line"></div>
+
+<canvas id="grid"></canvas>
+<div class="vignette"></div>
+<div class="overlay"></div>
+
+<div class="content">
+  <div class="brand-wrap">
+    <div class="brand-name">Signature <span class="trust">TRUST</span></div>
+    <div class="brand-sub">Insurance</div>
+  </div>
+
+  <div class="location-row">
+    <div class="loc-line"></div>
+    <div class="location-text">Naples, FL</div>
+    <div class="loc-line right"></div>
+  </div>
+
+  <div class="tagline">"Coverage Built on Trust. Service Built for You."</div>
+
+  <div class="trust-strip">
+    <span class="trust-item">Auto &amp; Home</span>
+    <span class="trust-dot"></span>
+    <span class="trust-item">Flood &amp; Commercial</span>
+    <span class="trust-dot"></span>
+    <span class="trust-item">Health &amp; Marine</span>
+    <span class="trust-dot"></span>
+    <span class="trust-item">Bilingual Service</span>
+  </div>
+</div>
+
+<div class="bottom-bar">
+  <div class="bottom-url">signaturetrustfl.com</div>
+  <div class="bottom-phone">(239) 850-2268</div>
+  <div class="bottom-cities">Naples · Cape Coral · Fort Myers · Marco Island</div>
+</div>
+
+<script>
+const canvas = document.getElementById('grid');
+const ctx = canvas.getContext('2d');
+canvas.width = 1200;
+canvas.height = 630;
+
+const gold = 'rgba(201,169,110,';
+const horizonY = 420;
+const vp = { x: 600, y: horizonY };
+
+let offset = 0;
+
+function drawGrid() {
+  ctx.clearRect(0, 0, 1200, 630);
+
+  const numH = 18;
+  const numV = 26;
+
+  ctx.save();
+
+  for (let i = 0; i <= numH; i++) {
+    const t = Math.pow(i / numH, 2.2);
+    const y = horizonY + (630 - horizonY) * t + (offset * (1 - t * 0.8)) % (630 - horizonY);
+
+    if (y < horizonY || y > 630) continue;
+
+    const alpha = 0.04 + 0.18 * ((y - horizonY) / (630 - horizonY));
+    ctx.strokeStyle = gold + alpha + ')';
+    ctx.lineWidth = 0.8;
+    ctx.beginPath();
+    ctx.moveTo(0, y);
+    ctx.lineTo(1200, y);
+    ctx.stroke();
+  }
+
+  const spread = 900;
+  for (let i = 0; i <= numV; i++) {
+    const t = i / numV;
+    const xBottom = -spread/2 + spread * t + 150;
+
+    const alpha = 0.04 + 0.1 * (1 - Math.abs(t - 0.5) * 2);
+    ctx.strokeStyle = gold + alpha + ')';
+    ctx.lineWidth = 0.8;
+    ctx.beginPath();
+    ctx.moveTo(vp.x, vp.y);
+    ctx.lineTo(xBottom, 630);
+    ctx.stroke();
+  }
+
+  ctx.restore();
+}
+
+function animate() {
+  offset += 0.5;
+  if (offset > 60) offset = 0;
+  drawGrid();
+  requestAnimationFrame(animate);
+}
+
+animate();
+</script>
+
+</body>
+</html>

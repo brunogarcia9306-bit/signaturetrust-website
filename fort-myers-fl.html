@@ -1,0 +1,642 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Independent insurance agent serving Fort Myers and Lee County, FL. Auto, home, flood and commercial insurance. Post-Ian coverage help. Bilingual EN/ES. Free quotes.">
+    <meta name="keywords" content="insurance agent Fort Myers FL, auto insurance Fort Myers, home insurance Fort Myers Florida, flood insurance Lee County, commercial insurance Fort Myers, seguro Fort Myers, agente de seguros Fort Myers FL">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Insurance Agent in Fort Myers, FL | Signature Trust Insurance">
+    <meta property="og:description" content="Auto, home, flood and commercial insurance for Fort Myers and Lee County. Independent agent. Bilingual EN/ES. Free quotes.">
+    <meta property="og:url" content="https://signaturetrustfl.com/fort-myers-fl">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://signaturetrustfl.com/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://signaturetrustfl.com/fort-myers-fl">
+    <title>Insurance Agent Fort Myers FL | Auto, Home &amp; Flood — Signature Trust Insurance</title>
+    <script type="application/ld+json">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "InsuranceAgency",
+        "name": "Signature Trust Insurance",
+        "description": "Independent insurance agency serving Fort Myers and Lee County. Auto, Home, Flood, and Commercial insurance. Bilingual English and Spanish.",
+        "url": "https://signaturetrustfl.com/fort-myers-fl",
+        "telephone": "+12398502268",
+        "email": "bruno@signaturetrustfl.com",
+        "areaServed": {"@type": "City", "name": "Fort Myers", "containedInPlace": {"@type": "State", "name": "Florida"}},
+        "geo": {"@type": "GeoCoordinates", "latitude": 26.640, "longitude": -81.872},
+        "knowsLanguage": ["en","es"],
+        "employee": {"@type": "Person", "name": "Bruno Garcia", "jobTitle": "Licensed Insurance Agent", "knowsLanguage": ["en","es"]}
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "How have insurance rates changed in Fort Myers after Hurricane Ian?", "acceptedAnswer": {"@type": "Answer", "text": "Hurricane Ian caused significant market disruptions in Lee County. Several insurers exited Florida, pushing more homeowners to Citizens Insurance. An independent agent can shop multiple carriers to find competitive alternatives before Citizens becomes your only option."}},
+          {"@type": "Question", "name": "Do I need flood insurance in Fort Myers?", "acceptedAnswer": {"@type": "Answer", "text": "Most of Fort Myers is in FEMA flood zones due to proximity to the Caloosahatchee River, San Carlos Bay, and low-lying areas. If you have a federally-backed mortgage and live in a high-risk zone, flood insurance is required. Even outside required zones, Ian showed that flood risk is real throughout Lee County."}},
+          {"@type": "Question", "name": "Can you help me if my insurance company dropped me after Hurricane Ian?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Many Lee County homeowners received non-renewal notices after Ian. As an independent agent, Bruno works with multiple admitted and surplus lines carriers to find coverage for properties that standard insurers have declined."}},
+          {"@type": "Question", "name": "Do you insure commercial properties and businesses in Fort Myers?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Signature Trust serves businesses along the US-41 corridor and throughout Lee County — commercial property, general liability, business owners policies (BOP), and commercial auto."}}
+        ]
+      }
+    ]
+    </script>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23080808'/%3E%3Ctext x='50' y='74' font-family='Georgia%2C serif' font-size='60' font-weight='700' fill='%23C9A96E' text-anchor='middle'%3EST%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+        --gold: #C9A96E; --gold-light: #E8D5A3; --black: #080808;
+        --dark: #111111; --dark-2: #1a1a1a; --dark-3: #222222;
+        --white: #F8F5EE; --white-muted: #C8C4BB;
+        --transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        --font-serif: 'Cormorant Garamond', Georgia, serif;
+        --font-sans: 'Inter', sans-serif;
+    }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body { background: var(--black); color: var(--white); font-family: var(--font-sans); min-height: 100vh; overflow-x: hidden; }
+
+    #office-bg { position: fixed; inset: 0; z-index: 0; background: linear-gradient(180deg,#080808 0%,#0d0d0d 40%,#111 100%); pointer-events: none; }
+    #office-bg::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(201,169,110,.025) 80px), repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(201,169,110,.025) 80px); animation: gridShift 20s linear infinite; }
+    @keyframes gridShift { from { background-position: 0 0; } to { background-position: 80px 80px; } }
+
+    nav#mainNav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; gap: 32px; padding: 0 60px; height: 72px; transition: all .4s ease; border-bottom: 1px solid transparent; }
+    nav#mainNav.scrolled { background: rgba(8,8,8,.95); backdrop-filter: blur(20px); border-bottom-color: rgba(201,169,110,.12); }
+    .nav-logo { text-decoration: none; display: flex; flex-direction: column; line-height: 1; }
+    .nav-logo-main { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--white); letter-spacing: .02em; }
+    .nav-logo-sub { font-family: var(--font-sans); font-size: 8px; letter-spacing: .5em; color: var(--gold); text-transform: uppercase; margin-top: 2px; }
+    .nav-links { display: flex; gap: 32px; list-style: none; margin: 0 auto; }
+    .nav-links a { font-family: var(--font-sans); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--white-muted); text-decoration: none; transition: color .3s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-phone { display: flex; align-items: center; gap: 8px; font-family: var(--font-sans); font-size: 13px; color: var(--white-muted); text-decoration: none; transition: color .3s; }
+    .nav-phone:hover { color: var(--gold); }
+    .nav-phone-icon { width: 28px; height: 28px; border: 1px solid rgba(201,169,110,.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold); }
+    .lang-toggle { display: flex; gap: 4px; }
+    .lang-btn { background: none; border: 1px solid rgba(201,169,110,.2); color: var(--white-muted); font-family: var(--font-sans); font-size: 10px; letter-spacing: .1em; padding: 4px 8px; cursor: pointer; transition: all .3s; }
+    .lang-btn.active, .lang-btn:hover { border-color: var(--gold); color: var(--gold); }
+    .nav-cta { background: var(--gold); color: var(--black); font-family: var(--font-sans); font-size: 11px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; text-decoration: none; padding: 10px 20px; transition: all .3s; white-space: nowrap; }
+    .nav-cta:hover { background: var(--gold-light); }
+    .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .nav-toggle span { width: 22px; height: 1px; background: var(--white-muted); }
+
+    .mobile-nav { position: fixed; top: 0; right: -100%; width: 280px; height: 100vh; background: rgba(8,8,8,.98); backdrop-filter: blur(20px); z-index: 200; display: flex; flex-direction: column; padding: 80px 40px 40px; gap: 24px; transition: right .4s ease; border-left: 1px solid rgba(201,169,110,.1); }
+    .mobile-nav.open { right: 0; }
+    .mobile-nav a { font-family: var(--font-sans); font-size: 14px; letter-spacing: .1em; text-transform: uppercase; color: var(--white-muted); text-decoration: none; }
+    .mobile-nav-close { position: absolute; top: 24px; right: 24px; background: none; border: none; color: var(--white-muted); font-size: 24px; cursor: pointer; }
+
+    .city-hero { position: relative; z-index: 1; min-height: 60vh; display: flex; align-items: center; padding: 160px 60px 100px; border-bottom: 1px solid rgba(201,169,110,.12); }
+    .city-hero-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+    .breadcrumb { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 32px; font-family: var(--font-sans); font-size: 11px; letter-spacing: .15em; text-transform: uppercase; color: rgba(201,169,110,.6); }
+    .breadcrumb a { color: rgba(201,169,110,.6); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--gold); }
+    .breadcrumb-sep { color: rgba(201,169,110,.3); }
+    .city-badge { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(201,169,110,.25); padding: 6px 16px; margin-bottom: 28px; font-family: var(--font-sans); font-size: 10px; letter-spacing: .35em; text-transform: uppercase; color: var(--gold); }
+    .city-hero h1 { font-family: var(--font-serif); font-size: clamp(42px,6vw,72px); font-weight: 300; color: var(--white); line-height: 1.1; margin-bottom: 20px; }
+    .city-hero h1 em { font-style: italic; color: var(--gold); }
+    .city-hero-sub { font-family: var(--font-sans); font-size: 16px; color: var(--white-muted); line-height: 1.7; max-width: 620px; margin: 0 auto 40px; }
+    .city-hero-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { background: var(--gold); color: var(--black); font-family: var(--font-sans); font-size: 11px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; text-decoration: none; padding: 16px 32px; transition: all .3s; }
+    .btn-primary:hover { background: var(--gold-light); }
+    .btn-ghost { border: 1px solid rgba(201,169,110,.3); color: var(--gold); font-family: var(--font-sans); font-size: 11px; letter-spacing: .15em; text-transform: uppercase; text-decoration: none; padding: 16px 32px; transition: all .3s; }
+    .btn-ghost:hover { border-color: var(--gold); background: rgba(201,169,110,.06); }
+
+    .local-context { position: relative; z-index: 1; padding: 100px 60px; background: var(--dark-2); }
+    .local-context-inner { max-width: 1100px; margin: 0 auto; }
+    .section-label { display: flex; align-items: center; gap: 12px; font-family: var(--font-sans); font-size: 10px; letter-spacing: .4em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+    .section-label::before { content: ''; width: 40px; height: 1px; background: var(--gold); }
+    .section-title { font-family: var(--font-serif); font-size: clamp(32px,4vw,52px); font-weight: 300; color: var(--white); line-height: 1.15; margin-bottom: 20px; }
+    .section-title em { font-style: italic; color: var(--gold); }
+    .section-sub { font-family: var(--font-sans); font-size: 15px; color: var(--white-muted); line-height: 1.8; max-width: 700px; margin-bottom: 60px; }
+    .risk-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
+    .risk-card { background: var(--dark-3); padding: 36px 28px; border: 1px solid rgba(201,169,110,.08); transition: var(--transition); }
+    .risk-card:hover { border-color: rgba(201,169,110,.28); transform: translateY(-4px); }
+    .risk-icon { width: 44px; height: 44px; border: 1px solid rgba(201,169,110,.2); display: flex; align-items: center; justify-content: center; color: var(--gold); margin-bottom: 20px; }
+    .risk-title { font-family: var(--font-serif); font-size: 22px; font-weight: 500; color: var(--white); margin-bottom: 10px; }
+    .risk-desc { font-family: var(--font-sans); font-size: 13px; color: var(--white-muted); line-height: 1.8; }
+
+    .coverage-section { position: relative; z-index: 1; padding: 100px 60px; }
+    .coverage-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; margin-top: 60px; }
+    .coverage-card { background: var(--dark-2); padding: 40px 28px; border: 1px solid rgba(201,169,110,.08); text-align: center; transition: var(--transition); }
+    .coverage-card:hover { border-color: rgba(201,169,110,.28); background: var(--dark-3); }
+    .coverage-card-icon { width: 56px; height: 56px; border: 1px solid rgba(201,169,110,.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold); margin: 0 auto 20px; }
+    .coverage-card h3 { font-family: var(--font-serif); font-size: 22px; font-weight: 500; color: var(--white); margin-bottom: 10px; }
+    .coverage-card p { font-family: var(--font-sans); font-size: 13px; color: var(--white-muted); line-height: 1.7; }
+
+    #quote { position: relative; z-index: 1; padding: 100px 60px; background: var(--dark-2); }
+    .quote-inner { max-width: 680px; margin: 0 auto; text-align: center; }
+    .quote-form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 48px; text-align: left; }
+    .form-field { display: flex; flex-direction: column; gap: 8px; }
+    .form-field.full { grid-column: 1 / -1; }
+    .form-field label { font-family: var(--font-sans); font-size: 10px; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); }
+    .form-field input, .form-field select, .form-field textarea { background: rgba(255,255,255,.04); border: 1px solid rgba(201,169,110,.15); color: var(--white); font-family: var(--font-sans); font-size: 14px; padding: 14px 16px; outline: none; transition: border-color .3s; width: 100%; appearance: none; }
+    .form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-color: rgba(201,169,110,.5); }
+    .form-field select option { background: var(--dark); color: var(--white); }
+    .form-field textarea { resize: vertical; min-height: 90px; }
+    .form-submit { grid-column: 1 / -1; margin-top: 8px; }
+    .form-submit button { width: 100%; background: var(--gold); color: var(--black); font-family: var(--font-sans); font-size: 11px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; border: none; padding: 18px; cursor: pointer; transition: all .3s; }
+    .form-submit button:hover { background: var(--gold-light); }
+    .form-note { grid-column: 1 / -1; font-family: var(--font-sans); font-size: 11px; color: rgba(200,196,187,.5); text-align: center; margin-top: 4px; }
+    .form-success-msg { display: none; padding: 40px; border: 1px solid rgba(201,169,110,.2); text-align: center; margin-top: 24px; }
+    .form-success-msg.visible { display: block; }
+    .form-success-msg h4 { font-family: var(--font-serif); font-size: 28px; color: var(--gold); margin-bottom: 12px; }
+    .form-success-msg p { font-family: var(--font-sans); font-size: 14px; color: var(--white-muted); line-height: 1.7; }
+
+    .faq-section { position: relative; z-index: 1; padding: 100px 60px; }
+    .faq-inner { max-width: 800px; margin: 0 auto; }
+    .faq-list { margin-top: 48px; display: flex; flex-direction: column; gap: 2px; }
+    .faq-item { background: var(--dark-2); border: 1px solid rgba(201,169,110,.08); }
+    .faq-q { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 24px 28px; cursor: pointer; font-family: var(--font-serif); font-size: 20px; font-weight: 500; color: var(--white); transition: color .3s; }
+    .faq-q:hover { color: var(--gold); }
+    .faq-q-icon { color: var(--gold); flex-shrink: 0; font-size: 20px; transition: transform .3s; }
+    .faq-item.open .faq-q-icon { transform: rotate(45deg); }
+    .faq-a { display: none; padding: 0 28px 28px; font-family: var(--font-sans); font-size: 14px; color: var(--white-muted); line-height: 1.9; }
+    .faq-item.open .faq-a { display: block; }
+
+    .cta-strip { position: relative; z-index: 1; padding: 80px 60px; background: var(--dark-2); text-align: center; border-top: 1px solid rgba(201,169,110,.12); }
+    .cta-strip h2 { font-family: var(--font-serif); font-size: clamp(32px,4vw,52px); font-weight: 300; color: var(--white); margin-bottom: 12px; }
+    .cta-strip h2 em { font-style: italic; color: var(--gold); }
+    .cta-strip p { font-family: var(--font-sans); font-size: 15px; color: var(--white-muted); margin-bottom: 36px; }
+    .cta-strip-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    footer { position: relative; z-index: 1; background: var(--black); border-top: 1px solid rgba(201,169,110,.1); padding: 60px 60px 40px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-top { display: flex; justify-content: space-between; gap: 60px; padding-bottom: 48px; border-bottom: 1px solid rgba(201,169,110,.08); margin-bottom: 32px; flex-wrap: wrap; }
+    .footer-logo-main { font-family: var(--font-serif); font-size: 24px; font-weight: 500; color: var(--white); }
+    .footer-logo-sub { font-family: var(--font-sans); font-size: 9px; letter-spacing: .5em; color: var(--white-muted); text-transform: uppercase; margin-top: 4px; }
+    .footer-logo-tagline { font-family: var(--font-serif); font-size: 14px; font-style: italic; color: var(--white-muted); margin-top: 16px; max-width: 280px; }
+    .footer-contact-block { margin-top: 20px; display: flex; flex-direction: column; gap: 6px; }
+    .footer-contact-block a { font-family: var(--font-sans); font-size: 13px; color: var(--white-muted); text-decoration: none; }
+    .footer-contact-block a:hover { color: var(--gold); }
+    .footer-hours { font-family: var(--font-sans); font-size: 12px; color: rgba(200,196,187,.5); }
+    .footer-links { display: flex; gap: 60px; flex-wrap: wrap; }
+    .footer-col h5 { font-family: var(--font-sans); font-size: 10px; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a { font-family: var(--font-sans); font-size: 14px; color: var(--white-muted); text-decoration: none; transition: color .3s; }
+    .footer-col ul li a:hover { color: var(--white); }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+    .footer-copy, .footer-license { font-family: var(--font-sans); font-size: 12px; color: rgba(200,196,187,.4); }
+
+    .whatsapp-btn { position: fixed; bottom: 30px; right: 30px; z-index: 90; width: 56px; height: 56px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,.3); transition: transform .3s; }
+    .whatsapp-btn:hover { transform: scale(1.1); }
+    .whatsapp-btn svg { width: 28px; height: 28px; fill: white; }
+
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .delay-1 { transition-delay: .1s; } .delay-2 { transition-delay: .2s; } .delay-3 { transition-delay: .3s; }
+
+    @media (max-width: 900px) {
+        nav#mainNav { padding: 0 24px; }
+        .nav-links, .nav-phone, .nav-cta { display: none; }
+        .nav-toggle { display: flex; }
+        .city-hero, .local-context, .coverage-section, #quote, .faq-section, .cta-strip { padding-left: 24px; padding-right: 24px; }
+        footer { padding: 40px 24px 30px; }
+        .risk-grid { grid-template-columns: 1fr; }
+        .coverage-grid { grid-template-columns: 1fr 1fr; }
+        .quote-form { grid-template-columns: 1fr; }
+        .footer-top { flex-direction: column; }
+        .footer-links { gap: 32px; }
+    }
+    @media (max-width: 600px) {
+        .coverage-grid { grid-template-columns: 1fr; }
+        .city-hero-ctas, .cta-strip-btns { flex-direction: column; align-items: center; }
+    }
+        @media(max-width:480px){
+        .svc-hero{padding:120px 16px 64px}
+        .svc-hero h1{font-size:clamp(32px,10vw,52px)}
+        .svc-hero-sub{font-size:14px}
+        .svc-section,#quote,.faq-section,.related-pages,.cta-strip{padding-left:16px;padding-right:16px}
+        .cov-grid{grid-template-columns:1fr}
+        .context-grid{grid-template-columns:1fr;gap:32px}
+        .related-grid{grid-template-columns:1fr}
+        .quote-form{grid-template-columns:1fr}
+        .hero-ctas,.cta-btns{flex-direction:column;align-items:stretch}
+        .btn-primary,.btn-ghost{text-align:center;padding:14px 20px}
+        .faq-q{font-size:16px;padding:18px 16px}
+        .faq-a{padding:0 16px 20px;font-size:13px}
+        .section-title{font-size:clamp(24px,7vw,40px)}
+        footer{padding:40px 16px 32px}
+        .footer-links{gap:24px}
+    }
+    
+    .instagram-btn { position:fixed;bottom:100px;right:30px;z-index:90;width:56px;height:56px;background:linear-gradient(135deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(188,24,136,.3);transition:transform .3s;text-decoration:none; }
+    .instagram-btn:hover { transform:scale(1.1); }
+    .instagram-btn svg { width:28px;height:28px;fill:white; }
+    .facebook-btn { position:fixed;bottom:168px;right:30px;z-index:90;width:56px;height:56px;background:#1877F2;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(24,119,242,.3);transition:transform .3s;text-decoration:none; }
+    .facebook-btn:hover { transform:scale(1.1); }
+    .facebook-btn svg { width:28px;height:28px;fill:white; }
+    </style>
+</head>
+<body>
+<div id="office-bg"></div>
+
+<div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-close" onclick="closeMobileNav()">&#215;</button>
+    <a href="index.html#services" onclick="closeMobileNav()" id="mNavCov">Coverage</a>
+    <a href="index.html#how-it-works" onclick="closeMobileNav()" id="mNavHow">How It Works</a>
+    <a href="index.html#why" onclick="closeMobileNav()" id="mNavAbout">About</a>
+    <a href="help.html" onclick="closeMobileNav()" id="mNavHelp">Help</a>
+    <a href="#faq" onclick="closeMobileNav()" id="mNavFaq">FAQ</a>
+    <a href="#quote" onclick="closeMobileNav()" id="mNavQuote">Free Quote</a>
+    <div class="lang-toggle" style="margin-top:16px;">
+        <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
+        <button class="lang-btn" onclick="setLanguage('es')">ES</button>
+    </div>
+</div>
+
+<nav id="mainNav">
+    <a href="index.html" class="nav-logo">
+        <span class="nav-logo-main">Signature Trust</span>
+        <span class="nav-logo-sub">Insurance</span>
+    </a>
+    <ul class="nav-links">
+        <li><a href="index.html#services" id="navCov">Coverage</a></li>
+        <li><a href="index.html#how-it-works" id="navHow">How It Works</a></li>
+        <li><a href="index.html#why" id="navAbout">About</a></li>
+        <li><a href="help.html" id="navHelp">Help</a></li>
+        <li><a href="#faq" id="navFaq">FAQ</a></li>
+    </ul>
+    <a href="tel:+12398502268" class="nav-phone">
+        <span class="nav-phone-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.07 6.07l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+        (239) 850-2268
+    </a>
+    <div class="lang-toggle">
+        <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
+        <button class="lang-btn" onclick="setLanguage('es')">ES</button>
+    </div>
+    <a href="#quote" class="nav-cta" id="navCta">Free Quote</a>
+    <div class="nav-toggle" onclick="openMobileNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<section class="city-hero">
+    <div class="city-hero-inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="breadcrumb-sep">›</span>
+            <span id="breadCity">Fort Myers, FL</span>
+        </nav>
+        <div class="city-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span id="heroBadge">Fort Myers &amp; Lee County</span>
+        </div>
+        <h1 id="heroTitle">Insurance Built for<br><em>Fort Myers</em></h1>
+        <p class="city-hero-sub" id="heroSub">Independent insurance agent serving Fort Myers and Lee County. Auto, home, flood and commercial coverage — from an agent who understands the real risks of living in Southwest Florida after Ian.</p>
+        <div class="city-hero-ctas">
+            <a href="#quote" class="btn-primary" id="heroCta1">Get a Free Quote</a>
+            <a href="https://wa.me/12398502268" class="btn-ghost" target="_blank" rel="noopener" id="heroCta2">WhatsApp Bruno</a>
+        </div>
+    </div>
+</section>
+
+<section class="local-context">
+    <div class="local-context-inner">
+        <p class="section-label" id="localLabel">Fort Myers Coverage</p>
+        <h2 class="section-title" id="localTitle">Local Risks Require<br><em>Local Knowledge</em></h2>
+        <p class="section-sub" id="localSub">Lee County's insurance market changed drastically after Hurricane Ian. Rates rose, carriers left, and many homeowners are underinsured. Bruno works with you to find real coverage at the best available rate.</p>
+        <div class="risk-grid">
+            <div class="risk-card reveal">
+                <div class="risk-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M20 17.58A5 5 0 0 0 18 8h-1.26A8 8 0 1 0 4 16.25"/><line x1="8" y1="16" x2="8.01" y2="16"/><line x1="12" y1="18" x2="12.01" y2="18"/><line x1="12" y1="22" x2="12.01" y2="22"/></svg></div>
+                <h3 class="risk-title" id="r1t">Hurricane &amp; Wind</h3>
+                <p class="risk-desc" id="r1d">Ian proved Lee County is among Florida's most hurricane-exposed areas. Windstorm deductibles, replacement cost, and post-storm claims must be understood before the next storm — not during it.</p>
+            </div>
+            <div class="risk-card reveal delay-1">
+                <div class="risk-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+                <h3 class="risk-title" id="r2t">Flood Exposure</h3>
+                <p class="risk-desc" id="r2d">Fort Myers sits near the Caloosahatchee River and tidal inlets. FEMA flood maps cover large portions of Lee County — and Ian's storm surge reached areas never before considered high-risk. Flood is always a separate policy.</p>
+            </div>
+            <div class="risk-card reveal delay-2">
+                <div class="risk-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+                <h3 class="risk-title" id="r3t">Commercial Coverage</h3>
+                <p class="risk-desc" id="r3d">The US-41 corridor is home to thousands of small businesses. GL, commercial property, and BOPs are critical for any Fort Myers business owner — especially with post-Ian reconstruction costs still elevated.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="coverage-section">
+    <div class="local-context-inner">
+        <p class="section-label" id="covLabel">What We Offer</p>
+        <h2 class="section-title" id="covTitle">Coverage for<br><em>Every Need</em></h2>
+        <div class="coverage-grid">
+            <div class="coverage-card reveal">
+                <div class="coverage-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+                <h3 id="c1t">Auto Insurance</h3>
+                <p id="c1d">Personal and commercial auto. PIP, liability, comprehensive, collision — tailored for Fort Myers drivers.</p>
+            </div>
+            <div class="coverage-card reveal delay-1">
+                <div class="coverage-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+                <h3 id="c2t">Home Insurance</h3>
+                <p id="c2d">Homeowners coverage with windstorm, replacement cost, and loss of use. Post-Ian market navigation included.</p>
+            </div>
+            <div class="coverage-card reveal delay-2">
+                <div class="coverage-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M20 17.58A5 5 0 0 0 18 8h-1.26A8 8 0 1 0 4 16.25"/></svg></div>
+                <h3 id="c3t">Flood Insurance</h3>
+                <p id="c3d">NFIP and private flood options for Lee County properties. Required by lenders in high-risk zones — smart anywhere.</p>
+            </div>
+            <div class="coverage-card reveal delay-3">
+                <div class="coverage-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+                <h3 id="c4t">Commercial</h3>
+                <p id="c4d">GL, BOP, commercial property and auto for Fort Myers area businesses of any size.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="quote">
+    <div class="quote-inner">
+        <p class="section-label" style="justify-content:center;" id="formLabel">Free Quote</p>
+        <h2 class="section-title" id="formTitle">Get Your<br><em>Fort Myers Quote</em></h2>
+        <p class="section-sub" style="margin:0 auto;max-width:520px;" id="formSub">No pressure. No obligation. Bruno reviews every request personally and responds within 24 hours.</p>
+        <form class="quote-form" id="quoteForm" novalidate>
+            <div class="form-field">
+                <label id="lName">Full Name</label>
+                <input type="text" name="name" id="fName" placeholder="John Smith" required>
+            </div>
+            <div class="form-field">
+                <label id="lPhone">Phone</label>
+                <input type="tel" name="phone" id="fPhone" placeholder="(239) 000-0000" required>
+            </div>
+            <div class="form-field">
+                <label id="lEmail">Email</label>
+                <input type="email" name="email" id="fEmail" placeholder="you@email.com">
+            </div>
+            <div class="form-field">
+                <label id="lType">Coverage Type</label>
+                <select name="type" id="fType">
+                    <option value="">Select…</option>
+                    <option value="Auto">Auto Insurance</option>
+                    <option value="Home">Home Insurance</option>
+                    <option value="Flood">Flood Insurance</option>
+                    <option value="Commercial">Commercial</option>
+                    <option value="Other">Other / Not Sure</option>
+                </select>
+            </div>
+            <div class="form-field full">
+                <label id="lMsg">Message (optional)</label>
+                <textarea name="message" id="fMsg" placeholder="Tell us what you need…"></textarea>
+            </div>
+            <input type="hidden" name="source" value="fort-myers-page">
+            <input type="hidden" name="city" value="Fort Myers">
+            <div class="form-submit">
+                <button type="submit" id="submitBtn">Send Request</button>
+            </div>
+            <p class="form-note" id="formNote">No spam. No sales calls. Bruno reviews every request personally.</p>
+        </form>
+        <div class="form-success-msg" id="formSuccess">
+            <h4 id="successTitle">Request Received</h4>
+            <p id="successMsg">Thank you — Bruno will reach out within 24 hours. You can also call directly: (239) 850-2268.</p>
+        </div>
+    </div>
+</section>
+
+<section class="faq-section" id="faq">
+    <div class="faq-inner">
+        <p class="section-label" id="faqLabel">Common Questions</p>
+        <h2 class="section-title" id="faqTitle">Fort Myers<br><em>Insurance FAQ</em></h2>
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)"><span id="q1">How have insurance rates changed in Fort Myers after Hurricane Ian?</span><span class="faq-q-icon">+</span></div>
+                <div class="faq-a" id="a1">Hurricane Ian permanently changed Lee County's insurance market. Several major carriers exited Florida, reducing competition and pushing rates up significantly. Citizens Insurance became the insurer of last resort for many homeowners. As an independent agent, Bruno shops multiple carriers — including surplus lines — to find the most competitive rate for your specific property.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)"><span id="q2">Do I need flood insurance in Fort Myers?</span><span class="faq-q-icon">+</span></div>
+                <div class="faq-a" id="a2">If you have a federally-backed mortgage and your property is in a FEMA high-risk flood zone, flood insurance is legally required. But even outside required zones, Ian showed that storm surge and inland flooding can reach areas never before considered at risk. Flood coverage is always a separate policy from homeowners — and often worth carrying regardless of your zone.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)"><span id="q3">My insurer dropped me after Ian. Can you help?</span><span class="faq-q-icon">+</span></div>
+                <div class="faq-a" id="a3">Yes. Many Lee County homeowners received non-renewal notices after Hurricane Ian. As an independent agent, Bruno has access to multiple admitted and surplus lines carriers. Even for properties that standard insurers have declined, alternatives exist — including specialty markets — that can provide real coverage. The sooner you start, the more options remain available before a lapse occurs.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)"><span id="q4">Do you insure businesses in the Fort Myers area?</span><span class="faq-q-icon">+</span></div>
+                <div class="faq-a" id="a4">Yes. Signature Trust serves businesses throughout Lee County — from the US-41 corridor to downtown Fort Myers and Cape Coral. We offer commercial property, general liability, business owners policies (BOP), commercial auto, and umbrella coverage. Post-Ian reconstruction has made commercial insurance especially important for businesses that suffered physical damage or business interruption losses.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-strip">
+    <h2 id="ctaTitle">Talk to Bruno.<br><em>Get a Real Answer.</em></h2>
+    <p id="ctaSub">Licensed Florida agent. No scripts. No pressure. Honest guidance for Fort Myers families and businesses.</p>
+    <div class="cta-strip-btns">
+        <a href="#quote" class="btn-primary" id="ctaBtn1">Get a Free Quote</a>
+        <a href="https://wa.me/12398502268" class="btn-ghost" target="_blank" rel="noopener" id="ctaBtn2">WhatsApp Us</a>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-top">
+            <div>
+                <div class="footer-logo-main">Signature Trust</div>
+                <div class="footer-logo-sub">Insurance</div>
+                <p class="footer-logo-tagline">"Coverage Built on Trust.<br>Service Built for You."</p>
+                <div class="footer-contact-block">
+                    <a href="tel:+12398502268">(239) 850-2268</a>
+                    <a href="mailto:bruno@signaturetrustfl.com">bruno@signaturetrustfl.com</a>
+                    <p class="footer-hours" id="fHours">Mon – Sat &nbsp;·&nbsp; 9:00 am – 5:00 pm EST</p>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h5>Coverage</h5>
+                    <ul>
+                        <li><a href="auto-insurance-naples-fl.html">Auto Insurance</a></li>
+                        <li><a href="home-insurance-naples-fl.html">Home Insurance</a></li>
+                        <li><a href="flood-insurance-naples-fl.html">Flood Insurance</a></li>
+                        <li><a href="commercial-insurance-naples-fl.html">Commercial</a></li>
+                        <li><a href="commercial-truck-insurance-naples-fl.html">Truck Insurance</a></li>
+                        <li><a href="health-insurance-naples-fl.html">Health Insurance</a></li>
+                        <li><a href="recreational-vehicles-naples-fl.html">Boats &amp; Watercraft</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Service Areas</h5>
+                    <ul>
+                        <li><a href="index.html">Naples</a></li>
+                        <li><a href="cape-coral-fl.html">Cape Coral</a></li>
+                        <li><a href="marco-island-fl.html">Marco Island</a></li>
+                        <li><a href="bonita-springs-fl.html">Bonita Springs</a></li>
+                        <li><a href="estero-fl.html">Estero</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Help Center</h5>
+                    <ul>
+                        <li><a href="help.html#auto">Auto Accidents</a></li>
+                        <li><a href="help.html#home">Home Damage</a></li>
+                        <li><a href="help.html#hurricane">Hurricane Prep</a></li>
+                        <li><a href="help.html#claims">Filing a Claim</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copy" id="fCopy">&copy; <span id="footerYear">2026</span> Signature Trust Insurance. All rights reserved.</p>
+            <p class="footer-license" id="fLicense">Bruno Garcia &middot; Licensed Insurance Agent &middot; State of Florida</p>
+        </div>
+    </div>
+</footer>
+
+
+<!-- Instagram floating button -->
+<a href="https://www.instagram.com/signaturetrustfl" class="instagram-btn" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+</a>
+
+<!-- Facebook floating button -->
+<a href="https://www.facebook.com/profile.php?id=61590463125817" class="facebook-btn" target="_blank" rel="noopener" aria-label="Follow us on Facebook">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.994 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+</a>
+<a href="https://wa.me/12398502268?text=Hi%20Bruno%2C%20I%27d%20like%20a%20quote%20in%20Fort%20Myers." class="whatsapp-btn" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+function openMobileNav() { document.getElementById('mobileNav').classList.add('open'); }
+function closeMobileNav() { document.getElementById('mobileNav').classList.remove('open'); }
+function toggleFaq(el) { el.parentElement.classList.toggle('open'); }
+document.querySelectorAll('.reveal').forEach(el => {
+    new IntersectionObserver(([e]) => { if (e.isIntersecting) { el.classList.add('visible'); } }, { threshold: 0.12 }).observe(el);
+});
+document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+document.getElementById('quoteForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var d = Object.fromEntries(new FormData(this));
+    d.access_key = '3d37d260-ccf0-4c59-9f95-5777c427222b';
+    d.subject = 'New Lead: ' + (d.type || 'Fort Myers') + ' — ' + (d.name || '');
+    d.timestamp = new Date().toISOString();
+    fetch('https://api.web3forms.com/submit', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(d) }).catch(function(){});
+    this.style.display = 'none';
+    document.getElementById('formSuccess').classList.add('visible');
+});
+
+const LANG = {
+    en: {
+        navLinks:['Coverage','How It Works','About','Help','FAQ'], navCta:'Free Quote',
+        breadCity:'Fort Myers, FL', badge:'Fort Myers & Lee County',
+        heroTitle:'Insurance Built for<br><em>Fort Myers</em>',
+        heroSub:'Independent insurance agent serving Fort Myers and Lee County. Auto, home, flood and commercial coverage — from an agent who understands the real risks of living in Southwest Florida after Ian.',
+        cta1:'Get a Free Quote', cta2:'WhatsApp Bruno',
+        localLabel:'Fort Myers Coverage', localTitle:'Local Risks Require<br><em>Local Knowledge</em>',
+        localSub:"Lee County's insurance market changed drastically after Hurricane Ian. Rates rose, carriers left, and many homeowners are underinsured. Bruno works with you to find real coverage at the best available rate.",
+        r1t:'Hurricane & Wind', r1d:"Ian proved Lee County is among Florida's most hurricane-exposed areas. Windstorm deductibles, replacement cost, and post-storm claims must be understood before the next storm — not during it.",
+        r2t:'Flood Exposure', r2d:"Fort Myers sits near the Caloosahatchee River and tidal inlets. FEMA flood maps cover large portions of Lee County — and Ian's storm surge reached areas never before considered high-risk.",
+        r3t:'Commercial Coverage', r3d:"The US-41 corridor is home to thousands of small businesses. GL, commercial property, and BOPs are critical — especially with post-Ian reconstruction costs still elevated.",
+        covLabel:'What We Offer', covTitle:'Coverage for<br><em>Every Need</em>',
+        c1t:'Auto Insurance', c1d:'Personal and commercial auto. PIP, liability, comprehensive, collision — tailored for Fort Myers drivers.',
+        c2t:'Home Insurance', c2d:'Homeowners coverage with windstorm, replacement cost, and loss of use. Post-Ian market navigation included.',
+        c3t:'Flood Insurance', c3d:'NFIP and private flood options for Lee County properties. Required in high-risk zones — smart anywhere.',
+        c4t:'Commercial', c4d:'GL, BOP, commercial property and auto for Fort Myers area businesses of any size.',
+        formLabel:'Free Quote', formTitle:'Get Your<br><em>Fort Myers Quote</em>',
+        formSub:'No pressure. No obligation. Bruno reviews every request personally and responds within 24 hours.',
+        lName:'Full Name', lPhone:'Phone', lEmail:'Email', lType:'Coverage Type', lMsg:'Message (optional)',
+        submitBtn:'Send Request', formNote:'No spam. No sales calls. Bruno reviews every request personally.',
+        successTitle:'Request Received', successMsg:'Thank you — Bruno will reach out within 24 hours. You can also call: (239) 850-2268.',
+        faqLabel:'Common Questions', faqTitle:'Fort Myers<br><em>Insurance FAQ</em>',
+        q1:'How have insurance rates changed in Fort Myers after Hurricane Ian?',
+        a1:"Hurricane Ian permanently changed Lee County's insurance market. Several major carriers exited Florida, pushing rates up and leaving Citizens Insurance as the last resort for many. As an independent agent, Bruno shops multiple carriers — including surplus lines — to find the best rate for your specific property.",
+        q2:'Do I need flood insurance in Fort Myers?',
+        a2:"If you have a federally-backed mortgage in a FEMA high-risk zone, flood insurance is legally required. But even outside required zones, Ian showed that storm surge can reach areas never before considered at risk. Flood is always a separate policy — and often worth carrying regardless of your zone designation.",
+        q3:'My insurer dropped me after Ian. Can you help?',
+        a3:"Yes. Many Lee County homeowners received non-renewal notices after Ian. Bruno has access to multiple admitted and surplus lines carriers, including specialty markets for properties standard insurers have declined. The sooner you start, the more options remain open before any lapse in coverage.",
+        q4:'Do you insure businesses in the Fort Myers area?',
+        a4:"Yes. Signature Trust serves businesses throughout Lee County — from US-41 to downtown Fort Myers. We offer commercial property, GL, BOPs, commercial auto, and umbrella coverage. Post-Ian reconstruction makes commercial coverage especially critical for business owners.",
+        ctaTitle:'Talk to Bruno.<br><em>Get a Real Answer.</em>',
+        ctaSub:'Licensed Florida agent. No scripts. No pressure. Honest guidance for Fort Myers families and businesses.',
+        ctaBtn1:'Get a Free Quote', ctaBtn2:'WhatsApp Us',
+        fHours:'Mon – Sat · 9:00 am – 5:00 pm EST',
+        fCopy:'© 2026 Signature Trust Insurance. All rights reserved.',
+        fLicense:'Bruno Garcia · Licensed Insurance Agent · State of Florida',
+        optType:['Select…','Auto Insurance','Home Insurance','Flood Insurance','Commercial','Other / Not Sure']
+    },
+    es: {
+        navLinks:['Cobertura','Cómo Funciona','Nosotros','Ayuda','Preguntas'], navCta:'Cotización Gratis',
+        breadCity:'Fort Myers, FL', badge:'Fort Myers y Condado Lee',
+        heroTitle:'Seguros Diseñados para<br><em>Fort Myers</em>',
+        heroSub:'Agente independiente sirviendo Fort Myers y el Condado Lee. Auto, hogar, inundación y seguro comercial — de un agente que conoce los riesgos reales del Suroeste de Florida después de Ian.',
+        cta1:'Cotización Gratis', cta2:'WhatsApp Bruno',
+        localLabel:'Cobertura Fort Myers', localTitle:'Los Riesgos Locales Requieren<br><em>Conocimiento Local</em>',
+        localSub:'El mercado de seguros del Condado Lee cambió drásticamente después del Huracán Ian. Las tarifas subieron, aseguradoras se fueron, y muchos propietarios están subcubiertos. Bruno trabaja contigo para encontrar la cobertura real al mejor precio.',
+        r1t:'Huracán y Viento', r1d:'Ian demostró que el Condado Lee es uno de los más expuestos a huracanes en Florida. Los deducibles por viento, costo de reemplazo y reclamaciones post-tormenta deben entenderse antes del próximo huracán.',
+        r2t:'Riesgo de Inundación', r2d:'Fort Myers está cerca del Río Caloosahatchee e inlets de marea. Los mapas FEMA cubren grandes partes del Condado Lee — e Ian llegó a áreas nunca antes consideradas de alto riesgo.',
+        r3t:'Cobertura Comercial', r3d:'El corredor US-41 alberga miles de pequeños negocios. GL, propiedad comercial y BOPs son críticos — especialmente con los costos post-Ian todavía elevados.',
+        covLabel:'Lo Que Ofrecemos', covTitle:'Cobertura para<br><em>Cada Necesidad</em>',
+        c1t:'Seguro de Auto', c1d:'Auto personal y comercial. PIP, responsabilidad civil, colisión — adaptado para conductores de Fort Myers.',
+        c2t:'Seguro de Hogar', c2d:'Cobertura para propietario con viento, costo de reemplazo y pérdida de uso. Navegación del mercado post-Ian incluida.',
+        c3t:'Seguro de Inundación', c3d:'NFIP y opciones privadas para propiedades del Condado Lee. Requerido en zonas de alto riesgo — inteligente en cualquier zona.',
+        c4t:'Comercial', c4d:'GL, BOP, propiedad y auto comercial para negocios de cualquier tamaño en el área de Fort Myers.',
+        formLabel:'Cotización Gratis', formTitle:'Obtén Tu<br><em>Cotización en Fort Myers</em>',
+        formSub:'Sin presión. Sin compromiso. Bruno revisa cada solicitud personalmente y responde en 24 horas.',
+        lName:'Nombre Completo', lPhone:'Teléfono', lEmail:'Correo Electrónico', lType:'Tipo de Cobertura', lMsg:'Mensaje (opcional)',
+        submitBtn:'Enviar Solicitud', formNote:'Sin spam. Sin llamadas de venta. Bruno revisa cada solicitud personalmente.',
+        successTitle:'Solicitud Recibida', successMsg:'Gracias — Bruno se pondrá en contacto en 24 horas. También puedes llamar: (239) 850-2268.',
+        faqLabel:'Preguntas Frecuentes', faqTitle:'Fort Myers<br><em>Preguntas de Seguros</em>',
+        q1:'¿Cómo cambiaron las tarifas de seguros en Fort Myers después del Huracán Ian?',
+        a1:'El impacto de Ian en el Condado Lee cambió permanentemente el mercado. Varias aseguradoras salieron de Florida, reduciendo la competencia y aumentando las tarifas. Citizens Insurance se convirtió en el último recurso para muchos. Como agente independiente, Bruno compara múltiples aseguradoras para encontrar la mejor tarifa disponible.',
+        q2:'¿Necesito seguro de inundación en Fort Myers?',
+        a2:'Si tienes una hipoteca federal en una zona de alto riesgo FEMA, el seguro de inundación es requerido por ley. Pero incluso fuera de las zonas requeridas, Ian demostró que la inundación puede llegar a áreas nunca antes consideradas de riesgo. El seguro de inundación es siempre una póliza separada.',
+        q3:'Mi aseguradora me canceló después de Ian. ¿Puedes ayudarme?',
+        a3:'Sí. Muchos propietarios del Condado Lee recibieron avisos de no-renovación. Bruno tiene acceso a múltiples aseguradoras admitidas y de líneas excedentes, incluyendo mercados especializados para propiedades rechazadas por aseguradoras estándar.',
+        q4:'¿Aseguran negocios en el área de Fort Myers?',
+        a4:'Sí. Signature Trust sirve a negocios en todo el Condado Lee — desde US-41 hasta el centro de Fort Myers. Ofrecemos propiedad comercial, GL, BOPs, auto comercial y cobertura paraguas.',
+        ctaTitle:'Habla con Bruno.<br><em>Obtén una Respuesta Real.</em>',
+        ctaSub:'Agente licenciado en Florida. Sin guiones. Sin presión. Orientación honesta para familias y negocios de Fort Myers.',
+        ctaBtn1:'Cotización Gratis', ctaBtn2:'Escríbenos por WhatsApp',
+        fHours:'Lun – Sáb · 9:00 am – 5:00 pm EST',
+        fCopy:'© 2026 Signature Trust Insurance. Todos los derechos reservados.',
+        fLicense:'Bruno Garcia · Agente de Seguros Licenciado · Estado de Florida',
+        optType:['Seleccionar…','Seguro de Auto','Seguro de Hogar','Seguro de Inundación','Comercial','Otro / No Estoy Seguro']
+    }
+};
+
+function S(id) { return document.getElementById(id); }
+function setT(id,v) { const e=S(id); if(e) e.textContent=v; }
+function setH(id,v) { const e=S(id); if(e) e.innerHTML=v; }
+
+function setLanguage(lang) {
+    localStorage.setItem('stLang', lang);
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.textContent.toLowerCase()===lang));
+    const t = LANG[lang];
+    const nids = ['navCov','navHow','navAbout','navHelp','navFaq'];
+    nids.forEach((id,i) => setT(id, t.navLinks[i]));
+    const mids = ['mNavCov','mNavHow','mNavAbout','mNavHelp','mNavFaq','mNavQuote'];
+    mids.forEach((id,i) => { if(t.navLinks[i]) setT(id, t.navLinks[i]); });
+    setT('navCta', t.navCta);
+    setT('breadCity', t.breadCity); setT('heroBadge', t.badge);
+    setH('heroTitle', t.heroTitle); setT('heroSub', t.heroSub);
+    setT('heroCta1', t.cta1); setT('heroCta2', t.cta2);
+    setT('localLabel', t.localLabel); setH('localTitle', t.localTitle); setT('localSub', t.localSub);
+    setT('r1t', t.r1t); setT('r1d', t.r1d);
+    setT('r2t', t.r2t); setT('r2d', t.r2d);
+    setT('r3t', t.r3t); setT('r3d', t.r3d);
+    setT('covLabel', t.covLabel); setH('covTitle', t.covTitle);
+    setT('c1t', t.c1t); setT('c1d', t.c1d);
+    setT('c2t', t.c2t); setT('c2d', t.c2d);
+    setT('c3t', t.c3t); setT('c3d', t.c3d);
+    setT('c4t', t.c4t); setT('c4d', t.c4d);
+    setT('formLabel', t.formLabel); setH('formTitle', t.formTitle); setT('formSub', t.formSub);
+    setT('lName', t.lName); setT('lPhone', t.lPhone); setT('lEmail', t.lEmail);
+    setT('lType', t.lType); setT('lMsg', t.lMsg);
+    setT('submitBtn', t.submitBtn); setT('formNote', t.formNote);
+    setT('successTitle', t.successTitle); setT('successMsg', t.successMsg);
+    setT('faqLabel', t.faqLabel); setH('faqTitle', t.faqTitle);
+    setT('q1', t.q1); setT('a1', t.a1);
+    setT('q2', t.q2); setT('a2', t.a2);
+    setT('q3', t.q3); setT('a3', t.a3);
+    setT('q4', t.q4); setT('a4', t.a4);
+    setH('ctaTitle', t.ctaTitle); setT('ctaSub', t.ctaSub);
+    setT('ctaBtn1', t.ctaBtn1); setT('ctaBtn2', t.ctaBtn2);
+    setT('fHours', t.fHours); setT('fCopy', t.fCopy); setT('fLicense', t.fLicense);
+    const fTypeSel = document.getElementById('fType');
+    if (fTypeSel) t.optType.forEach((txt, i) => { if (fTypeSel.options[i]) fTypeSel.options[i].text = txt; });
+}
+
+setLanguage(localStorage.getItem('stLang') || 'en');
+</script>
+</body>
+</html>
+
