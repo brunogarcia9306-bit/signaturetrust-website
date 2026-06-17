@@ -501,6 +501,7 @@
 
     @media (max-width: 1200px) {
         .services-grid { grid-template-columns: repeat(2, 1fr); }
+        .services-grid > .service-card:nth-last-child(1):nth-child(3n+1) { grid-column: auto; }
         .areas-grid { grid-template-columns: repeat(3, 1fr); }
         .blog-grid { grid-template-columns: repeat(2, 1fr); }
         .footer-links { gap: 40px; }
@@ -565,6 +566,8 @@
         .carriers-grid { flex-direction: column; align-items: stretch; }
         .carrier-box { max-width: 100%; min-width: unset; padding: 24px 20px; }
         .whatsapp-btn { bottom: 76px; right: 16px; }
+        .instagram-btn { bottom: 140px; right: 16px; }
+        .facebook-btn { bottom: 208px; right: 16px; }
         nav { padding: 14px 16px; }
         .lang-toggle { gap: 2px; }
         .hero-title { font-size: clamp(36px, 11vw, 72px); line-height: 0.95; }
