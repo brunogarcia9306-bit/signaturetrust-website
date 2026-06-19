@@ -610,9 +610,10 @@ async function checkFloodZone(){
     btn.disabled=true;
     resultDiv.style.display='none';
     try{
-        var geoRes=await fetch('https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address='+encodeURIComponent(addr)+'&benchmark=2020&format=json');
+        var geoRes=await fetch('https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address='+encodeURIComponent(addr)+'&benchmark=Public_AR_Current&format=json');
+        if(!geoRes.ok) throw new Error('geocoder_http');
         var geoData=await geoRes.json();
-        if(!geoData.result.addressMatches||!geoData.result.addressMatches.length){
+        if(!geoData.result||!geoData.result.addressMatches||!geoData.result.addressMatches.length){
             showFloodError(lang==='es'?'Dirección no encontrada. Intentá agregar ", FL" o el código postal.':'Address not found. Try adding ", FL" or a zip code.');
             return;
         }
