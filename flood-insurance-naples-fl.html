@@ -617,35 +617,29 @@ async function checkFloodZone(){
     btn.disabled=true;
     resultDiv.style.display='none';
     try{
-        /* Normalize: ensure state is present for better geocoding results */
+        /* Normalize: ensure state is present */
         var normalizedAddr=addr;
         if(!/\b(FL|Florida)\b/i.test(addr)) normalizedAddr=addr+', FL';
 
-        /* Try structured Nominatim query first (more reliable for US addresses) */
         var lat,lon,matched;
         var geoRes;
-        var parsed=parseSwflAddress(normalizedAddr);
-        if(parsed){
-            try{
-                geoRes=await fetch('https://nominatim.openstreetmap.org/search?street='+encodeURIComponent(parsed.street)+'&city='+encodeURIComponent(parsed.city)+'&state=Florida&country=us&format=json&limit=1');
-            }catch(e1){ geoRes=null; }
-        }
-        var geoData= geoRes&&geoRes.ok ? await geoRes.json() : [];
-        /* Fallback: unstructured query */
-        if(!geoData||!geoData.length){
-            try{
-                var r2=await fetch('https://nominatim.openstreetmap.org/search?q='+encodeURIComponent(normalizedAddr)+'&format=json&limit=1');
-                if(r2.ok) geoData=await r2.json();
-            }catch(e2){ geoData=[]; }
-        }
-        if(!geoData||!geoData.length){
-            showFloodError(lang==='es'
-                ?'Dirección no encontrada. Intentá con el formato: "123 Main St, Naples, FL 34102"'
-                :'Address not found. Try format: "123 Main St, Naples, FL 34102" — or use the official links below.');
+        try{
+            geoRes=await fetch('/api/geocode?address='+encodeURIComponent(normalizedAddr));
+        }catch(geoErr){
+            showFloodError('[Step 1 - Geocoder] '+geoErr.message);
             return;
         }
-        lat=parseFloat(geoData[0].lat); lon=parseFloat(geoData[0].lon);
-        matched=geoData[0].display_name;
+        if(!geoRes.ok){showFloodError('[Step 1 - Geocoder HTTP] Status: '+geoRes.status);return;}
+        var geoData=await geoRes.json();
+        if(!geoData.result||!geoData.result.addressMatches||!geoData.result.addressMatches.length){
+            showFloodError(lang==='es'
+                ?'Dirección no encontrada. Intentá con el formato: "2137 51st St SW, Naples, FL 34116"'
+                :'Address not found. Try: "2137 51st St SW, Naples, FL 34116"');
+            return;
+        }
+        var match=geoData.result.addressMatches[0];
+        lat=match.coordinates.y; lon=match.coordinates.x;
+        matched=match.matchedAddress;
         var femaUrl='https://hazards.fema.gov/gis/nfhl/rest/services/public/NFHL/MapServer/28/query?geometry='+lon+','+lat+'&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=FLD_ZONE,ZONE_SUBTY&returnGeometry=false&f=json';
         var femaRes;
         try{
