@@ -752,6 +752,30 @@
         .instagram-btn { bottom: 140px; right: 16px; }
         .facebook-btn { bottom: 208px; right: 16px; }
     }
+
+    /* ===================== MEET YOUR AGENT ===================== */
+    #agent { position: relative; z-index: 1; padding: 120px 60px; background: rgba(6,5,3,0.52); border-top: 1px solid rgba(201,169,110,0.1); }
+    .agent-section-inner { max-width: 1200px; margin: 0 auto; }
+    .agent-section-grid { display: grid; grid-template-columns: 400px 1fr; gap: 80px; align-items: center; margin-top: 60px; }
+    .agent-section-photo-wrap { position: relative; }
+    .agent-section-photo-wrap::after { content: ''; position: absolute; top: 24px; left: 24px; right: -24px; bottom: -24px; border: 1px solid rgba(201,169,110,0.18); z-index: 0; pointer-events: none; }
+    .agent-section-photo { position: relative; z-index: 1; width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: center top; display: block; }
+    .agent-section-body { display: flex; flex-direction: column; gap: 24px; }
+    .agent-section-name { font-family: var(--font-serif); font-size: clamp(34px, 4vw, 54px); font-weight: 400; color: var(--white); line-height: 1.05; margin: 0; }
+    .agent-section-title { font-family: var(--font-sans); font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-top: -8px; }
+    .agent-section-bio { font-family: var(--font-serif); font-size: 19px; font-style: italic; color: var(--white-muted); line-height: 1.75; border-left: 2px solid rgba(201,169,110,0.3); padding-left: 24px; }
+    .agent-section-trust { display: flex; flex-direction: column; gap: 14px; }
+    .agent-section-trust-item { display: flex; align-items: center; gap: 14px; font-family: var(--font-sans); font-size: 14px; color: var(--white-muted); }
+    .agent-section-trust-icon { width: 36px; height: 36px; min-width: 36px; border: 1px solid rgba(201,169,110,0.2); display: flex; align-items: center; justify-content: center; color: var(--gold); flex-shrink: 0; }
+    .agent-section-license { font-family: var(--font-sans); font-size: 11px; letter-spacing: 0.2em; color: rgba(200,196,187,0.35); border-top: 1px solid rgba(201,169,110,0.1); padding-top: 20px; }
+    .agent-section-cta { display: inline-flex; align-items: center; gap: 12px; font-family: var(--font-sans); font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--black); background: var(--gold); padding: 16px 36px; text-decoration: none; transition: var(--transition); align-self: flex-start; }
+    .agent-section-cta:hover { background: var(--gold-light); transform: translateY(-2px); }
+    @media (max-width: 1000px) {
+        .agent-section-grid { grid-template-columns: 1fr; gap: 48px; }
+        .agent-section-photo-wrap::after { display: none; }
+        .agent-section-photo { max-width: 300px; }
+    }
+    @media (max-width: 900px) { #agent { padding: 72px 20px; } }
     </style>
 </head>
 <body>
@@ -1328,6 +1352,51 @@
                 <div class="faq-answer">
                     <p class="faq-answer-inner">Bruno personally reviews your information and contacts you within 24 hours — typically by phone or WhatsApp — to discuss your needs and present the best options available. There's no obligation, no pressure, and no automated sales pitches. Just a straightforward conversation about what coverage makes sense for you.</p>
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== MEET YOUR AGENT ===== -->
+<section id="agent">
+    <div class="agent-section-inner">
+        <div class="reveal">
+            <div class="section-label">Your Agent</div>
+            <h2 class="section-title">Meet <em>Bruno Garcia</em></h2>
+        </div>
+        <div class="agent-section-grid">
+            <div class="agent-section-photo-wrap reveal-left">
+                <img src="bruno-garcia.jpg.jpeg"
+                     alt="Bruno Garcia Sanchez — Licensed Insurance Agent Naples FL, Signature Trust Insurance"
+                     class="agent-section-photo"
+                     loading="lazy" width="400" height="533">
+            </div>
+            <div class="agent-section-body reveal-right">
+                <h3 class="agent-section-name">Bruno Garcia<br>Sanchez</h3>
+                <p class="agent-section-title">Licensed Insurance Agent &mdash; Southwest Florida</p>
+                <p class="agent-section-bio">"I built Signature Trust Insurance to give Southwest Florida families the same personal attention and honest guidance I'd want for my own. No call centers. No scripts. You get me — directly."</p>
+                <div class="agent-section-trust">
+                    <div class="agent-section-trust-item">
+                        <div class="agent-section-trust-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        Florida Licensed Independent Agent
+                    </div>
+                    <div class="agent-section-trust-item">
+                        <div class="agent-section-trust-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        </div>
+                        Bilingual Service &mdash; English &amp; Spanish
+                    </div>
+                    <div class="agent-section-trust-item">
+                        <div class="agent-section-trust-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        Response Within 2 Hours — Naples, Cape Coral, Fort Myers
+                    </div>
+                </div>
+                <p class="agent-section-license">Florida License &nbsp;#G339614</p>
+                <a href="#contact" class="agent-section-cta">Talk to Bruno Directly</a>
             </div>
         </div>
     </div>
