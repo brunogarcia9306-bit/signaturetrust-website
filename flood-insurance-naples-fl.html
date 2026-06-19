@@ -600,6 +600,13 @@ document.getElementById('quoteForm').addEventListener('submit', function(e) {
     document.getElementById('formSuccess').classList.add('visible');
 });
 
+function parseSwflAddress(addr){
+    var m=addr.match(/^(.+?),\s*([^,]+?)\s*,?\s*(FL|Florida)\b/i);
+    if(m) return {street:m[1].trim(),city:m[2].trim()};
+    var m2=addr.match(/^(.+?),\s*([^,\d]+?)(?:\s+(?:FL|Florida))?\s+\d{5}/i);
+    if(m2) return {street:m2[1].trim(),city:m2[2].trim()};
+    return null;
+}
 async function checkFloodZone(){
     var addr=document.getElementById('floodAddress').value.trim();
     var lang=localStorage.getItem('stLang')||'en';
@@ -610,21 +617,35 @@ async function checkFloodZone(){
     btn.disabled=true;
     resultDiv.style.display='none';
     try{
+        /* Normalize: ensure state is present for better geocoding results */
+        var normalizedAddr=addr;
+        if(!/\b(FL|Florida)\b/i.test(addr)) normalizedAddr=addr+', FL';
+
+        /* Try structured Nominatim query first (more reliable for US addresses) */
+        var lat,lon,matched;
         var geoRes;
-        try{
-            geoRes=await fetch('https://nominatim.openstreetmap.org/search?q='+encodeURIComponent(addr)+'&format=json&limit=1&countrycodes=us&addressdetails=1',{headers:{'Accept':'application/json'}});
-        }catch(geoErr){
-            showFloodError('[Step 1 - Geocoder] '+geoErr.message);
-            return;
+        var parsed=parseSwflAddress(normalizedAddr);
+        if(parsed){
+            try{
+                geoRes=await fetch('https://nominatim.openstreetmap.org/search?street='+encodeURIComponent(parsed.street)+'&city='+encodeURIComponent(parsed.city)+'&state=Florida&country=us&format=json&limit=1');
+            }catch(e1){ geoRes=null; }
         }
-        if(!geoRes.ok){showFloodError('[Step 1 - Geocoder HTTP] Status: '+geoRes.status);return;}
-        var geoData=await geoRes.json();
+        var geoData= geoRes&&geoRes.ok ? await geoRes.json() : [];
+        /* Fallback: unstructured query */
         if(!geoData||!geoData.length){
-            showFloodError(lang==='es'?'Dirección no encontrada. Intentá agregar ", FL" o el código postal.':'Address not found. Try adding ", FL" or a zip code.');
+            try{
+                var r2=await fetch('https://nominatim.openstreetmap.org/search?q='+encodeURIComponent(normalizedAddr)+'&format=json&limit=1');
+                if(r2.ok) geoData=await r2.json();
+            }catch(e2){ geoData=[]; }
+        }
+        if(!geoData||!geoData.length){
+            showFloodError(lang==='es'
+                ?'Dirección no encontrada. Intentá con el formato: "123 Main St, Naples, FL 34102"'
+                :'Address not found. Try format: "123 Main St, Naples, FL 34102" — or use the official links below.');
             return;
         }
-        var lat=parseFloat(geoData[0].lat),lon=parseFloat(geoData[0].lon);
-        var matched=geoData[0].display_name;
+        lat=parseFloat(geoData[0].lat); lon=parseFloat(geoData[0].lon);
+        matched=geoData[0].display_name;
         var femaUrl='https://hazards.fema.gov/gis/nfhl/rest/services/public/NFHL/MapServer/28/query?geometry='+lon+','+lat+'&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=FLD_ZONE,ZONE_SUBTY&returnGeometry=false&f=json';
         var femaRes;
         try{
