@@ -610,8 +610,14 @@ async function checkFloodZone(){
     btn.disabled=true;
     resultDiv.style.display='none';
     try{
-        var geoRes=await fetch('https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address='+encodeURIComponent(addr)+'&benchmark=Public_AR_Current&format=json');
-        if(!geoRes.ok) throw new Error('geocoder_http');
+        var geoRes;
+        try{
+            geoRes=await fetch('https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address='+encodeURIComponent(addr)+'&benchmark=Public_AR_Current&format=json');
+        }catch(geoErr){
+            showFloodError('[Step 1 - Geocoder] '+geoErr.message);
+            return;
+        }
+        if(!geoRes.ok){showFloodError('[Step 1 - Geocoder HTTP] Status: '+geoRes.status);return;}
         var geoData=await geoRes.json();
         if(!geoData.result||!geoData.result.addressMatches||!geoData.result.addressMatches.length){
             showFloodError(lang==='es'?'Dirección no encontrada. Intentá agregar ", FL" o el código postal.':'Address not found. Try adding ", FL" or a zip code.');
@@ -621,7 +627,14 @@ async function checkFloodZone(){
         var lon=match.coordinates.x,lat=match.coordinates.y;
         var matched=match.matchedAddress;
         var femaUrl='https://hazards.fema.gov/gis/nfhl/rest/services/public/NFHL/MapServer/28/query?geometry='+lon+','+lat+'&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=FLD_ZONE,ZONE_SUBTY&returnGeometry=false&f=json';
-        var femaRes=await fetch(femaUrl);
+        var femaRes;
+        try{
+            femaRes=await fetch(femaUrl);
+        }catch(femaErr){
+            showFloodError('[Step 2 - FEMA API] '+femaErr.message);
+            return;
+        }
+        if(!femaRes.ok){showFloodError('[Step 2 - FEMA HTTP] Status: '+femaRes.status);return;}
         var femaData=await femaRes.json();
         if(!femaData.features||!femaData.features.length){
             showFloodError(lang==='es'?'No encontramos datos para esta dirección. Usá los links oficiales de abajo o llamanos.':'No flood zone data found for this address. Try the official links below or call us.');
@@ -630,7 +643,7 @@ async function checkFloodZone(){
         var attrs=femaData.features[0].attributes;
         showFloodResult(attrs.FLD_ZONE||'X',attrs.ZONE_SUBTY||'',matched,lang);
     }catch(e){
-        showFloodError(lang==='es'?'Error de conexión. Usá los links oficiales de abajo o llamanos.':'Connection error. Use the official links below or call us.');
+        showFloodError('[Unexpected] '+e.message);
     }finally{
         btn.textContent=lang==='es'?'Consultar Zona →':'Check My Zone →';
         btn.disabled=false;
