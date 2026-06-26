@@ -640,7 +640,7 @@ async function checkFloodZone(){
         var match=geoData.result.addressMatches[0];
         lat=match.coordinates.y; lon=match.coordinates.x;
         matched=match.matchedAddress;
-        var femaUrl='https://hazards.fema.gov/gis/nfhl/rest/services/public/NFHL/MapServer/28/query?geometry='+lon+','+lat+'&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=FLD_ZONE,ZONE_SUBTY&returnGeometry=false&f=json';
+        var femaUrl='https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query?geometry='+lon+','+lat+'&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=FLD_ZONE,ZONE_SUBTY&returnGeometry=false&f=json';
         var femaRes;
         try{
             femaRes=await fetch(femaUrl);
