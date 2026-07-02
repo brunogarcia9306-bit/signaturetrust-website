@@ -884,7 +884,8 @@ function switchCarrierTab(type, btn) {
 // Category filter
 function filterCat(cat) {
     document.querySelectorAll('.help-cat-pill').forEach(p => p.classList.remove('active'));
-    event.currentTarget.classList.add('active');
+    const pill = document.getElementById('cat' + cat.charAt(0).toUpperCase() + cat.slice(1));
+    if (pill) pill.classList.add('active');
     document.querySelectorAll('.help-category').forEach(section => {
         if (cat === 'all' || section.dataset.cat === cat) {
             section.style.display = '';
@@ -893,6 +894,12 @@ function filterCat(cat) {
         }
     });
 }
+// Deep-link: activate category filter from URL hash (e.g. help.html#auto)
+document.addEventListener('DOMContentLoaded', function() {
+    const hash = window.location.hash.replace('#', '');
+    const valid = ['auto', 'home', 'flood', 'claims', 'hurricane', 'policy', 'carriers'];
+    if (valid.includes(hash)) filterCat(hash);
+});
 
 // ===== BILINGUAL =====
 const LANG = {
