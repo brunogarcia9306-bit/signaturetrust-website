@@ -1349,7 +1349,7 @@
                     <span class="faq-icon">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p class="faq-answer-inner">Most quotes are ready within 24 hours of submitting your information. Bruno personally reviews each request and contacts you directly to go over your options — no automated systems, no call centers. For urgent needs, reach out via WhatsApp at (239) 850-2268 for a faster response.</p>
+                    <p class="faq-answer-inner">Most quotes are ready within 2 hours of submitting your information. Bruno personally reviews each request and contacts you directly to go over your options — no automated systems, no call centers. For urgent needs, reach out via WhatsApp at (239) 850-2268 for a faster response.</p>
                 </div>
             </div>
             <div class="faq-item reveal">
@@ -1385,7 +1385,7 @@
                     <span class="faq-icon">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p class="faq-answer-inner">Bruno personally reviews your information and contacts you within 24 hours — typically by phone or WhatsApp — to discuss your needs and present the best options available. There's no obligation, no pressure, and no automated sales pitches. Just a straightforward conversation about what coverage makes sense for you.</p>
+                    <p class="faq-answer-inner">Bruno personally reviews your information and contacts you within 2 hours — typically by phone or WhatsApp — to discuss your needs and present the best options available. There's no obligation, no pressure, and no automated sales pitches. Just a straightforward conversation about what coverage makes sense for you.</p>
                 </div>
             </div>
         </div>
@@ -1402,12 +1402,12 @@
         <div class="agent-section-grid">
             <div class="agent-section-photo-wrap reveal-left">
                 <img src="bruno-garcia.jpg"
-                     alt="Bruno Garcia Sanchez — Licensed Insurance Agent Naples FL, Signature Trust Insurance"
+                     alt="Bruno Garcia — Licensed Insurance Agent Naples FL, Signature Trust Insurance"
                      class="agent-section-photo"
                      loading="lazy" width="400" height="533">
             </div>
             <div class="agent-section-body reveal-right">
-                <h3 class="agent-section-name">Bruno Garcia<br>Sanchez</h3>
+                <h3 class="agent-section-name">Bruno Garcia</h3>
                 <p class="agent-section-title">Licensed Insurance Agent &mdash; Southwest Florida</p>
                 <p class="agent-section-bio">"I built Signature Trust Insurance to give Southwest Florida families the same personal attention and honest guidance I'd want for my own. No call centers. No scripts. You get me — directly."</p>
                 <div class="agent-section-trust">
@@ -2243,7 +2243,8 @@ const LANG = {
         navLinks: ['Coverage','How It Works','About','Help','FAQ','Contact'],
         navCta: 'Free Quote',
         heroBadge: "Southwest Florida's Independent Insurance Agency",
-        heroDivider: 'Naples, FL',
+        heroTitle: 'Insurance<br><span class="hero-title-gold">Agency</span><br><span class="hero-title-ins">Naples, FL</span>',
+        heroDivider: 'Southwest Florida',
         heroSubtitle: 'Coverage Built on Trust. Service Built for You.',
         heroPrimary: 'Get Your Free Quote',
         heroSecondary: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:-1px;margin-right:7px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.07 6.07l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(239) 850-2268',
@@ -2254,14 +2255,15 @@ const LANG = {
         servicesLabel: 'What We Cover',
         servicesTitle: 'Protection for<br><em>Every Aspect</em><br>of Your Life',
         servicesDesc: 'As an independent insurance agency, we work with multiple top-rated carriers to find you the best coverage at the most competitive rates — with the personal attention you deserve.',
-        serviceNames: ['Auto','Home','Flood','Commercial','Health','Boats & RV','Commercial Truck'],
+        serviceNames: ['Auto','Home','Flood','Commercial','Health','Boat & Watercraft','Condo','Commercial Truck'],
         serviceDescs: [
             'Comprehensive auto coverage tailored to your vehicle and driving needs. From liability to full coverage, we compare carriers to find you the best protection at the best price.',
             'Protect your most valuable investment. Homeowners insurance covering your property, belongings, and liability — with comprehensive plans for every budget in SWFL.',
             'In Southwest Florida, flood insurance is essential. Standard home policies don\'t cover flood damage — we help you secure the right NFIP or private flood policy before storm season.',
             'Keep your SWFL business fully protected. General liability, business property, workers compensation and more — tailored coverage built around your specific industry and needs.',
             'Individual, family, and Medicare health insurance plans for Southwest Florida residents. ACA Marketplace, Medigap supplements, group health for businesses, and short-term coverage.',
-            'Protect your boat, jet ski, motorcycle, or RV on Florida\'s waters and roads. Comprehensive marine and recreational vehicle coverage built for SWFL\'s active waterfront lifestyle.',
+            'Protect your boat, jet ski, or personal watercraft on Florida\'s waters. Comprehensive marine coverage built for SWFL\'s active boating lifestyle — liability, hull, and more.',
+            'HO-6 condo insurance for Naples, Marco Island, and SWFL condo owners. Covers your interior, personal property, and liability — filling the gaps your condo association\'s master policy leaves behind.',
             'FMCSA-compliant truck insurance for owner-operators and small fleets in SWFL. Primary liability, cargo, bobtail, and occupational accident coverage for CDL drivers.'
         ],
         serviceLink: 'Learn More',
@@ -2321,11 +2323,11 @@ const LANG = {
         faqs: [
             { q:'Do I need flood insurance if I\'m not in a high-risk flood zone?', a:'Yes — strongly recommended. In Southwest Florida, over 25% of flood claims come from properties outside high-risk zones. Hurricanes and heavy rain don\'t follow flood zone maps. Flood insurance is typically very affordable outside Zone AE, making it one of the best value protections you can get in SWFL.' },
             { q:'What\'s the difference between Citizens and a private home insurance company?', a:'Citizens is Florida\'s state-backed insurer of last resort — often the only option when private carriers won\'t insure a property. Private carriers can sometimes offer better coverage, faster claims, and lower premiums. As your independent agent, Bruno evaluates both options and recommends what\'s best for your specific property and budget.' },
-            { q:'How long does it take to get a quote?', a:'Most quotes are ready within 24 hours of submitting your information. Bruno personally reviews each request and contacts you directly to go over your options — no automated systems, no call centers. For urgent needs, reach out via WhatsApp at (239) 850-2268 for a faster response.' },
+            { q:'How long does it take to get a quote?', a:'Most quotes are ready within 2 hours of submitting your information. Bruno personally reviews each request and contacts you directly to go over your options — no automated systems, no call centers. For urgent needs, reach out via WhatsApp at (239) 850-2268 for a faster response.' },
             { q:'Can I bundle my auto and home insurance?', a:'Yes, and bundling typically saves you 10–25% on your premiums. Not all carriers offer both, but Bruno searches across multiple companies to find the best bundle deal for your situation. Just select "Multiple Coverages" in the quote form and indicate which coverage types you need.' },
             { q:'What does "windstorm coverage" mean and do I need it in SWFL?', a:'Windstorm coverage protects your home from damage caused by hurricanes and tropical storms. In Southwest Florida, most standard home policies include windstorm protection — but it often comes with a separate, higher deductible (typically 2–5% of your home\'s insured value). Bruno will explain exactly what your policy covers before hurricane season so there are no surprises.' },
             { q:'I have a small business — do I really need commercial insurance?', a:'Absolutely. Even a one-person operation faces real risks — a client injury, property damage, or a lawsuit can wipe out years of work without proper coverage. General Liability is the foundation every business needs. Depending on your industry, you may also need Workers\' Comp, Commercial Auto, or Business Property coverage. Bruno will help you build the right coverage package for your budget and business type.' },
-            { q:'What happens after I submit the quote form?', a:'Bruno personally reviews your information and contacts you within 24 hours — typically by phone or WhatsApp — to discuss your needs and present the best options available. There\'s no obligation, no pressure, and no automated sales pitches. Just a straightforward conversation about what coverage makes sense for you.' }
+            { q:'What happens after I submit the quote form?', a:'Bruno personally reviews your information and contacts you within 2 hours — typically by phone or WhatsApp — to discuss your needs and present the best options available. There\'s no obligation, no pressure, and no automated sales pitches. Just a straightforward conversation about what coverage makes sense for you.' }
         ],
         contactLabel: 'Get In Touch',
         contactTitle: 'Request Your<br><em>Free Quote</em>',
@@ -2372,7 +2374,7 @@ const LANG = {
         fsMsg: '— thank you for trusting us with your coverage needs. Bruno Garcia will personally review your information and reach out with the best options available.',
         fsStep1: 'Your request has been received and is being reviewed.',
         fsStep2: 'Bruno is comparing multiple top-rated carriers to find your best rate.',
-        fsStep3: "We'll reach out within 24 hours — no pressure, no obligation.",
+        fsStep3: "We'll reach out within 2 hours — no pressure, no obligation.",
         fsContact: 'Questions in the meantime? (239) 850-2268 · WhatsApp · bruno@signaturetrustfl.com',
         footerTagline: '"Coverage Built on Trust.<br>Service Built for You."',
         footerCols: ['Coverage','Service Areas','Company','Help Center'],
@@ -2383,7 +2385,8 @@ const LANG = {
         navLinks: ['Cobertura','Cómo Funciona','Nosotros','Ayuda','Preguntas','Contacto'],
         navCta: 'Cotización Gratis',
         heroBadge: 'Agencia de Seguros Independiente del Suroeste de Florida',
-        heroDivider: 'Naples, FL',
+        heroTitle: 'Agencia de<br><span class="hero-title-gold">Seguros</span><br><span class="hero-title-ins">Naples, FL</span>',
+        heroDivider: 'Southwest Florida',
         heroSubtitle: 'Cobertura Basada en Confianza. Servicio Hecho para Ti.',
         heroPrimary: 'Obtén tu Cotización Gratis',
         heroSecondary: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:-1px;margin-right:7px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.07 6.07l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(239) 850-2268',
@@ -2394,14 +2397,15 @@ const LANG = {
         servicesLabel: 'Lo Que Cubrimos',
         servicesTitle: 'Protección para<br><em>Cada Aspecto</em><br>de Tu Vida',
         servicesDesc: 'Como agencia de seguros independiente, trabajamos con múltiples aseguradoras de primer nivel para encontrarte la mejor cobertura a las tarifas más competitivas — con la atención personal que mereces.',
-        serviceNames: ['Auto','Hogar','Inundación','Comercial','Salud','Botes y RV','Camiones Comerciales'],
+        serviceNames: ['Auto','Hogar','Inundación','Comercial','Salud','Bote y Embarcaciones','Condominio','Camiones Comerciales'],
         serviceDescs: [
             'Cobertura de auto integral adaptada a tu vehículo y necesidades de manejo. Desde responsabilidad civil hasta cobertura total, comparamos aseguradoras para encontrarte la mejor protección al mejor precio.',
             'Protege tu inversión más valiosa. Seguro de propietario que cubre tu propiedad, pertenencias y responsabilidad — con planes completos para cada presupuesto en el Suroeste de Florida.',
             'En el Suroeste de Florida, el seguro contra inundación es esencial. Las pólizas estándar de hogar no cubren daños por inundación — te ayudamos a obtener la póliza NFIP o privada correcta antes de la temporada de tormentas.',
             'Mantén tu negocio en SWFL completamente protegido. Responsabilidad general, propiedad empresarial, compensación a trabajadores y más — cobertura personalizada para tu industria y necesidades específicas.',
             'Planes de seguro de salud individual, familiar y Medicare para residentes del Suroeste de Florida. Mercado ACA, suplementos Medigap, salud grupal para empresas y cobertura a corto plazo.',
-            'Protege tu bote, jet ski, moto o RV en las aguas y carreteras de Florida. Cobertura marina y de vehículos recreativos diseñada para el estilo de vida activo del SWFL.',
+            'Protege tu bote, jet ski o embarcación personal en las aguas de Florida. Cobertura marina integral diseñada para el estilo de vida activo del SWFL — responsabilidad, casco y más.',
+            'Seguro de condominio HO-6 para propietarios en Naples, Marco Island y SWFL. Cubre tu interior, pertenencias personales y responsabilidad — llenando los vacíos que la póliza maestra de tu asociación de condominios deja.',
             'Seguro de camión compatible con FMCSA para operadores independientes y flotas pequeñas en SWFL. Cobertura de responsabilidad primaria, carga, bobtail y accidente ocupacional para conductores CDL.'
         ],
         serviceLink: 'Más Info',
@@ -2461,11 +2465,11 @@ const LANG = {
         faqs: [
             { q:'¿Necesito seguro de inundación si no estoy en una zona de alto riesgo?', a:'Sí — muy recomendado. En el Suroeste de Florida, más del 25% de los reclamos de inundación provienen de propiedades fuera de zonas de alto riesgo. Los huracanes y las lluvias intensas no siguen los mapas de zonas de inundación. El seguro de inundación suele ser muy asequible fuera de la Zona AE, lo que lo convierte en una de las mejores protecciones de valor en SWFL.' },
             { q:'¿Cuál es la diferencia entre Citizens y una aseguradora privada de hogar?', a:'Citizens es la aseguradora estatal de último recurso de Florida — a menudo la única opción cuando las aseguradoras privadas no aseguran una propiedad. Las aseguradoras privadas a veces ofrecen mejor cobertura, reclamaciones más rápidas y primas más bajas. Como tu agente independiente, Bruno evalúa ambas opciones y recomienda lo mejor para tu propiedad y presupuesto.' },
-            { q:'¿Cuánto tiempo toma obtener una cotización?', a:'La mayoría de las cotizaciones están listas dentro de las 24 horas de enviar tu información. Bruno revisa personalmente cada solicitud y te contacta directamente para revisar tus opciones — sin sistemas automatizados, sin call centers. Para necesidades urgentes, contáctanos por WhatsApp al (239) 850-2268 para una respuesta más rápida.' },
+            { q:'¿Cuánto tiempo toma obtener una cotización?', a:'La mayoría de las cotizaciones están listas dentro de las 2 horas de enviar tu información. Bruno revisa personalmente cada solicitud y te contacta directamente para revisar tus opciones — sin sistemas automatizados, sin call centers. Para necesidades urgentes, contáctanos por WhatsApp al (239) 850-2268 para una respuesta más rápida.' },
             { q:'¿Puedo combinar mi seguro de auto y hogar?', a:'Sí, y combinarlos generalmente te ahorra entre un 10 y un 25% en tus primas. No todas las aseguradoras ofrecen ambos, pero Bruno busca entre múltiples compañías para encontrar la mejor oferta combinada para tu situación. Solo selecciona "Múltiples Coberturas" en el formulario e indica qué tipos de cobertura necesitas.' },
             { q:'¿Qué significa "cobertura contra vientos" y la necesito en SWFL?', a:'La cobertura contra vientos protege tu hogar de daños causados por huracanes y tormentas tropicales. En el Suroeste de Florida, la mayoría de las pólizas estándar de hogar incluyen protección contra vientos — pero generalmente tiene un deducible separado y más alto (típicamente del 2 al 5% del valor asegurado de tu hogar). Bruno te explicará exactamente qué cubre tu póliza antes de la temporada de huracanes.' },
             { q:'Tengo un pequeño negocio — ¿realmente necesito seguro comercial?', a:'Absolutamente. Incluso una operación unipersonal enfrenta riesgos reales — una lesión de un cliente, daño a la propiedad o una demanda puede destruir años de trabajo sin la cobertura adecuada. La Responsabilidad General es la base que todo negocio necesita. Dependiendo de tu industria, también puedes necesitar Compensación a Trabajadores, Auto Comercial o Propiedad Empresarial.' },
-            { q:'¿Qué pasa después de enviar el formulario de cotización?', a:'Bruno revisa personalmente tu información y te contacta dentro de las 24 horas — generalmente por teléfono o WhatsApp — para discutir tus necesidades y presentar las mejores opciones disponibles. Sin obligación, sin presión y sin discursos de venta automatizados. Solo una conversación directa sobre qué cobertura tiene sentido para ti.' }
+            { q:'¿Qué pasa después de enviar el formulario de cotización?', a:'Bruno revisa personalmente tu información y te contacta dentro de las 2 horas — generalmente por teléfono o WhatsApp — para discutir tus necesidades y presentar las mejores opciones disponibles. Sin obligación, sin presión y sin discursos de venta automatizados. Solo una conversación directa sobre qué cobertura tiene sentido para ti.' }
         ],
         contactLabel: 'Contáctanos',
         contactTitle: 'Solicita Tu<br><em>Cotización Gratis</em>',
@@ -2512,7 +2516,7 @@ const LANG = {
         fsMsg: '— gracias por confiar en nosotros con tus necesidades de cobertura. Bruno Garcia revisará personalmente tu información y se pondrá en contacto con las mejores opciones disponibles.',
         fsStep1: 'Tu solicitud ha sido recibida y está siendo revisada.',
         fsStep2: 'Bruno está comparando múltiples aseguradoras para encontrar tu mejor tarifa.',
-        fsStep3: 'Nos pondremos en contacto en menos de 24 horas — sin presión ni compromiso.',
+        fsStep3: 'Nos pondremos en contacto en menos de 2 horas — sin presión ni compromiso.',
         fsContact: '¿Preguntas? (239) 850-2268 · WhatsApp · bruno@signaturetrustfl.com',
         footerTagline: '"Cobertura Basada en Confianza.<br>Servicio Hecho para Ti."',
         footerCols: ['Cobertura','Áreas de Servicio','Empresa','Centro de Ayuda'],
@@ -2537,6 +2541,7 @@ function setLanguage(lang) {
 
     // HERO
     setTxt('.hero-badge', t.heroBadge);
+    setHTML('.hero-title', t.heroTitle);
     setTxt('.hero-divider-text', t.heroDivider);
     setTxt('.hero-subtitle', t.heroSubtitle);
     setTxt('.hero-buttons .btn-primary', t.heroPrimary);
