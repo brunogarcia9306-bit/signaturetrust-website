@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,10 +11,21 @@
       gtag('js', new Date());
       gtag('config', 'G-8P0NDDF6KP');
     </script>
-    <meta name="description" content="Privacy Policy for Signature Trust Insurance — how we collect, use, and protect your information.">
-    <meta name="robots" content="noindex, follow">
-    <link rel="canonical" href="https://signaturetrustfl.com/privacy-policy">
-    <title>Privacy Policy | Signature Trust Insurance</title>
+    <meta name="description" content="Get a free insurance quote from Signature Trust Insurance — Naples, FL. Compare auto, home, flood, and commercial coverage from 20+ top-rated carriers. Bilingual service. (239) 850-2268.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Get Your Free Insurance Quote | Signature Trust Insurance — Naples, FL">
+    <meta property="og:description" content="Compare auto, home, flood, and commercial insurance quotes from 20+ top-rated carriers. Fast, free, no pressure. Southwest Florida.">
+    <meta property="og:url" content="https://signaturetrustfl.com/quote">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://signaturetrustfl.com/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Get Your Free Insurance Quote | Signature Trust Insurance">
+    <meta name="twitter:description" content="Compare auto, home, flood, and commercial insurance from 20+ top-rated carriers. Free, fast, no obligation.">
+    <meta name="twitter:image" content="https://signaturetrustfl.com/og-image.jpg">
+    <link rel="canonical" href="https://signaturetrustfl.com/quote">
+    <title>Get a Free Quote | Signature Trust Insurance — Naples, FL</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23080808'/%3E%3Ctext x='50' y='74' font-family='Georgia%2C serif' font-size='60' font-weight='700' fill='%23C9A96E' text-anchor='middle'%3EST%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,6 +38,8 @@
     #office-bg { position:fixed;inset:0;z-index:0;background:linear-gradient(180deg,#080808 0%,#0d0d0d 40%,#111 100%);pointer-events:none; }
     #office-bg::before { content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(201,169,110,.025) 80px),repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(201,169,110,.025) 80px);animation:gridShift 20s linear infinite; }
     @keyframes gridShift { from{background-position:0 0}to{background-position:80px 80px} }
+
+    /* NAV */
     nav#mainNav { position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;gap:32px;padding:0 60px;height:72px;transition:all .4s ease;border-bottom:1px solid transparent; }
     nav#mainNav.scrolled { background:rgba(8,8,8,.95);backdrop-filter:blur(20px);border-bottom-color:rgba(201,169,110,.12); }
     .nav-logo { text-decoration:none;display:flex;flex-direction:column;line-height:1; }
@@ -45,29 +58,37 @@
     .nav-cta:hover { background:var(--gold-light); }
     .nav-toggle { display:none;flex-direction:column;gap:5px;cursor:pointer; }
     .nav-toggle span { width:22px;height:1px;background:var(--white-muted); }
+
+    /* MOBILE NAV */
     .mobile-nav { position:fixed;top:0;right:-100%;width:280px;height:100vh;background:rgba(8,8,8,.98);backdrop-filter:blur(20px);z-index:200;display:flex;flex-direction:column;padding:80px 40px 40px;gap:24px;transition:right .4s ease;border-left:1px solid rgba(201,169,110,.1); }
     .mobile-nav.open { right:0; }
     .mobile-nav a { font-family:var(--font-sans);font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--white-muted);text-decoration:none; }
     .mobile-nav-close { position:absolute;top:24px;right:24px;background:none;border:none;color:var(--white-muted);font-size:24px;cursor:pointer; }
-    .page-hero { position:relative;z-index:1;padding:140px 60px 72px;border-bottom:1px solid rgba(201,169,110,.12); }
-    .page-hero-inner { max-width:800px;margin:0 auto; }
+
+    /* PAGE HERO */
+    .page-hero { position:relative;z-index:1;padding:140px 60px 64px;border-bottom:1px solid rgba(201,169,110,.12); }
+    .page-hero-inner { max-width:900px;margin:0 auto; }
     .breadcrumb { display:flex;align-items:center;gap:8px;margin-bottom:28px;font-family:var(--font-sans);font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:rgba(201,169,110,.6); }
     .breadcrumb a { color:rgba(201,169,110,.6);text-decoration:none; }
     .breadcrumb a:hover { color:var(--gold); }
     .breadcrumb-sep { color:rgba(201,169,110,.3); }
-    .page-hero h1 { font-family:var(--font-serif);font-size:clamp(36px,5vw,58px);font-weight:300;color:var(--white);line-height:1.1;margin-bottom:16px; }
+    .page-hero h1 { font-family:var(--font-serif);font-size:clamp(36px,5vw,62px);font-weight:300;color:var(--white);line-height:1.1;margin-bottom:20px; }
     .page-hero h1 em { font-style:italic;color:var(--gold); }
-    .page-hero-sub { font-family:var(--font-sans);font-size:14px;color:var(--white-muted);line-height:1.7; }
-    .policy-body { position:relative;z-index:1;padding:72px 60px 100px; }
-    .policy-inner { max-width:800px;margin:0 auto; }
-    .policy-inner h2 { font-family:var(--font-serif);font-size:clamp(22px,3vw,32px);font-weight:400;color:var(--gold);margin:48px 0 14px; }
-    .policy-inner h2:first-child { margin-top:0; }
-    .policy-inner p { font-family:var(--font-sans);font-size:14px;color:var(--white-muted);line-height:1.9;margin-bottom:14px; }
-    .policy-inner ul { font-family:var(--font-sans);font-size:14px;color:var(--white-muted);line-height:1.9;margin:0 0 16px 20px; }
-    .policy-inner ul li { margin-bottom:6px; }
-    .policy-inner a { color:var(--gold);text-decoration:none; }
-    .policy-inner a:hover { text-decoration:underline; }
-    .policy-updated { display:inline-block;font-family:var(--font-sans);font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:rgba(201,169,110,.6);border:1px solid rgba(201,169,110,.15);padding:6px 14px;margin-bottom:48px; }
+    .page-hero-sub { font-family:var(--font-sans);font-size:15px;color:var(--white-muted);line-height:1.75;max-width:700px; }
+    .trust-strip { display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:32px; }
+    .trust-item { font-family:var(--font-sans);font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:rgba(200,196,187,.5);display:flex;align-items:center;gap:7px; }
+    .trust-dot { width:3px;height:3px;border-radius:50%;background:var(--gold);opacity:.7;flex-shrink:0; }
+
+    /* QUOTE SECTION */
+    .quote-section { position:relative;z-index:1;padding:64px 60px 100px; }
+    .quote-inner { max-width:1100px;margin:0 auto; }
+    .quote-frame-wrap { position:relative;width:100%;background:rgba(255,255,255,.98);border:1px solid rgba(201,169,110,.2);overflow:hidden; }
+    .quote-frame-wrap iframe { display:block;width:100%;min-height:780px;border:none; }
+    .quote-note { font-family:var(--font-sans);font-size:12px;color:rgba(200,196,187,.4);margin-top:20px;line-height:1.6; }
+    .quote-note a { color:rgba(201,169,110,.55);text-decoration:none; }
+    .quote-note a:hover { color:var(--gold); }
+
+    /* FOOTER */
     footer { position:relative;z-index:1;background:var(--black);border-top:1px solid rgba(201,169,110,.1);padding:60px 60px 40px; }
     .footer-inner { max-width:1200px;margin:0 auto; }
     .footer-top { display:flex;justify-content:space-between;gap:60px;padding-bottom:48px;border-bottom:1px solid rgba(201,169,110,.08);margin-bottom:32px;flex-wrap:wrap; }
@@ -85,18 +106,35 @@
     .footer-col ul li a:hover { color:var(--white); }
     .footer-bottom { display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px; }
     .footer-copy,.footer-license { font-family:var(--font-sans);font-size:12px;color:rgba(200,196,187,.4); }
-    .whatsapp-btn { position:fixed;bottom:30px;right:30px;z-index:90;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.3);transition:transform .3s; }
+
+    /* WHATSAPP */
+    .whatsapp-btn { position:fixed;bottom:30px;right:30px;z-index:90;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.3);transition:transform .3s;text-decoration:none; }
     .whatsapp-btn:hover { transform:scale(1.1); }
     .whatsapp-btn svg { width:28px;height:28px;fill:white; }
+
+    /* LANG */
+    .es-only { display:none; }
+    body.es .en-only { display:none; }
+    body.es div.es-only, body.es p.es-only, body.es li.es-only { display:block; }
+    body.es span.es-only { display:inline; }
+
     @media(max-width:900px){
-        nav#mainNav{padding:0 24px}.nav-links,.nav-phone,.nav-cta{display:none}.nav-toggle{display:flex}
-        .page-hero,.policy-body{padding-left:24px;padding-right:24px}
-        footer{padding:40px 24px 30px}.footer-top{flex-direction:column}.footer-links{gap:28px}
+        nav#mainNav { padding:0 24px; }
+        .nav-links,.nav-phone,.nav-cta { display:none; }
+        .nav-toggle { display:flex; }
+        .page-hero { padding:110px 24px 52px; }
+        .quote-section { padding:40px 24px 72px; }
+        .quote-frame-wrap iframe { min-height:900px; }
+        footer { padding:40px 24px 30px; }
+        .footer-top { flex-direction:column; }
+        .footer-links { gap:28px; }
     }
     @media(max-width:480px){
-        .page-hero{padding-top:110px;padding-left:16px;padding-right:16px}
-        .policy-body{padding-left:16px;padding-right:16px}
-        footer{padding:40px 16px 32px}
+        .page-hero { padding-top:100px;padding-left:16px;padding-right:16px; }
+        .quote-section { padding-left:16px;padding-right:16px; }
+        .quote-frame-wrap iframe { min-height:1000px; }
+        footer { padding:40px 16px 32px; }
+        .trust-strip { gap:6px 16px; }
     }
     </style>
 </head>
@@ -111,7 +149,11 @@
     <a href="/flood-insurance-naples-fl" onclick="closeMobileNav()">Flood Insurance</a>
     <a href="/commercial-insurance-naples-fl" onclick="closeMobileNav()">Commercial</a>
     <a href="/help" onclick="closeMobileNav()">Help Center</a>
-    <a href="/quote" onclick="closeMobileNav()">Get a Quote</a>
+    <a href="/quote" onclick="closeMobileNav()" style="color:var(--gold)">Get a Quote</a>
+    <div class="lang-toggle" style="margin-top:16px">
+        <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
+        <button class="lang-btn" onclick="setLanguage('es')">ES</button>
+    </div>
 </div>
 
 <nav id="mainNav">
@@ -131,6 +173,10 @@
         <span class="nav-phone-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.07 6.07l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
         (239) 850-2268
     </a>
+    <div class="lang-toggle">
+        <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
+        <button class="lang-btn" onclick="setLanguage('es')">ES</button>
+    </div>
     <a href="/quote" class="nav-cta">Get a Quote</a>
     <div class="nav-toggle" onclick="openMobileNav()"><span></span><span></span><span></span></div>
 </nav>
@@ -140,78 +186,41 @@
         <nav class="breadcrumb" aria-label="Breadcrumb">
             <a href="/">Home</a>
             <span class="breadcrumb-sep">›</span>
-            <span>Privacy Policy</span>
+            <span class="en-only">Get a Quote</span>
+            <span class="es-only">Obtén Tu Cotización</span>
         </nav>
-        <h1>Privacy <em>Policy</em></h1>
-        <p class="page-hero-sub">How Signature Trust Insurance collects, uses, and protects your information.</p>
+        <h1>
+            <span class="en-only">Get Your <em>Free Quote</em></span>
+            <span class="es-only">Obtén Tu <em>Cotización Gratis</em></span>
+        </h1>
+        <p class="page-hero-sub en-only">Compare auto, home, flood, and commercial insurance from 20+ top-rated carriers — in minutes. No pressure, no obligation. Bruno reviews every option with you personally.</p>
+        <p class="page-hero-sub es-only">Compara seguros de auto, hogar, inundación y comercial de más de 20 aseguradoras líderes, en minutos. Sin presión ni compromiso. Bruno revisa cada opción contigo personalmente.</p>
+        <div class="trust-strip">
+            <span class="trust-item"><span class="trust-dot"></span><span class="en-only">20+ Top Carriers</span><span class="es-only">+20 Aseguradoras Líderes</span></span>
+            <span class="trust-item"><span class="trust-dot"></span><span class="en-only">Free &amp; No Obligation</span><span class="es-only">Gratis, Sin Compromiso</span></span>
+            <span class="trust-item"><span class="trust-dot"></span><span class="en-only">FL Licensed Agent</span><span class="es-only">Agente Licenciado en FL</span></span>
+            <span class="trust-item"><span class="trust-dot"></span><span class="en-only">Bilingual Service</span><span class="es-only">Servicio Bilingüe</span></span>
+        </div>
     </div>
 </section>
 
-<section class="policy-body">
-    <div class="policy-inner">
-        <span class="policy-updated">Last updated: May 2026</span>
-
-        <h2>Who We Are</h2>
-        <p>Signature Trust Insurance is an independent insurance agency located in Naples, Florida, operated by Bruno Garcia, a licensed Florida insurance agent (License #W861718). Our website is <a href="https://signaturetrustfl.com">signaturetrustfl.com</a>.</p>
-        <p>When you contact us or submit a quote request through this website, you are communicating directly with a licensed agent — not a lead aggregator or third-party marketplace.</p>
-
-        <h2>Information We Collect</h2>
-        <p>We collect only what we need to provide you with an accurate insurance quote or respond to your inquiry. This may include:</p>
-        <ul>
-            <li>Name, phone number, and email address</li>
-            <li>ZIP code or property address (to determine coverage availability in your area)</li>
-            <li>Coverage type of interest (auto, home, flood, commercial)</li>
-            <li>Details you provide specific to your coverage request (e.g., vehicle count, property type, year built)</li>
-            <li>Your preferred contact method and best time to reach you</li>
-            <li>Language preference (English or Spanish)</li>
-        </ul>
-        <p>We do not collect payment information, Social Security numbers, or driver's license numbers through this website.</p>
-
-        <h2>How We Use Your Information</h2>
-        <p>Information you submit through our quote form is used solely to:</p>
-        <ul>
-            <li>Contact you to discuss your insurance needs and provide a quote</li>
-            <li>Follow up on your request via phone, email, WhatsApp, or SMS — based on the contact preference you indicated</li>
-            <li>Maintain a record of our communication for service continuity</li>
-        </ul>
-        <p>We do not sell, rent, or share your personal information with third parties for marketing purposes.</p>
-
-        <h2>Contact by Phone, Text, and Email</h2>
-        <p>By submitting a quote request on this website, you consent to be contacted by a licensed Signature Trust Insurance agent regarding your inquiry. This may include calls, SMS/text messages, and email to the contact information you provide.</p>
-        <p>If you contact us via WhatsApp, we may continue that conversation through WhatsApp as your primary channel. You can opt out of any communication channel at any time by letting us know.</p>
-        <p>We do not use automated dialers or mass marketing systems. All outreach is personal and conducted by a licensed agent.</p>
-
-        <h2>Data Storage and Security</h2>
-        <p>Quote request information is stored in our secure customer relationship management (CRM) system, hosted on infrastructure with industry-standard encryption and access controls. Access to this data is limited to licensed agency staff.</p>
-        <p>We retain your information for as long as necessary to maintain our business relationship or comply with applicable Florida insurance regulations.</p>
-
-        <h2>Cookies and Analytics</h2>
-        <p>This website may use standard analytics tools (such as Google Analytics) to understand how visitors use the site. These tools may use cookies — small files stored in your browser — to collect anonymized usage data such as pages visited and approximate geographic region.</p>
-        <p>We do not use advertising cookies or cross-site tracking. You can disable cookies in your browser settings at any time.</p>
-
-        <h2>Children's Privacy</h2>
-        <p>This website is not directed at children under the age of 13. We do not knowingly collect personal information from children.</p>
-
-        <h2>Your Rights</h2>
-        <p>You have the right to:</p>
-        <ul>
-            <li>Request a copy of the personal information we hold about you</li>
-            <li>Request correction of inaccurate information</li>
-            <li>Request deletion of your information (subject to any legal retention requirements)</li>
-            <li>Opt out of future communications at any time</li>
-        </ul>
-        <p>To exercise any of these rights, contact us directly at <a href="mailto:bruno@signaturetrustfl.com">bruno@signaturetrustfl.com</a> or call <a href="tel:+12398502268">(239) 850-2268</a>.</p>
-
-        <h2>Changes to This Policy</h2>
-        <p>We may update this Privacy Policy from time to time. The "Last updated" date at the top of this page will reflect any changes. Continued use of this website following a policy update constitutes acceptance of the revised policy.</p>
-
-        <h2>Contact Us</h2>
-        <p>If you have questions about this Privacy Policy or how your information is handled:</p>
-        <ul>
-            <li><strong style="color:var(--white)">Email:</strong> <a href="mailto:bruno@signaturetrustfl.com">bruno@signaturetrustfl.com</a></li>
-            <li><strong style="color:var(--white)">Phone:</strong> <a href="tel:+12398502268">(239) 850-2268</a></li>
-            <li><strong style="color:var(--white)">WhatsApp:</strong> <a href="https://wa.me/12398502268" target="_blank" rel="noopener">wa.me/12398502268</a></li>
-        </ul>
+<section class="quote-section">
+    <div class="quote-inner">
+        <div class="quote-frame-wrap">
+            <iframe
+                src="https://www.agentinsure.com/compare/auto-insurance-home-insurance/ironclad/quote.aspx"
+                title="Insurance Quote — Signature Trust Insurance"
+                loading="lazy"
+                scrolling="yes"
+                allowfullscreen>
+            </iframe>
+        </div>
+        <p class="quote-note en-only">
+            By submitting a quote request you agree to our <a href="/terms-and-conditions">Terms &amp; Conditions</a> and <a href="/privacy-policy">Privacy Policy</a>, including SMS consent. Quotes are provided for comparison purposes and are not a binding offer of insurance. Final premium is subject to carrier underwriting review. Questions? Call Bruno at <a href="tel:+12398502268">(239) 850-2268</a> or <a href="mailto:bruno@signaturetrustfl.com">bruno@signaturetrustfl.com</a>.
+        </p>
+        <p class="quote-note es-only">
+            Al enviar una solicitud de cotización, aceptas nuestros <a href="/terms-and-conditions">Términos y Condiciones</a> y <a href="/privacy-policy">Política de Privacidad</a>, incluyendo el consentimiento de SMS. Las cotizaciones se proporcionan con fines comparativos y no constituyen una oferta vinculante de seguro. La prima final está sujeta a revisión de suscripción. ¿Preguntas? Llama a Bruno al <a href="tel:+12398502268">(239) 850-2268</a> o escríbele a <a href="mailto:bruno@signaturetrustfl.com">bruno@signaturetrustfl.com</a>.
+        </p>
     </div>
 </section>
 
@@ -264,7 +273,7 @@
     </div>
 </footer>
 
-<a href="https://wa.me/12398502268?text=Hi%20Bruno%2C%20I%20have%20a%20question%20about%20your%20privacy%20policy." class="whatsapp-btn" target="_blank" rel="noopener" aria-label="WhatsApp">
+<a href="https://wa.me/12398502268?text=Hi%20Bruno%2C%20I%27d%20like%20a%20free%20insurance%20quote." class="whatsapp-btn" target="_blank" rel="noopener" aria-label="WhatsApp">
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
@@ -274,7 +283,14 @@ window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scro
 function openMobileNav(){document.getElementById('mobileNav').classList.add('open')}
 function closeMobileNav(){document.getElementById('mobileNav').classList.remove('open')}
 document.getElementById('footerYear').textContent=new Date().getFullYear();
+
+function setLanguage(lang){
+    localStorage.setItem('stLang',lang);
+    document.body.classList.toggle('es',lang==='es');
+    document.documentElement.lang=lang==='es'?'es':'en';
+    document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent.toLowerCase()===lang));
+}
+setLanguage(localStorage.getItem('stLang')||'en');
 </script>
 </body>
 </html>
-
