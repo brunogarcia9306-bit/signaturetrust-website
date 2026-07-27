@@ -71,12 +71,26 @@
         {"@type": "City", "name": "Lehigh Acres"},
         {"@type": "City", "name": "Cape Coral"}
       ],
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
-        "opens": "09:00",
-        "closes": "17:00"
-      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"],
+          "opens": "11:00",
+          "closes": "19:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Friday","Saturday"],
+          "opens": "11:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Sunday"],
+          "opens": "12:00",
+          "closes": "18:00"
+        }
+      ],
       "priceRange": "$$",
       "knowsLanguage": ["en","es"],
       "hasOfferCatalog": {
@@ -1760,7 +1774,8 @@
                 <div class="footer-contact-block">
                     <a href="tel:+12398502268">(239) 850-2268</a>
                     <a href="mailto:bruno@signaturetrustfl.com">bruno@signaturetrustfl.com</a>
-                    <p class="footer-hours" id="footerHours">Mon – Sat &nbsp;·&nbsp; 9:00 am – 5:00 pm EST</p>
+                    <p class="footer-hours" id="footerHours">Mon – Thu &nbsp;·&nbsp; 11:00 am – 7:00 pm<br>Fri – Sat &nbsp;·&nbsp; 11:00 am – 8:00 pm<br>Sun &nbsp;·&nbsp; 12:00 pm – 6:00 pm</p>
+                    <p class="footer-hours" style="margin-top:6px" id="footerHours24">Available online 24/7 — get a quote anytime, including weekends.</p>
                 </div>
             </div>
             <div class="footer-links">
@@ -2251,7 +2266,8 @@ const LANG = {
         heroSecondary: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:-1px;margin-right:7px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.07 6.07l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(239) 850-2268',
         heroScroll: 'Scroll',
         trust1: 'Response within 2 hours', trust2: '20+ Top Carriers', trust3: 'FL Licensed Agent', trust4: 'Bilingual Service',
-        footerHours: 'Mon – Sat &nbsp;·&nbsp; 9:00 am – 5:00 pm EST',
+        footerHours: 'Mon – Thu &nbsp;·&nbsp; 11:00 am – 7:00 pm<br>Fri – Sat &nbsp;·&nbsp; 11:00 am – 8:00 pm<br>Sun &nbsp;·&nbsp; 12:00 pm – 6:00 pm',
+        footerHours24: 'Available online 24/7 — get a quote anytime, including weekends.',
         mobileStickyCallTxt: 'Call Now', mobileStickyQuote: 'Free Quote',
         servicesLabel: 'What We Cover',
         servicesTitle: 'Protection for<br><em>Every Aspect</em><br>of Your Life',
@@ -2393,7 +2409,8 @@ const LANG = {
         heroSecondary: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:-1px;margin-right:7px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.07 6.07l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(239) 850-2268',
         heroScroll: 'Deslizar',
         trust1: 'Respuesta en menos de 2 horas', trust2: '+20 Aseguradoras', trust3: 'Licenciado en Florida', trust4: 'Servicio en Español',
-        footerHours: 'Lun – Sáb &nbsp;·&nbsp; 9:00 am – 5:00 pm EST',
+        footerHours: 'Lun – Jue &nbsp;·&nbsp; 11:00 am – 7:00 pm<br>Vie – Sáb &nbsp;·&nbsp; 11:00 am – 8:00 pm<br>Dom &nbsp;·&nbsp; 12:00 pm – 6:00 pm',
+        footerHours24: 'Disponible en línea 24/7 — cotiza en cualquier momento, incluyendo fines de semana.',
         mobileStickyCallTxt: 'Llamar', mobileStickyQuote: 'Cotización Gratis',
         servicesLabel: 'Lo Que Cubrimos',
         servicesTitle: 'Protección para<br><em>Cada Aspecto</em><br>de Tu Vida',
@@ -2550,6 +2567,7 @@ function setLanguage(lang) {
     setTxt('.hero-scroll-text', t.heroScroll);
     setTxt('#trust1', t.trust1); setTxt('#trust2', t.trust2); setTxt('#trust3', t.trust3); setTxt('#trust4', t.trust4);
     setHTML('#footerHours', t.footerHours);
+    setHTML('#footerHours24', t.footerHours24);
     setTxt('#mobileStickyCallTxt', t.mobileStickyCallTxt);
     setTxt('#mobileStickyQuote', t.mobileStickyQuote);
 
