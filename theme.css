@@ -1,0 +1,189 @@
+/* ============================================================
+   Signature Trust Insurance — Light / Dark Theme Overrides
+   Shared across all pages.  theme.js sets data-theme on <html>.
+   ============================================================ */
+
+/* ---- Color-scheme hint for native browser UI ---- */
+:root[data-theme="dark"]  { color-scheme: dark; }
+:root[data-theme="light"] { color-scheme: light; }
+
+/* ---- Token overrides: light palette ---- */
+:root[data-theme="light"] {
+    --black:       #F0EBE0;
+    --dark:        #F5F1E8;
+    --dark-2:      #EDE8DC;
+    --dark-3:      #E3DDD1;
+    --white:       #1C1812;
+    --white-muted: #7A6E60;
+    --gold:        #9B7A45;
+    --gold-light:  #C9A96E;
+    --gold-dark:   #7A5E30;
+}
+
+/* ---- Animated office background ---- */
+[data-theme="light"] #office-bg {
+    background: #F5F1E8;
+}
+[data-theme="light"] #office-bg::before {
+    background-image:
+        linear-gradient(rgba(155,122,69,0.10) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(155,122,69,0.07) 1px, transparent 1px);
+}
+[data-theme="light"] #office-bg::after {
+    background:
+        linear-gradient(to bottom, #F5F1E8 0%, transparent 28%, transparent 60%, rgba(245,241,232,0.55) 100%),
+        radial-gradient(ellipse 700px 180px at 50% 0%, rgba(155,122,69,0.06) 0%, transparent 100%),
+        radial-gradient(ellipse 160px 600px at 100% 38%, rgba(200,170,100,0.03) 0%, transparent 100%),
+        radial-gradient(ellipse 120px 500px at 0% 45%, rgba(155,122,69,0.03) 0%, transparent 100%);
+}
+
+/* ---- Scrollbar ---- */
+[data-theme="light"] ::-webkit-scrollbar-track { background: #E8E3D6; }
+
+/* ---- Nav ---- */
+[data-theme="light"] nav.scrolled {
+    background: rgba(240,235,225,0.97);
+    border-bottom-color: rgba(155,122,69,0.18);
+}
+[data-theme="light"] .mobile-nav {
+    background: rgba(240,235,225,0.99);
+}
+
+/* ---- Stats bar ---- */
+[data-theme="light"] #stats {
+    background: rgba(227,221,206,0.62);
+}
+
+/* ---- Services ---- */
+[data-theme="light"] #services {
+    background: rgba(240,235,225,0.68);
+}
+[data-theme="light"] .service-card {
+    background: rgba(255,252,246,0.88);
+}
+[data-theme="light"] .service-card:hover {
+    background: rgba(237,231,218,0.93);
+}
+[data-theme="light"] .service-number {
+    color: rgba(155,122,69,0.10);
+}
+
+/* ---- Carriers ---- */
+[data-theme="light"] #carriers {
+    background: rgba(235,229,216,0.65);
+}
+[data-theme="light"] .carrier-box {
+    background: rgba(255,252,246,0.88);
+}
+[data-theme="light"] .carrier-box:hover {
+    background: rgba(237,231,218,0.93);
+}
+
+/* ---- Why us ---- */
+[data-theme="light"] .why-box {
+    background: rgba(255,252,246,0.88);
+}
+
+/* ---- Areas ---- */
+[data-theme="light"] #areas {
+    background: rgba(235,229,216,0.68);
+}
+[data-theme="light"] .area-item {
+    background: rgba(255,252,246,0.88);
+}
+
+/* ---- Testimonials ---- */
+[data-theme="light"] .testimonial-card {
+    background: rgba(255,252,246,0.88);
+}
+[data-theme="light"] .testimonial-card:hover {
+    background: rgba(237,231,218,0.93);
+}
+
+/* ---- Emergency section ---- */
+[data-theme="light"] #emergency {
+    background: rgba(245,237,218,0.88);
+}
+[data-theme="light"] .emergency-card {
+    background: rgba(255,250,242,0.90);
+}
+[data-theme="light"] .emergency-card:hover {
+    background: rgba(240,232,215,0.95);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* ---- Agent section ---- */
+[data-theme="light"] #agent {
+    background: rgba(240,235,225,0.65);
+}
+[data-theme="light"] .agent-section-license {
+    color: rgba(80,65,45,0.50);
+}
+
+/* ---- Footer ---- */
+[data-theme="light"] footer {
+    background: rgba(220,213,198,0.96);
+}
+[data-theme="light"] .footer-top {
+    border-bottom-color: rgba(0,0,0,0.10);
+}
+[data-theme="light"] .footer-copy,
+[data-theme="light"] .footer-license {
+    color: rgba(55,44,28,0.55);
+}
+
+/* ---- Contact form ---- */
+[data-theme="light"] .form-group input,
+[data-theme="light"] .form-group select,
+[data-theme="light"] .form-group textarea {
+    background: rgba(0,0,0,0.04);
+    border-color: rgba(0,0,0,0.14);
+}
+[data-theme="light"] .form-group input[type="date"] {
+    color-scheme: light;
+}
+[data-theme="light"] .form-group input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: none;
+    opacity: 0.55;
+}
+[data-theme="light"] .form-success {
+    background: linear-gradient(160deg, rgba(155,122,69,0.08) 0%, rgba(240,235,225,0.85) 100%);
+}
+
+/* ---- Hero trust badges ---- */
+[data-theme="light"] .hero-trust-item {
+    background: rgba(245,241,232,0.90) !important;
+    border-color: rgba(155,122,69,0.18) !important;
+}
+
+/* ============================================================
+   Theme toggle button — works in both themes
+   ============================================================ */
+.theme-toggle {
+    background: none;
+    border: 1px solid rgba(201,169,110,0.35);
+    color: var(--gold);
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: border-color 0.3s, color 0.3s;
+    flex-shrink: 0;
+    padding: 0;
+    margin-right: 4px;
+}
+.theme-toggle:hover {
+    border-color: var(--gold);
+}
+/* Dark mode: show sun (switch to light) */
+.theme-toggle .icon-sun  { display: block; }
+.theme-toggle .icon-moon { display: none;  }
+/* Light mode: show moon (switch to dark) */
+[data-theme="light"] .theme-toggle .icon-sun  { display: none;  }
+[data-theme="light"] .theme-toggle .icon-moon { display: block; }
+
+@media (max-width: 768px) {
+    .theme-toggle { width: 30px; height: 30px; }
+}
