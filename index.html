@@ -307,6 +307,11 @@
     .carrier-box:hover .carrier-name { color: var(--white); }
     .carrier-tag { font-family: var(--font-sans); font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(201,169,110,0.4); }
     .carrier-coming { font-family: var(--font-sans); font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(201,169,110,0.3); border: 1px solid rgba(201,169,110,0.15); padding: 4px 10px; margin-top: 4px; }
+    .carriers-group { width: 100%; display: flex; flex-direction: column; align-items: center; margin-bottom: 40px; }
+    .carriers-group:last-child { margin-bottom: 0; }
+    .carriers-group-label { font-family: var(--font-sans); font-size: 9px; letter-spacing: 0.5em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: flex; align-items: center; gap: 16px; }
+    .carriers-group-label::before, .carriers-group-label::after { content: ''; width: 30px; height: 1px; background: var(--gold); opacity: 0.5; }
+    .carriers-row { display: flex; justify-content: center; gap: 2px; flex-wrap: wrap; }
 
     /* ===================== WHY US ===================== */
     #why { position: relative; z-index: 1; padding: 120px 60px; max-width: 1400px; margin: 0 auto; }
@@ -1017,45 +1022,61 @@
             </div>
             <p>Top-rated companies. Independent advice. Your best options.</p>
         </div>
-        <div class="carriers-grid">
-            <div class="carrier-box reveal delay-1">
-                <div class="carrier-name">National General</div>
-                <div class="carrier-tag">Auto</div>
-            </div>
-            <div class="carrier-box reveal delay-2">
-                <div class="carrier-name">Bristol West</div>
-                <div class="carrier-tag">Auto</div>
-            </div>
-            <div class="carrier-box reveal delay-3">
-                <div class="carrier-name">Foremost</div>
-                <div class="carrier-tag">Auto</div>
-            </div>
-            <div class="carrier-box reveal delay-4">
-                <div class="carrier-name">Sterling MGA</div>
-                <div class="carrier-tag">Auto &middot; Non-Standard</div>
-            </div>
-            <div class="carrier-box reveal delay-5">
-                <div class="carrier-name">GEICO</div>
-                <div class="carrier-tag">Auto</div>
-            </div>
-            <div class="carrier-box reveal delay-6">
-                <div class="carrier-name">Slide Insurance</div>
-                <div class="carrier-tag">Home</div>
-            </div>
-            <div class="carrier-box reveal delay-1">
-                <div class="carrier-name">Neptune Flood</div>
-                <div class="carrier-tag">Flood</div>
-            </div>
-            <div class="carrier-box reveal delay-2">
-                <div class="carrier-name">Aon Edge</div>
-                <div class="carrier-tag">Flood</div>
-            </div>
-            <div class="carrier-box reveal delay-3">
-                <div class="carrier-name">Wright Flood</div>
-                <div class="carrier-tag">Flood</div>
+        <!-- Auto -->
+        <div class="carriers-group reveal">
+            <div class="carriers-group-label">Auto</div>
+            <div class="carriers-row">
+                <div class="carrier-box">
+                    <div class="carrier-name">Bristol West</div>
+                    <div class="carrier-tag">Auto</div>
+                </div>
+                <div class="carrier-box">
+                    <div class="carrier-name">Foremost</div>
+                    <div class="carrier-tag">Auto</div>
+                </div>
+                <div class="carrier-box">
+                    <div class="carrier-name">GEICO</div>
+                    <div class="carrier-tag">Auto</div>
+                </div>
+                <div class="carrier-box">
+                    <div class="carrier-name">National General</div>
+                    <div class="carrier-tag">Auto</div>
+                </div>
+                <div class="carrier-box">
+                    <div class="carrier-name">Sterling MGA</div>
+                    <div class="carrier-tag">Non-Standard</div>
+                </div>
             </div>
         </div>
-        <p class="reveal" style="text-align:center;margin-top:40px;font-family:var(--font-serif);font-size:18px;color:var(--white-muted);font-style:italic;">Independent agency — we shop our carriers to find the coverage that fits you.</p>
+        <!-- Home -->
+        <div class="carriers-group reveal delay-2">
+            <div class="carriers-group-label">Home</div>
+            <div class="carriers-row">
+                <div class="carrier-box">
+                    <div class="carrier-name">Slide Insurance</div>
+                    <div class="carrier-tag">Home</div>
+                </div>
+            </div>
+        </div>
+        <!-- Flood -->
+        <div class="carriers-group reveal delay-3">
+            <div class="carriers-group-label">Flood</div>
+            <div class="carriers-row">
+                <div class="carrier-box">
+                    <div class="carrier-name">Aon Edge</div>
+                    <div class="carrier-tag">Flood</div>
+                </div>
+                <div class="carrier-box">
+                    <div class="carrier-name">Neptune Flood</div>
+                    <div class="carrier-tag">Flood</div>
+                </div>
+                <div class="carrier-box">
+                    <div class="carrier-name">Wright Flood</div>
+                    <div class="carrier-tag">Flood</div>
+                </div>
+            </div>
+        </div>
+        <p class="reveal delay-4" style="text-align:center;margin-top:40px;font-family:var(--font-serif);font-size:18px;color:var(--white-muted);font-style:italic;">Independent agency — we shop multiple carriers to find the coverage that fits you best.</p>
     </div>
 </section>
 
