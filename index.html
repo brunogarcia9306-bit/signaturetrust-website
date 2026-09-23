@@ -2807,6 +2807,7 @@ function setLanguage(lang) {
                     + '<div class="testimonial-location">' + time + ' &mdash; Google Review</div>'
                     + '</div>';
             }).join('');
+            grid.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('visible'); });
         })
         .catch(function () {}); // silent fail — static cards remain as fallback
 })();
