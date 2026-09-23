@@ -59,7 +59,7 @@
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5.0",
-        "reviewCount": "5",
+        "reviewCount": "6",
         "bestRating": "5",
         "worstRating": "1"
       },
@@ -1289,8 +1289,12 @@
         <div class="testimonials-header reveal">
             <div class="section-label">Client Reviews</div>
             <h2 class="section-title">What Our Clients<br><em>Say About Us</em></h2>
+            <div id="google-rating-summary" style="margin-top:24px;display:flex;align-items:center;gap:0;min-height:28px;">
+                <span style="color:var(--gold);font-size:20px;letter-spacing:2px">★★★★★</span>
+                <span style="font-family:var(--font-sans);font-size:13px;color:var(--white-muted);margin-left:12px">5.0 &nbsp;·&nbsp; <a href="https://g.page/r/signaturetrustinsurance/review" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;">6 reviews on Google</a></span>
+            </div>
         </div>
-        <div class="testimonials-grid">
+        <div id="reviews-grid" class="testimonials-grid">
             <div class="testimonial-card reveal delay-1">
                 <div class="testimonial-stars">
                     <span class="testimonial-star">★</span><span class="testimonial-star">★</span><span class="testimonial-star">★</span><span class="testimonial-star">★</span><span class="testimonial-star">★</span>
@@ -2734,6 +2738,77 @@ function setLanguage(lang) {
 (function () {
     const saved = localStorage.getItem('lang') || 'en';
     setLanguage(saved);
+})();
+</script>
+
+<!-- Google Reviews — Places API (New)
+     Replace YOUR_GOOGLE_MAPS_API_KEY below with a real key from console.cloud.google.com
+     (Places API (New) must be enabled + key restricted to HTTP referrer *.signaturetrustfl.com/*)
+-->
+<script>
+(function () {
+    var PLACE_ID = 'ChIJk7hvCKbh2ogRVaDrvjNIkEE';
+    var API_KEY = 'YOUR_GOOGLE_MAPS_API_KEY';
+    if (!API_KEY || API_KEY === 'YOUR_GOOGLE_MAPS_API_KEY') return;
+
+    var endpoint = 'https://places.googleapis.com/v1/places/' + PLACE_ID
+        + '?fields=rating,userRatingCount,reviews&languageCode=en&key=' + API_KEY;
+
+    fetch(endpoint)
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+            if (!data || !data.rating) return;
+            var rating = data.rating;
+            var count = data.userRatingCount || 0;
+            var reviews = data.reviews || [];
+
+            // 1. Patch JSON-LD aggregateRating so schema always reflects live data
+            document.querySelectorAll('script[type="application/ld+json"]').forEach(function (s) {
+                try {
+                    var obj = JSON.parse(s.textContent);
+                    var items = Array.isArray(obj) ? obj : [obj];
+                    items.forEach(function (item) {
+                        if (item.aggregateRating) {
+                            item.aggregateRating.ratingValue = rating.toFixed(1);
+                            item.aggregateRating.reviewCount = String(count);
+                        }
+                    });
+                    s.textContent = JSON.stringify(Array.isArray(obj) ? items : items[0]);
+                } catch (e) {}
+            });
+
+            // 2. Update visible rating summary
+            var summary = document.getElementById('google-rating-summary');
+            if (summary) {
+                summary.innerHTML =
+                    '<span style="color:var(--gold);font-size:20px;letter-spacing:2px">★★★★★</span>'
+                    + '<span style="font-family:var(--font-sans);font-size:13px;color:var(--white-muted);margin-left:12px">'
+                    + rating.toFixed(1) + ' &nbsp;&middot;&nbsp; <a href="https://g.page/r/signaturetrustinsurance/review" '
+                    + 'target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;">'
+                    + count + ' reviews on Google</a></span>';
+            }
+
+            // 3. Replace review cards with real Google reviews (only those with text)
+            var withText = reviews.filter(function (r) { return r.text && r.text.text; });
+            if (!withText.length) return;
+            var grid = document.getElementById('reviews-grid');
+            if (!grid) return;
+            var delays = ['delay-1', 'delay-2', 'delay-3'];
+            grid.innerHTML = withText.slice(0, 3).map(function (r, i) {
+                var text = (r.text.text || '')
+                    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                var author = r.authorAttribution ? r.authorAttribution.displayName : 'Google Reviewer';
+                var time = r.relativePublishTimeDescription || '';
+                var stars = Array(Math.round(r.rating || 5)).fill('<span class="testimonial-star">★</span>').join('');
+                return '<div class="testimonial-card reveal ' + (delays[i] || '') + '">'
+                    + '<div class="testimonial-stars">' + stars + '</div>'
+                    + '<p class="testimonial-text">&ldquo;' + text + '&rdquo;</p>'
+                    + '<div class="testimonial-author">' + author + '</div>'
+                    + '<div class="testimonial-location">' + time + ' &mdash; Google Review</div>'
+                    + '</div>';
+            }).join('');
+        })
+        .catch(function () {}); // silent fail — static cards remain as fallback
 })();
 </script>
 </body>
