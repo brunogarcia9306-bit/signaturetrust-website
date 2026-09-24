@@ -226,3 +226,11 @@
 @media (max-width: 768px) {
     .theme-toggle { width: 30px; height: 30px; }
 }
+
+/* ---- Hero section border — transparent in light mode ---- */
+[data-theme="light"] .city-hero,
+[data-theme="light"] .svc-hero,
+[data-theme="light"] .page-hero,
+[data-theme="light"] #help-hero {
+    border-bottom-color: transparent;
+}

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -477,7 +477,7 @@
             <div>
                 <div class="footer-logo-main">Signature Trust</div>
                 <div class="footer-logo-sub">Insurance</div>
-                <p class="footer-logo-tagline">"Coverage Built on Trust.<br>Service Built for You."</p>
+                <p class="footer-logo-tagline" id="fTagline">"Coverage Built on Trust.<br>Service Built for You."</p>
                 <div class="footer-contact-block">
                     <a href="tel:+12398502268">(239) 850-2268</a>
                     <a href="mailto:bruno@signaturetrustfl.com">bruno@signaturetrustfl.com</a>
@@ -487,7 +487,7 @@
             </div>
             <div class="footer-links">
                 <div class="footer-col">
-                    <h5>Coverage</h5>
+                    <h5 id="fCol1">Coverage</h5>
                     <ul>
                         <li><a href="/auto-insurance-naples-fl">Auto Insurance</a></li>
                         <li><a href="/home-insurance-naples-fl">Home Insurance</a></li>
@@ -499,7 +499,7 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h5>Service Areas</h5>
+                    <h5 id="fCol2">Service Areas</h5>
                     <ul>
                         <li><a href="/">Naples</a></li>
                         <li><a href="/cape-coral-fl">Cape Coral</a></li>
@@ -509,7 +509,7 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h5>Help Center</h5>
+                    <h5 id="fCol3">Help Center</h5>
                     <ul>
                         <li><a href="help.html#auto">Auto Accidents</a></li>
                         <li><a href="help.html#home">Home Damage</a></li>
@@ -565,7 +565,7 @@ document.getElementById('quoteForm').addEventListener('submit', function(e) {
 
 const LANG = {
     en: {
-        navLinks:['Coverage','How It Works','About','Help','FAQ'], navCta:'Free Quote',
+        navLinks:['Coverage','How It Works','About','Help','FAQ'], navCta:'Get a Quote',
         breadCity:'Fort Myers, FL', badge:'Fort Myers & Lee County',
         heroTitle:'Insurance Built for<br><em>Fort Myers</em>',
         heroSub:'Independent insurance agent serving Fort Myers and Lee County. Auto, home, flood and commercial coverage — from an agent who understands the real risks of living in Southwest Florida after Ian.',
@@ -648,7 +648,7 @@ function setH(id,v) { const e=S(id); if(e) e.innerHTML=v; }
 
 function setLanguage(lang) {
     localStorage.setItem('lang', lang);
-    document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.textContent.toLowerCase()===lang));
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', (b.dataset.lang||b.textContent.toLowerCase())===lang));
     const t = LANG[lang];
     const nids = ['navCov','navHow','navAbout','navHelp','navFaq'];
     nids.forEach((id,i) => setT(id, t.navLinks[i]));
@@ -682,6 +682,7 @@ function setLanguage(lang) {
     setT('fHours', t.fHours); setT('fCopy', t.fCopy); setT('fLicense', t.fLicense);
     const fTypeSel = document.getElementById('fType');
     if (fTypeSel) t.optType.forEach((txt, i) => { if (fTypeSel.options[i]) fTypeSel.options[i].text = txt; });
+    document.documentElement.lang=lang;(function(){var e=lang==='es';var _h=function(id,v){var el=document.getElementById(id);if(el)el.innerHTML=v;};var _t=function(id,v){var el=document.getElementById(id);if(el)el.textContent=v;};_h('fHours',e?'Lun – Vie ·  11:00 am – 5:00 pm<br>Sáb – Dom ·  Cerrado':'Mon – Fri ·  11:00 am – 5:00 pm<br>Sat – Sun ·  Closed');_t('fHours24',e?'Disponible en línea 24/7 — obtén cotización en cualquier momento, incluso fines de semana.':'Available online 24/7 — get a quote anytime, including weekends.');_h('fTagline',e?'“Cobertura con Confianza.<br>Servicio para Ti.”':'“Coverage Built on Trust.<br>Service Built for You.”');_t('fCol1',e?'Coberturas':'Coverage');_t('fCol2',e?'Áreas de Servicio':'Service Areas');_t('fCol3',e?'Centro de Ayuda':'Help Center');_h('fCopy','© <span id="footerYear">'+new Date().getFullYear()+'</span> Signature Trust Insurance. '+(e?'Todos los derechos reservados.':'All rights reserved.'));_t('fLicense',e?'Bruno Garcia · Agente de Seguros Licenciado · Estado de Florida':'Bruno Garcia · Licensed Insurance Agent · State of Florida');})();
     var _nl=document.querySelectorAll('.nav-links a');var _nt=lang==='es'?['Coberturas','Cómo Funciona','Nosotros','Ayuda','Preguntas','Contacto']:['Coverage','How It Works','About','Help','FAQ','Contact'];_nl.forEach(function(a,i){if(_nt[i])a.textContent=_nt[i];});
 }
 

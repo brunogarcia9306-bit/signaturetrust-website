@@ -83,8 +83,8 @@
     nav#mainNav { position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;gap:32px;padding:0 60px;height:72px;transition:all .4s ease;border-bottom:1px solid transparent; }
     nav#mainNav.scrolled { background:rgba(8,8,8,.95);backdrop-filter:blur(20px);border-bottom-color:rgba(201,169,110,.12); }
     .nav-logo { text-decoration:none;display:flex;flex-direction:column;line-height:1; }
-    .nav-logo-main { font-family:var(--font-serif);font-size:18px;font-weight:600;color:var(--white); }
-    .nav-logo-sub { font-family:var(--font-sans);font-size:8px;letter-spacing:.5em;color:var(--gold);text-transform:uppercase;margin-top:2px; }
+    .nav-logo-main { font-family:var(--font-serif);font-size:20px;font-weight:600;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase; }
+    .nav-logo-sub { font-family:var(--font-sans);font-size:8px;letter-spacing:.5em;color:var(--white-muted);text-transform:uppercase;margin-top:2px; }
     .nav-links { display:flex;gap:32px;list-style:none;margin:0 auto; }
     .nav-links a { font-family:var(--font-sans);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--white-muted);text-decoration:none;transition:color .3s; }
     .nav-links a:hover { color:var(--gold); }
@@ -189,10 +189,10 @@
     <a href="/#why" onclick="closeMobileNav()">About</a>
     <a href="/help" onclick="closeMobileNav()">Help</a>
     <a href="/#contact" onclick="closeMobileNav()">Contact</a>
-    <a href="/quote" onclick="closeMobileNav()">Free Quote</a>
+    <a href="/quote" onclick="closeMobileNav()">Get a Quote</a>
     <div class="lang-toggle" style="margin-top:16px">
-        <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
-        <button class="lang-btn" onclick="setLanguage('es')">ES</button>
+        <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">EN</button>
+        <button class="lang-btn" data-lang="es" onclick="setLanguage('es')">ES</button>
     </div>
 </div>
 
@@ -214,8 +214,8 @@
         (239) 850-2268
     </a>
     <div class="lang-toggle">
-        <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
-        <button class="lang-btn" onclick="setLanguage('es')">ES</button>
+        <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">EN</button>
+        <button class="lang-btn" data-lang="es" onclick="setLanguage('es')">ES</button>
     </div>
     <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light/dark mode">
         <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
@@ -274,17 +274,17 @@
             <div>
                 <div class="footer-logo-main">Signature Trust</div>
                 <div class="footer-logo-sub">Insurance</div>
-                <p class="footer-logo-tagline">"Coverage Built on Trust.<br>Service Built for You."</p>
+                <p class="footer-logo-tagline"><span class="en-only">"Coverage Built on Trust.<br>Service Built for You."</span><span class="es-only">"Cobertura con Confianza.<br>Servicio para Ti."</span></p>
                 <div class="footer-contact-block">
                     <a href="tel:+12398502268">(239) 850-2268</a>
                     <a href="mailto:bruno@signaturetrustfl.com">bruno@signaturetrustfl.com</a>
-                    <p class="footer-hours">Mon – Fri &nbsp;·&nbsp; 11:00 am – 5:00 pm<br>Sat – Sun &nbsp;·&nbsp; Closed</p>
-                    <p class="footer-hours" style="margin-top:6px">Available online 24/7 — get a quote anytime, including weekends.</p>
+                    <p class="footer-hours"><span class="en-only">Mon – Fri &nbsp;·&nbsp; 11:00 am – 5:00 pm<br>Sat – Sun &nbsp;·&nbsp; Closed</span><span class="es-only">Lun – Vie &nbsp;·&nbsp; 11:00 am – 5:00 pm<br>Sáb – Dom &nbsp;·&nbsp; Cerrado</span></p>
+                    <p class="footer-hours" style="margin-top:6px"><span class="en-only">Available online 24/7 — get a quote anytime, including weekends.</span><span class="es-only">Disponible en línea 24/7 — obtén cotización en cualquier momento, incluso fines de semana.</span></p>
                 </div>
             </div>
             <div class="footer-links">
                 <div class="footer-col">
-                    <h5>Coverage</h5>
+                    <h5><span class="en-only">Coverage</span><span class="es-only">Coberturas</span></h5>
                     <ul>
                         <li><a href="/auto-insurance-naples-fl">Auto Insurance</a></li>
                         <li><a href="/home-insurance-naples-fl">Home Insurance</a></li>
@@ -293,7 +293,7 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h5>Service Areas</h5>
+                    <h5><span class="en-only">Service Areas</span><span class="es-only">Áreas de Servicio</span></h5>
                     <ul>
                         <li><a href="/">Naples</a></li>
                         <li><a href="/fort-myers-fl">Fort Myers</a></li>
@@ -312,8 +312,8 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p class="footer-copy">&copy; <span id="footerYear">2026</span> Signature Trust Insurance. All rights reserved.</p>
-            <p class="footer-license">Bruno Garcia &middot; Licensed Insurance Agent &middot; State of Florida</p>
+            <p class="footer-copy">&copy; <span id="footerYear">2026</span> Signature Trust Insurance. <span class="en-only">All rights reserved.</span><span class="es-only">Todos los derechos reservados.</span></p>
+            <p class="footer-license"><span class="en-only">Bruno Garcia &middot; Licensed Insurance Agent &middot; State of Florida</span><span class="es-only">Bruno Garcia &middot; Agente de Seguros Licenciado &middot; Estado de Florida</span></p>
         </div>
     </div>
 </footer>
@@ -333,7 +333,8 @@ function setLanguage(lang){
     localStorage.setItem('lang',lang);
     document.body.classList.toggle('es',lang==='es');
     document.documentElement.lang=lang==='es'?'es':'en';
-    document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent.toLowerCase()===lang));
+    document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',(b.dataset.lang||b.textContent.toLowerCase())===lang));
+    var _nl=document.querySelectorAll('.nav-links a');var _nt=lang==='es'?['Coberturas','Cómo Funciona','Nosotros','Ayuda','Preguntas','Contacto']:['Coverage','How It Works','About','Help','FAQ','Contact'];_nl.forEach(function(a,i){if(_nt[i])a.textContent=_nt[i];});
 }
 setLanguage(localStorage.getItem('lang')||'en');
 </script>
