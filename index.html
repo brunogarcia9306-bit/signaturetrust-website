@@ -70,7 +70,7 @@
         {"@type": "City", "name": "Marco Island"},
         {"@type": "City", "name": "Bonita Springs"},
         {"@type": "City", "name": "Fort Myers"},
-        {"@type": "City", "name": "Lehigh Acres"},
+        {"@type": "City", "name": "Estero"},
         {"@type": "City", "name": "Cape Coral"}
       ],
       "openingHoursSpecification": [
@@ -304,9 +304,9 @@
     .carriers-grid { display: flex; justify-content: center; align-items: stretch; gap: 2px; flex-wrap: wrap; }
     .carrier-box { background: rgba(22,18,12,0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(201,169,110,0.1); padding: 36px 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; transition: var(--transition); min-width: 180px; flex: 1; max-width: 220px; }
     .carrier-box:hover { border-color: rgba(201,169,110,0.3); background: rgba(35,28,16,0.7); transform: translateY(-3px); }
-    .carrier-name { font-family: var(--font-serif); font-size: 22px; font-weight: 500; color: var(--white-muted); letter-spacing: 0.05em; transition: color 0.3s; }
+    .carrier-name { font-family: var(--font-serif); font-size: 22px; font-weight: 500; color: var(--white-muted); letter-spacing: 0.05em; transition: color 0.3s; text-align: center; }
     .carrier-box:hover .carrier-name { color: var(--white); }
-    .carrier-tag { font-family: var(--font-sans); font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(201,169,110,0.4); }
+    .carrier-tag { font-family: var(--font-sans); font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(201,169,110,0.65); text-align: center; }
     .carrier-coming { font-family: var(--font-sans); font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(201,169,110,0.3); border: 1px solid rgba(201,169,110,0.15); padding: 4px 10px; margin-top: 4px; }
     .carriers-group { width: 100%; display: flex; flex-direction: column; align-items: center; margin-bottom: 40px; }
     .carriers-group:last-child { margin-bottom: 0; }
@@ -1041,10 +1041,6 @@
                     <div class="carrier-tag">Auto</div>
                 </div>
                 <div class="carrier-box">
-                    <div class="carrier-name">GEICO</div>
-                    <div class="carrier-tag">Auto</div>
-                </div>
-                <div class="carrier-box">
                     <div class="carrier-name">National General</div>
                     <div class="carrier-tag">Auto</div>
                 </div>
@@ -1192,7 +1188,7 @@
             </div>
             <div class="area-item reveal delay-5">
                 <span class="area-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-                <div class="area-name">Lehigh Acres</div><div class="area-sub">Lee County</div>
+                <div class="area-name">Estero</div><div class="area-sub">Lee County</div>
             </div>
             <div class="area-item reveal delay-6">
                 <span class="area-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
@@ -1491,7 +1487,7 @@
                     </div>
                     <div class="contact-detail-text">
                         <span class="contact-detail-label">Location</span>
-                        Serving Naples, Marco Island, Bonita Springs,<br>Fort Myers, Lehigh Acres &amp; Cape Coral — SWFL
+                        Serving Naples, Marco Island, Bonita Springs,<br>Estero, Fort Myers &amp; Cape Coral — SWFL
                     </div>
                 </div>
                 <div class="contact-detail">

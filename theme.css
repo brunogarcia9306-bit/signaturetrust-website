@@ -40,7 +40,13 @@
 /* ---- Scrollbar ---- */
 [data-theme="light"] ::-webkit-scrollbar-track { background: #E8E3D6; }
 
-/* ---- Nav ---- */
+/* ---- Nav — prevent browser default blue on anchor logo ---- */
+[data-theme="light"] .nav-logo,
+[data-theme="light"] .nav-logo-main {
+    color: var(--gold);
+}
+
+/* ---- Nav scrolled / mobile ---- */
 [data-theme="light"] nav.scrolled {
     background: rgba(240,235,225,0.97);
     border-bottom-color: rgba(155,122,69,0.18);
@@ -78,6 +84,10 @@
 [data-theme="light"] .carrier-box:hover {
     background: rgba(237,231,218,0.93);
 }
+/* Fix #4 & #5: carrier tag contrast — both themes */
+[data-theme="light"] .carrier-tag {
+    color: rgba(100,75,35,0.82);
+}
 
 /* ---- Why us ---- */
 [data-theme="light"] .why-box {
@@ -112,12 +122,18 @@
     box-shadow: 0 20px 40px rgba(0,0,0,0.08);
 }
 
+/* ---- Help page hero (fix #3) ---- */
+[data-theme="light"] #help-hero {
+    background: rgba(240,235,225,0.68);
+}
+
 /* ---- Agent section ---- */
 [data-theme="light"] #agent {
     background: rgba(240,235,225,0.65);
 }
+/* Fix #4: agent license text contrast */
 [data-theme="light"] .agent-section-license {
-    color: rgba(80,65,45,0.50);
+    color: rgba(80,65,45,0.68);
 }
 
 /* ---- Footer ---- */
@@ -127,9 +143,10 @@
 [data-theme="light"] .footer-top {
     border-bottom-color: rgba(0,0,0,0.10);
 }
+/* Fix #4: footer text contrast */
 [data-theme="light"] .footer-copy,
 [data-theme="light"] .footer-license {
-    color: rgba(55,44,28,0.55);
+    color: rgba(55,44,28,0.72);
 }
 
 /* ---- Contact form ---- */
@@ -150,8 +167,9 @@
     background: linear-gradient(160deg, rgba(155,122,69,0.08) 0%, rgba(240,235,225,0.85) 100%);
 }
 
-/* ---- Hero trust badges ---- */
+/* ---- Fix #4: hero trust points contrast ---- */
 [data-theme="light"] .hero-trust-item {
+    color: rgba(75,60,35,0.78);
     background: rgba(245,241,232,0.90) !important;
     border-color: rgba(155,122,69,0.18) !important;
 }

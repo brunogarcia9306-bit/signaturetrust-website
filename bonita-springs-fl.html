@@ -262,12 +262,12 @@
 
 <div class="mobile-nav" id="mobileNav">
     <button class="mobile-nav-close" onclick="closeMobileNav()">&#215;</button>
-    <a href="/#services" onclick="closeMobileNav()" id="mNavCov">Coverage</a>
-    <a href="/#how-it-works" onclick="closeMobileNav()" id="mNavHow">How It Works</a>
-    <a href="/#why" onclick="closeMobileNav()" id="mNavAbout">About</a>
-    <a href="/help" onclick="closeMobileNav()" id="mNavHelp">Help</a>
-    <a href="#faq" onclick="closeMobileNav()" id="mNavFaq">FAQ</a>
-    <a href="#quote" onclick="closeMobileNav()" id="mNavQuote">Free Quote</a>
+    <a href="/" onclick="closeMobileNav()">Home</a>
+    <a href="/#services" onclick="closeMobileNav()">Coverage</a>
+    <a href="/#why" onclick="closeMobileNav()">About</a>
+    <a href="/help" onclick="closeMobileNav()">Help</a>
+    <a href="/#contact" onclick="closeMobileNav()">Contact</a>
+    <a href="/quote" onclick="closeMobileNav()">Free Quote</a>
     <div class="lang-toggle" style="margin-top:16px;">
         <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
         <button class="lang-btn" onclick="setLanguage('es')">ES</button>
@@ -279,12 +279,13 @@
         <span class="nav-logo-main">Signature Trust</span>
         <span class="nav-logo-sub">Insurance</span>
     </a>
-    <ul class="nav-links">
-        <li><a href="/#services" id="navCov">Coverage</a></li>
-        <li><a href="/#how-it-works" id="navHow">How It Works</a></li>
-        <li><a href="/#why" id="navAbout">About</a></li>
-        <li><a href="/help" id="navHelp">Help</a></li>
-        <li><a href="#faq" id="navFaq">FAQ</a></li>
+        <ul class="nav-links">
+        <li><a href="/#services">Coverage</a></li>
+        <li><a href="/#how-it-works">How It Works</a></li>
+        <li><a href="/#why">About</a></li>
+        <li><a href="/help">Help</a></li>
+        <li><a href="/#faq">FAQ</a></li>
+        <li><a href="/#contact">Contact</a></li>
     </ul>
     <a href="tel:+12398502268" class="nav-phone">
         <span class="nav-phone-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.07 6.07l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
@@ -649,7 +650,7 @@ function setT(id,v) { const e=S(id); if(e) e.textContent=v; }
 function setH(id,v) { const e=S(id); if(e) e.innerHTML=v; }
 
 function setLanguage(lang) {
-    localStorage.setItem('stLang', lang);
+    localStorage.setItem('lang', lang);
     document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.textContent.toLowerCase()===lang));
     const t = LANG[lang];
     ['navCov','navHow','navAbout','navHelp','navFaq'].forEach((id,i) => setT(id, t.navLinks[i]));
@@ -685,7 +686,7 @@ function setLanguage(lang) {
     const fTypeSel = document.getElementById('fType');
     if (fTypeSel) t.optType.forEach((txt, i) => { if (fTypeSel.options[i]) fTypeSel.options[i].text = txt; });
 }
-setLanguage(localStorage.getItem('stLang') || 'en');
+setLanguage(localStorage.getItem('lang') || 'en');
 </script>
 </body>
 </html>

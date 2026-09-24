@@ -242,11 +242,12 @@
 <!-- Mobile Nav -->
 <div class="mobile-nav" id="mobileNav">
     <button class="mobile-nav-close" onclick="closeMobileNav()">&#215;</button>
-    <a href="/">Home</a>
-    <a href="/#services">Coverage</a>
-    <a href="/help" style="color:var(--gold)">Help Center</a>
-    <a href="/#faq">FAQ</a>
-    <a href="/#contact">Contact</a>
+    <a href="/" onclick="closeMobileNav()">Home</a>
+    <a href="/#services" onclick="closeMobileNav()">Coverage</a>
+    <a href="/#why" onclick="closeMobileNav()">About</a>
+    <a href="/help" onclick="closeMobileNav()">Help</a>
+    <a href="/#contact" onclick="closeMobileNav()">Contact</a>
+    <a href="/quote" onclick="closeMobileNav()">Free Quote</a>
     <div class="lang-toggle" style="margin-top:16px;">
         <button class="lang-btn active" onclick="setLanguage('en')" data-lang="en">EN</button>
         <button class="lang-btn" onclick="setLanguage('es')" data-lang="es">ES</button>
@@ -259,10 +260,11 @@
         <span class="nav-logo-main">Signature Trust</span>
         <span class="nav-logo-sub">Insurance</span>
     </a>
-    <ul class="nav-links">
-        <li><a href="/">Home</a></li>
+        <ul class="nav-links">
         <li><a href="/#services">Coverage</a></li>
-        <li><a href="/help" class="active" id="navHelp">Help Center</a></li>
+        <li><a href="/#how-it-works">How It Works</a></li>
+        <li><a href="/#why">About</a></li>
+        <li><a href="/help">Help</a></li>
         <li><a href="/#faq">FAQ</a></li>
         <li><a href="/#contact">Contact</a></li>
     </ul>
