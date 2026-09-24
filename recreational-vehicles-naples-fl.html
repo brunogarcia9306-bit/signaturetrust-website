@@ -104,8 +104,8 @@
     nav#mainNav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; gap: 32px; padding: 0 60px; height: 72px; transition: all .4s ease; border-bottom: 1px solid transparent; }
     nav#mainNav.scrolled { background: rgba(8,8,8,.95); backdrop-filter: blur(20px); border-bottom-color: rgba(201,169,110,.12); }
     .nav-logo { text-decoration: none; display: flex; flex-direction: column; line-height: 1; }
-    .nav-logo-main { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--white); }
-    .nav-logo-sub { font-family: var(--font-sans); font-size: 8px; letter-spacing: .5em; color: var(--gold); text-transform: uppercase; margin-top: 2px; }
+    .nav-logo-main { font-family: var(--font-serif); font-size: 20px; font-weight: 600; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; }
+    .nav-logo-sub { font-family: var(--font-sans); font-size: 8px; letter-spacing: .5em; color: var(--white-muted); text-transform: uppercase; margin-top: 2px; }
     .nav-links { display: flex; gap: 32px; list-style: none; margin: 0 auto; }
     .nav-links a { font-family: var(--font-sans); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--white-muted); text-decoration: none; transition: color .3s; }
     .nav-links a:hover { color: var(--gold); }
@@ -267,10 +267,10 @@
     <a href="/#why" onclick="closeMobileNav()">About</a>
     <a href="/help" onclick="closeMobileNav()">Help</a>
     <a href="/#contact" onclick="closeMobileNav()">Contact</a>
-    <a href="/quote" onclick="closeMobileNav()">Free Quote</a>
+    <a href="/quote" onclick="closeMobileNav()">Get a Quote</a>
     <div class="lang-toggle" style="margin-top:16px;">
-        <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
-        <button class="lang-btn" onclick="setLanguage('es')">ES</button>
+        <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">EN</button>
+        <button class="lang-btn" data-lang="es" onclick="setLanguage('es')">ES</button>
     </div>
 </div>
 
@@ -292,8 +292,8 @@
         (239) 850-2268
     </a>
     <div class="lang-toggle">
-        <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
-        <button class="lang-btn" onclick="setLanguage('es')">ES</button>
+        <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">EN</button>
+        <button class="lang-btn" data-lang="es" onclick="setLanguage('es')">ES</button>
     </div>
     <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light/dark mode">
         <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
@@ -666,6 +666,7 @@ function setLanguage(lang) {
     setT('fHours',t.fHours); setT('fCopy',t.fCopy); setT('fLicense',t.fLicense);
     const fTypeSel = document.getElementById('fType');
     if (fTypeSel) t.optType.forEach((txt, i) => { if (fTypeSel.options[i]) fTypeSel.options[i].text = txt; });
+    var _nl=document.querySelectorAll('.nav-links a');var _nt=lang==='es'?['Coberturas','Cómo Funciona','Nosotros','Ayuda','Preguntas','Contacto']:['Coverage','How It Works','About','Help','FAQ','Contact'];_nl.forEach(function(a,i){if(_nt[i])a.textContent=_nt[i];});
 }
 setLanguage(localStorage.getItem('lang') || 'en');
 </script>
