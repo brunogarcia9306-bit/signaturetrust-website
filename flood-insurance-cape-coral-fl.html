@@ -729,5 +729,25 @@ function setLanguage(lang){
 }
 setLanguage(localStorage.getItem('lang')||'en');
 </script>
+
+<!-- Google Reviews — schema patch (keeps aggregateRating live) -->
+<script>
+(function(){
+    var P='ChIJk7hvCKbh2ogRVaDrvjNIkEE',K='AIzaSyANtKFMMBfLTgDFkfBmAFh4XWsnbi1v3AA';
+    fetch('https://places.googleapis.com/v1/places/'+P+'?fields=rating,userRatingCount&key='+K)
+    .then(function(r){return r.json();})
+    .then(function(d){
+        if(!d||!d.rating)return;
+        var ra=d.rating,co=d.userRatingCount||0;
+        document.querySelectorAll('script[type="application/ld+json"]').forEach(function(s){
+            try{
+                var o=JSON.parse(s.textContent),a=Array.isArray(o)?o:[o];
+                a.forEach(function(i){if(i.aggregateRating){i.aggregateRating.ratingValue=ra.toFixed(1);i.aggregateRating.reviewCount=String(co);}});
+                s.textContent=JSON.stringify(Array.isArray(o)?a:a[0]);
+            }catch(e){}
+        });
+    }).catch(function(){});
+}());
+</script>
 </body>
 </html>
