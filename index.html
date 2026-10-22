@@ -57,13 +57,6 @@
         "postalCode": "34102",
         "addressCountry": "US"
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": "6",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
       "geo": { "@type": "GeoCoordinates", "latitude": 26.142, "longitude": -81.795 },
       "areaServed": [
         {"@type": "City", "name": "Naples", "containedInPlace": {"@type": "State", "name": "Florida"}},
@@ -1323,7 +1316,7 @@
             <h2 class="section-title">What Our Clients<br><em>Say About Us</em></h2>
             <div id="google-rating-summary" style="margin-top:24px;display:flex;align-items:center;gap:0;min-height:28px;">
                 <span style="color:var(--gold);font-size:20px;letter-spacing:2px">★★★★★</span>
-                <span style="font-family:var(--font-sans);font-size:13px;color:var(--white-muted);margin-left:12px">5.0 &nbsp;·&nbsp; <a href="https://g.page/r/signaturetrustinsurance/review" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;">6 reviews on Google</a></span>
+                <span style="font-family:var(--font-sans);font-size:13px;color:var(--white-muted);margin-left:12px"><a href="https://g.page/r/CVWg674zSJBBEAI/review" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;">Google Reviews</a></span>
             </div>
         </div>
         <div id="reviews-grid" class="testimonials-grid">
@@ -2800,9 +2793,8 @@ function setLanguage(lang) {
                     var obj = JSON.parse(s.textContent);
                     var items = Array.isArray(obj) ? obj : [obj];
                     items.forEach(function (item) {
-                        if (item.aggregateRating) {
-                            item.aggregateRating.ratingValue = rating.toFixed(1);
-                            item.aggregateRating.reviewCount = String(count);
+                        if (item['@type'] === 'InsuranceAgency') {
+                            item.aggregateRating = {"@type":"AggregateRating","ratingValue":rating.toFixed(1),"reviewCount":String(count),"bestRating":"5","worstRating":"1"};
                         }
                     });
                     s.textContent = JSON.stringify(Array.isArray(obj) ? items : items[0]);
@@ -2815,7 +2807,7 @@ function setLanguage(lang) {
                 summary.innerHTML =
                     '<span style="color:var(--gold);font-size:20px;letter-spacing:2px">★★★★★</span>'
                     + '<span style="font-family:var(--font-sans);font-size:13px;color:var(--white-muted);margin-left:12px">'
-                    + rating.toFixed(1) + ' &nbsp;&middot;&nbsp; <a href="https://g.page/r/signaturetrustinsurance/review" '
+                    + rating.toFixed(1) + ' &nbsp;&middot;&nbsp; <a href="https://g.page/r/CVWg674zSJBBEAI/review" '
                     + 'target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;">'
                     + count + ' reviews on Google</a></span>';
             }

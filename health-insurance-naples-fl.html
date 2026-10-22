@@ -55,13 +55,6 @@
         },
         "image": "https://signaturetrustfl.com/og-image.jpg",
         "logo": "https://signaturetrustfl.com/og-image.jpg",
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "5.0",
-          "reviewCount": "6",
-          "bestRating": "5",
-          "worstRating": "1"
-        },
         "sameAs": [
           "https://g.page/r/signaturetrustinsurance",
           "https://www.facebook.com/profile.php?id=61590463125817",
@@ -684,7 +677,7 @@ setLanguage(localStorage.getItem('lang') || 'en');
         document.querySelectorAll('script[type="application/ld+json"]').forEach(function(s){
             try{
                 var o=JSON.parse(s.textContent),a=Array.isArray(o)?o:[o];
-                a.forEach(function(i){if(i.aggregateRating){i.aggregateRating.ratingValue=ra.toFixed(1);i.aggregateRating.reviewCount=String(co);}});
+                a.forEach(function(i){if(i['@type']==='InsuranceAgency'){i.aggregateRating={"@type":"AggregateRating","ratingValue":ra.toFixed(1),"reviewCount":String(co),"bestRating":"5","worstRating":"1"};}});
                 s.textContent=JSON.stringify(Array.isArray(o)?a:a[0]);
             }catch(e){}
         });
