@@ -361,17 +361,33 @@ html {
 .gr-dots {
     display: flex;
     justify-content: center;
-    gap: 8px;
-    margin-top: 20px;
+    gap: 4px;
+    margin-top: 16px;
 }
 .gr-dot {
+    /* tap target 24×24 px; visual dot stays 7 px via ::after */
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    background: transparent;
+    border: none; cursor: pointer; padding: 0;
+    position: relative;
+    flex-shrink: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+.gr-dot::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
     width: 7px; height: 7px;
     border-radius: 50%;
     background: rgba(201,169,110,0.25);
-    border: none; cursor: pointer; padding: 0;
     transition: background 0.25s, transform 0.25s;
 }
-.gr-don, .gr-dot:hover { background: var(--gold); transform: scale(1.35); }
+.gr-don::after, .gr-dot:hover::after {
+    background: var(--gold);
+    transform: translate(-50%, -50%) scale(1.35);
+}
 
 /* light-mode overrides */
 [data-theme="light"] .gr-section { background: rgba(227,221,206,0.62); }

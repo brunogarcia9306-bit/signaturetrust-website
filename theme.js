@@ -25,24 +25,36 @@ function toggleTheme() {
     var KEY = 'AIzaSyANtKFMMBfLTgDFkfBmAFh4XWsnbi1v3AA';
     var GBP = 'https://g.page/r/CVWg674zSJBBEAI/review';
     var CK  = 'sig_gplaces_v2';
-    var TTL = 600000; // 10 min in ms
+    var TTL = 600000;
+
+    // Section heading translations (nested carousel on index.html)
+    var HEADS = {
+        en: { label: 'Client Reviews', title: 'What Our Clients<br><em>Say About Us</em>' },
+        es: { label: 'Reseñas de Clientes', title: 'Lo Que Nuestros Clientes<br><em>Dicen de Nosotros</em>' }
+    };
+
+    // Module-level state so container hover listeners don't stack on re-render
+    var _grPaused = false;
+    var _grStop   = null;
+    var _grStart  = null;
 
     function esc(s) {
         return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
     }
 
-    /* ---- fetch with sessionStorage cache ---- */
-    function fetchPlaces(cb) {
+    /* ---- fetch with per-lang sessionStorage cache ---- */
+    function fetchPlaces(lang, cb) {
+        var ck = CK + '_' + lang;
         try {
-            var c = JSON.parse(sessionStorage.getItem(CK) || 'null');
+            var c = JSON.parse(sessionStorage.getItem(ck) || 'null');
             if (c && Date.now() - c.ts < TTL) { cb(c.d); return; }
         } catch (_) {}
         fetch('https://places.googleapis.com/v1/places/' + PID
-            + '?fields=rating,userRatingCount,reviews&key=' + KEY)
+            + '?fields=rating,userRatingCount,reviews&languageCode=' + lang + '&key=' + KEY)
             .then(function (r) { return r.json(); })
             .then(function (d) {
                 if (!d || !d.rating) { cb(null); return; }
-                try { sessionStorage.setItem(CK, JSON.stringify({ ts: Date.now(), d: d })); } catch (_) {}
+                try { sessionStorage.setItem(ck, JSON.stringify({ ts: Date.now(), d: d })); } catch (_) {}
                 cb(d);
             })
             .catch(function () { cb(null); });
@@ -112,23 +124,41 @@ function toggleTheme() {
         if (n <= 1) return;
         var tr   = root.querySelector('.gr-tr');
         var dots = root.querySelectorAll('.gr-dot');
-        var idx  = 0, tmr = null, psd = false;
+        var idx  = 0, tmr = null;
         var nm   = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // Stop previous rotation before creating new closures
+        if (_grStop) _grStop();
 
         function go(i) {
             idx = ((i % n) + n) % n;
             tr.style.transform = 'translateX(-' + (idx * 100) + '%)';
             dots.forEach(function (d, j) { d.classList.toggle('gr-don', j === idx); });
         }
-        function start() { if (nm || psd) return; tmr = setTimeout(function () { go(idx + 1); start(); }, 6000); }
+        function start() { if (nm || _grPaused) return; tmr = setTimeout(function () { go(idx + 1); start(); }, 6000); }
         function stop()  { clearTimeout(tmr); tmr = null; }
 
-        root.addEventListener('mouseenter',  function () { psd = true;  stop(); });
-        root.addEventListener('mouseleave',  function () { psd = false; start(); });
-        root.addEventListener('touchstart',  function () { psd = true;  stop(); },  { passive: true });
-        root.addEventListener('touchend',    function () { psd = false; start(); }, { passive: true });
+        // Expose new closures at module level — container handlers always call current ones
+        _grStop  = stop;
+        _grStart = start;
+
+        // Container hover/touch — added only once per element (safe across re-renders)
+        if (!root._grWired) {
+            root._grWired = true;
+            root.addEventListener('mouseenter',  function () { _grPaused = true;  if (_grStop)  _grStop(); });
+            root.addEventListener('mouseleave',  function () { _grPaused = false; if (_grStart) _grStart(); });
+            root.addEventListener('touchstart',  function () { _grPaused = true;  if (_grStop)  _grStop(); },  { passive: true });
+            root.addEventListener('touchend',    function () { _grPaused = false; if (_grStart) _grStart(); }, { passive: true });
+        }
+
+        // Dots and read-more re-bound each render (new DOM elements after innerHTML replace)
         dots.forEach(function (d) {
-            d.addEventListener('click', function () { go(parseInt(d.dataset.i, 10)); stop(); psd = false; start(); });
+            d.addEventListener('click', function () {
+                go(parseInt(d.dataset.i, 10));
+                if (_grStop)  _grStop();
+                _grPaused = false;
+                if (_grStart) _grStart();
+            });
         });
         root.querySelectorAll('.gr-more').forEach(function (btn) {
             btn.addEventListener('click', function () {
@@ -139,30 +169,54 @@ function toggleTheme() {
                 btn.textContent = ex ? btn.dataset.m : btn.dataset.l;
             });
         });
+
         start();
+    }
+
+    /* ---- render (or re-render on lang change) ---- */
+    function render(el, sa, data, lang) {
+        // Update section headings for nested carousel (index.html #testimonials)
+        if (!sa) {
+            var section = el.closest('section');
+            if (section) {
+                var h   = HEADS[lang] || HEADS.en;
+                var slbl = section.querySelector('.section-label');
+                var sttl = section.querySelector('.section-title');
+                if (slbl) slbl.textContent = h.label;
+                if (sttl) sttl.innerHTML   = h.title;
+                if (!data || !data.rating) { section.style.display = 'none'; return; }
+            }
+        } else {
+            if (!data || !data.rating) { el.innerHTML = ''; return; }
+        }
+
+        patchLd(data.rating, data.userRatingCount || 0);
+        var html = buildHtml(data, lang);
+        if (!html) return;
+        el.innerHTML = html;
+        if (sa) el.className = 'gr-section';
+        var rev = (data.reviews || []).filter(function (r) { return r.text && r.text.text; });
+        wire(el, rev.length);
     }
 
     /* ---- auto-init ---- */
     function init() {
         var el = document.getElementById('google-reviews-carousel');
         if (!el) return;
-        var lang = el.dataset.lang || 'en';
         var sa   = el.dataset.standalone === 'true';
+        var lang = (document.documentElement.lang || el.dataset.lang || 'en').startsWith('es') ? 'es' : 'en';
 
-        fetchPlaces(function (data) {
-            if (!data || !data.rating) {
-                // API failed — hide parent section (only if carousel is nested, not standalone)
-                if (!sa) { var sec = el.closest('section'); if (sec) sec.style.display = 'none'; }
-                return;
-            }
-            patchLd(data.rating, data.userRatingCount || 0);
-            var html = buildHtml(data, lang);
-            if (!html) return;
-            el.innerHTML = html;
-            if (sa) el.className = 'gr-section';
-            var rev = (data.reviews || []).filter(function (r) { return r.text && r.text.text; });
-            wire(el, rev.length);
-        });
+        fetchPlaces(lang, function (data) { render(el, sa, data, lang); });
+
+        // Watch for lang attribute changes triggered by setLanguage() toggle on EN pages
+        new MutationObserver(function (ms) {
+            ms.forEach(function (m) {
+                if (m.attributeName === 'lang') {
+                    var l = (document.documentElement.lang || '').startsWith('es') ? 'es' : 'en';
+                    fetchPlaces(l, function (data) { render(el, sa, data, l); });
+                }
+            });
+        }).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
     }
 
     if (document.readyState === 'loading') {
