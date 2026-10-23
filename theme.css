@@ -415,6 +415,11 @@ html {
         margin-left: auto;
         margin-right: 0;
     }
+    /* Pages without a lang-toggle (e.g. carriers): theme-toggle is the right anchor.
+       Specificity (1,2,1) beats the margin-left:10px rule below (1,1,1). */
+    nav#mainNav:not(:has(.lang-toggle)) .theme-toggle {
+        margin-left: auto;
+    }
     /* 10px breathing room between each right-side control; ≥36px tap target */
     nav#mainNav .theme-toggle {
         margin-left: 10px;

@@ -645,6 +645,7 @@
     .nav-phone { font-family: var(--font-sans); font-size: 12px; letter-spacing: 0.08em; color: var(--white-muted); text-decoration: none; display: flex; align-items: center; gap: 7px; transition: color 0.3s; margin-right: 4px; white-space: nowrap; }
     .nav-phone:hover { color: var(--gold); }
     .nav-phone-icon { color: var(--gold); opacity: 0.8; }
+    @media (max-width: 900px) { .nav-phone { display: none; } }
 
     /* ===================== HERO TRUST STRIP ===================== */
     .hero-trust { display: flex; gap: 28px; justify-content: center; flex-wrap: wrap; margin-top: 36px; opacity: 0; animation: fadeUp 1s ease forwards 1.3s; }
