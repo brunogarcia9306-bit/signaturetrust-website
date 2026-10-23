@@ -180,8 +180,38 @@
 }
 
 /* ---- Footer hours & availability ---- */
-[data-theme="light"] .footer-hours {
-    color: rgba(75,60,35,0.72);
+[data-theme="light"] .footer-hours,
+[data-theme="light"] .footer-hours p {
+    color: var(--white);
+}
+/* Footer column headings and links */
+[data-theme="light"] .footer-col h5 {
+    color: var(--white);
+}
+[data-theme="light"] .footer-col ul li a {
+    color: var(--white);
+}
+
+/* ---- Breadcrumb — rgba(201,169,110,.6) is 1.5:1 on cream; nearly invisible ---- */
+[data-theme="light"] .breadcrumb,
+[data-theme="light"] .breadcrumb a {
+    color: var(--gold-dark);
+}
+[data-theme="light"] .breadcrumb-sep {
+    color: var(--white-muted);
+}
+
+/* ---- FAQ answer text on card backgrounds (product + /es/ pages) ---- */
+[data-theme="light"] .faq-a {
+    color: var(--white);
+}
+
+/* ---- Section eyebrow labels (product + /es/ pages) ---- */
+[data-theme="light"] .section-label {
+    color: var(--gold-dark);
+}
+[data-theme="light"] .section-label::before {
+    background: var(--gold-dark);
 }
 
 /* ---- Footer Privacy / Terms links (inline style override) ---- */

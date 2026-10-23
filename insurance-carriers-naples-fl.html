@@ -380,7 +380,19 @@
         .footer-cols { grid-template-columns: 1fr; }
         .group-header { gap: 14px; }
         .carrier-top { gap: 10px; }
+        .breadcrumb { letter-spacing: 0.2em; font-size: 9px; }
     }
+
+    /* ── LIGHT MODE OVERRIDES ── */
+    [data-theme="light"] .faq-question { color: var(--white); }
+    [data-theme="light"] .faq-icon { color: var(--gold); }
+    [data-theme="light"] .faq-answer p { color: var(--white); }
+    [data-theme="light"] .group-header-label { color: var(--gold-dark); }
+    [data-theme="light"] .carrier-type-badge { color: var(--gold-dark); border-color: var(--gold); }
+    [data-theme="light"] .carrier-geo { color: var(--gold-dark); }
+    [data-theme="light"] .breadcrumb,
+    [data-theme="light"] .breadcrumb a { color: var(--gold-dark); }
+    [data-theme="light"] .cta-eyebrow { color: var(--gold-dark); }
     </style>
     <link rel="stylesheet" href="/theme.css">
 </head>
