@@ -399,3 +399,47 @@ html {
     .gr-section { padding: 48px 16px; }
     .gr-card    { padding: 20px 16px; }
 }
+
+/* ============================================================
+   Mobile nav layout — collapse gap:32px at ≤900 px
+   All product/city/ES pages share nav#mainNav { gap:32px } in
+   their inline <style>. theme.css loads after, so nav#mainNav
+   (specificity 0-1-1) overrides the inline gap at mobile widths.
+   ============================================================ */
+@media (max-width: 900px) {
+    nav#mainNav {
+        gap: 0;
+    }
+    /* Push controls to the right; cancel index.html's margin-right:8px */
+    nav#mainNav .lang-toggle {
+        margin-left: auto;
+        margin-right: 0;
+    }
+    /* 10px breathing room between each right-side control; ≥36px tap target */
+    nav#mainNav .theme-toggle {
+        margin-left: 10px;
+        width: 36px;
+        height: 36px;
+    }
+    nav#mainNav .nav-toggle {
+        margin-left: 10px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Shrink logo text at narrow widths to stay clear of the controls */
+@media (max-width: 480px) {
+    .nav-logo-main {
+        font-size: 16px;
+        letter-spacing: 0.08em;
+    }
+}
+@media (max-width: 400px) {
+    .nav-logo-main {
+        font-size: 15px;
+        letter-spacing: 0.06em;
+    }
+}
