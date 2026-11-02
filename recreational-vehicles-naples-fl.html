@@ -148,6 +148,9 @@
     .risk-title { font-family: var(--font-serif); font-size: 22px; font-weight: 500; color: var(--white); margin-bottom: 10px; }
     .risk-desc { font-family: var(--font-sans); font-size: 13px; color: var(--white-muted); line-height: 1.8; }
     .coverage-section { position: relative; z-index: 1; padding: 100px 60px; }
+    .svc-section { position: relative; z-index: 1; padding: 100px 60px; }
+    .svc-section.dark { background: var(--dark-2); }
+    .svc-inner { max-width: 1100px; margin: 0 auto; }
     .coverage-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; margin-top: 60px; }
     .coverage-card { background: var(--dark-2); padding: 40px 28px; border: 1px solid rgba(201,169,110,.08); text-align: center; transition: var(--transition); }
     .coverage-card:hover { border-color: rgba(201,169,110,.28); background: var(--dark-3); }
@@ -214,7 +217,7 @@
         nav#mainNav { padding: 0 24px; }
         .nav-links,.nav-phone,.nav-cta { display: none; }
         .nav-toggle { display: flex; }
-        .city-hero,.local-context,.coverage-section,#quote,.faq-section,.cta-strip { padding-left: 24px; padding-right: 24px; }
+        .city-hero,.local-context,.coverage-section,.svc-section,#quote,.faq-section,.cta-strip { padding-left: 24px; padding-right: 24px; }
         footer { padding: 40px 24px 30px; }
         .risk-grid { grid-template-columns: 1fr; }
         .coverage-grid { grid-template-columns: 1fr 1fr; }
@@ -232,7 +235,7 @@
         .city-hero{padding:120px 16px 64px}
         .city-hero h1{font-size:clamp(32px,10vw,52px)}
         .city-hero-sub{font-size:14px}
-        .local-context,.coverage-section,#quote,.faq-section,.cta-strip{padding-left:16px;padding-right:16px}
+        .local-context,.coverage-section,.svc-section,#quote,.faq-section,.cta-strip{padding-left:16px;padding-right:16px}
         .coverage-grid{grid-template-columns:1fr}
         .quote-form{grid-template-columns:1fr}
         .city-hero-ctas,.cta-strip-btns{flex-direction:column;align-items:stretch}
@@ -370,6 +373,14 @@
                 <p id="c4d">Full-timer and recreational RV policies covering the vehicle, personal contents, campsite liability, and total loss replacement. Whether you spend winters in SWFL or use your RV seasonally, Bruno finds the right policy for how you actually live in it.</p>
             </div>
         </div>
+    </div>
+</section>
+
+<section class="svc-section dark">
+    <div class="svc-inner">
+        <p class="section-label" id="rvLabel">RVs &amp; Motorhomes</p>
+        <h2 class="section-title" id="rvTitle">RV &amp; Motorhome Insurance in<br><em>Naples, FL</em></h2>
+        <p class="section-sub" id="rvBody">I insure a wide variety of RVs. Most of my clients have motorhomes, travel trailers, or fifth wheels. Many of these RVs sit at home for long stretches and don't go out on the road much. Even so, they still need coverage, especially if the RV is financed and the lender requires it.</p>
     </div>
 </section>
 
@@ -564,6 +575,7 @@ const LANG = {
         c2t:'Jet Ski / PWC', c2d:'Dedicated personal watercraft coverage for jet skis and WaveRunners. Standard boat policies often exclude PWCs — Bruno places specific coverage for Naples Bay, Estero Bay, and beyond.',
         c3t:'Motorcycle', c3d:"Year-round coverage in Florida — liability, comprehensive, collision, uninsured motorist, and medical payments. Florida's climate makes motorcycles a genuine all-year vehicle.",
         c4t:'RV & Motorhome', c4d:"Full-timer and recreational RV policies covering the vehicle, personal contents, campsite liability, and total loss replacement — for seasonal and full-time SWFL RV owners.",
+        rvLabel:'RVs & Motorhomes',rvTitle:'RV & Motorhome Insurance in<br><em>Naples, FL</em>',rvBody:"I insure a wide variety of RVs. Most of my clients have motorhomes, travel trailers, or fifth wheels. Many of these RVs sit at home for long stretches and don't go out on the road much. Even so, they still need coverage, especially if the RV is financed and the lender requires it.",
         formLabel:'Free Quote', formTitle:'Get Your<br><em>Recreational Vehicle Quote</em>',
         formSub:'No pressure. No obligation. Bruno reviews every request personally and responds within 24 hours.',
         lName:'Full Name', lPhone:'Phone', lEmail:'Email', lType:'Vehicle Type', lMsg:'Message (optional)',
@@ -602,6 +614,7 @@ const LANG = {
         c2t:'Jet Ski / Moto Acuática', c2d:'Cobertura dedicada para jet skis y WaveRunners. Las pólizas estándar de bote a menudo excluyen las motos acuáticas — Bruno coloca cobertura específica para Naples Bay, Estero Bay y más.',
         c3t:'Motocicleta', c3d:'Cobertura todo el año en Florida — responsabilidad, comprensivo, colisión, motorista sin seguro y pagos médicos. El clima de Florida hace que las motocicletas sean vehículos genuinamente de todo el año.',
         c4t:'Casa Rodante / RV', c4d:'Pólizas para casas rodantes de tiempo completo y recreativas que cubren el vehículo, contenido personal, responsabilidad en el campamento y reposición por pérdida total.',
+        rvLabel:'RVs y Motorhomes',rvTitle:'Seguro de RV y Motorhome en<br><em>Naples, FL</em>',rvBody:'Aseguro una gran variedad de RVs. La mayoría de mis clientes tienen motorhomes, travel trailers o fifth wheels. Muchos de estos RVs pasan mucho tiempo en casa y salen poco a la carretera. Aun así, siguen necesitando cobertura, sobre todo si el RV está financiado y el banco la exige.',
         formLabel:'Cotización Gratis', formTitle:'Obtén Tu<br><em>Cotización de Vehículo Recreativo</em>',
         formSub:'Sin presión. Sin compromiso. Bruno revisa cada solicitud personalmente y responde en 24 horas.',
         lName:'Nombre Completo', lPhone:'Teléfono', lEmail:'Correo Electrónico', lType:'Tipo de Vehículo', lMsg:'Mensaje (opcional)',
@@ -649,6 +662,7 @@ function setLanguage(lang) {
     setT('c2t',t.c2t); setT('c2d',t.c2d);
     setT('c3t',t.c3t); setT('c3d',t.c3d);
     setT('c4t',t.c4t); setT('c4d',t.c4d);
+    setT('rvLabel',t.rvLabel); setH('rvTitle',t.rvTitle); setT('rvBody',t.rvBody);
     setT('formLabel',t.formLabel); setH('formTitle',t.formTitle); setT('formSub',t.formSub);
     setT('lName',t.lName); setT('lPhone',t.lPhone); setT('lEmail',t.lEmail);
     setT('lType',t.lType); setT('lMsg',t.lMsg);
