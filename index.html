@@ -957,7 +957,7 @@
         </div>
         <div class="hero-trust">
             <span class="hero-trust-item"><span class="hero-trust-dot"></span><span id="trust1">Response within 2 hours</span></span>
-            <span class="hero-trust-item"><span class="hero-trust-dot"></span><span id="trust2">20+ Top Carriers</span></span>
+            <span class="hero-trust-item"><span class="hero-trust-dot"></span><span id="trust2">Multiple Florida Carriers</span></span>
             <span class="hero-trust-item"><span class="hero-trust-dot"></span><span id="trust3">FL Licensed Agent</span></span>
             <span class="hero-trust-item"><span class="hero-trust-dot"></span><span id="trust4">Bilingual Service</span></span>
         </div>
@@ -1061,8 +1061,8 @@
 <div id="stats">
     <div class="stats-inner">
         <div class="stat-item reveal delay-1">
-            <div class="stat-number">20+</div>
-            <div class="stat-label">Insurance Carriers</div>
+            <div class="stat-number" id="statNum1" style="font-size:28px;line-height:1.3;">Multiple</div>
+            <div class="stat-label">Florida Carriers</div>
         </div>
         <div class="stat-item reveal delay-2">
             <div class="stat-number">6</div>
@@ -2328,7 +2328,7 @@ const LANG = {
         heroPrimary: 'Get Your Free Quote',
         heroSecondary: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:-1px;margin-right:7px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.07 6.07l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(239) 850-2268',
         heroScroll: 'Scroll',
-        trust1: 'Response within 2 hours', trust2: '20+ Top Carriers', trust3: 'FL Licensed Agent', trust4: 'Bilingual Service',
+        trust1: 'Response within 2 hours', trust2: 'Multiple Florida Carriers', trust3: 'FL Licensed Agent', trust4: 'Bilingual Service',
         footerHours: 'Mon – Fri &nbsp;·&nbsp; 11:00 am – 5:00 pm<br>Sat – Sun &nbsp;·&nbsp; Closed',
         footerHours24: 'Available online 24/7 — get a quote anytime, including weekends.',
         mobileStickyCallTxt: 'Call Now', mobileStickyQuote: 'Free Quote',
@@ -2347,7 +2347,7 @@ const LANG = {
             'FMCSA-compliant truck insurance for owner-operators and small fleets in SWFL. Primary liability, cargo, bobtail, and occupational accident coverage for CDL drivers.'
         ],
         serviceLink: 'Learn More',
-        statLabels: ['Insurance Carriers','Areas Served in SWFL','Types of Coverage','Independent & Unbiased'],
+        statNum1: 'Multiple', statLabels: ['Florida Carriers','Areas Served in SWFL','Types of Coverage','Independent & Unbiased'],
         hiwLabel: 'The Process',
         hiwTitle: 'Getting Covered Is<br><em>Simpler Than You Think</em>',
         hiwTitles: ['Request Your Free Quote','Bruno Compares Carriers','You Choose — No Pressure'],
@@ -2357,7 +2357,7 @@ const LANG = {
             'Bruno presents your options in plain language. You decide. No pushy sales tactics, no hidden fees, no obligations.'
         ],
         carriersP: 'Top-rated companies. Independent advice. Your best options.',
-        carriersNote: '+ 20 more top-rated carriers — we shop them all to find your best rate.',
+        carriersNote: 'Plus additional carriers through our agency network — we compare options that fit your coverage needs and budget.',
         whyLabel: 'Why Choose Us',
         whyTitle: 'The Signature Trust<br><em>Difference</em>',
         whyBoxQuote: '"My commitment is to find you the coverage that truly fits — not just any policy, but the right one. That\'s the Signature Trust promise."',
@@ -2471,7 +2471,7 @@ const LANG = {
         heroPrimary: 'Obtén tu Cotización Gratis',
         heroSecondary: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:-1px;margin-right:7px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.07 6.07l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(239) 850-2268',
         heroScroll: 'Deslizar',
-        trust1: 'Respuesta en menos de 2 horas', trust2: '+20 Aseguradoras', trust3: 'Licenciado en Florida', trust4: 'Servicio en Español',
+        trust1: 'Respuesta en menos de 2 horas', trust2: 'Múltiples Aseguradoras en FL', trust3: 'Licenciado en Florida', trust4: 'Servicio en Español',
         footerHours: 'Lun – Vie &nbsp;·&nbsp; 11:00 am – 5:00 pm<br>Sáb – Dom &nbsp;·&nbsp; Cerrado',
         footerHours24: 'Disponible en línea 24/7 — cotiza en cualquier momento, incluyendo fines de semana.',
         mobileStickyCallTxt: 'Llamar', mobileStickyQuote: 'Cotización Gratis',
@@ -2490,7 +2490,7 @@ const LANG = {
             'Seguro de camión compatible con FMCSA para operadores independientes y flotas pequeñas en SWFL. Cobertura de responsabilidad primaria, carga, bobtail y accidente ocupacional para conductores CDL.'
         ],
         serviceLink: 'Más Info',
-        statLabels: ['Aseguradoras Disponibles','Áreas Servidas en SWFL','Tipos de Cobertura','Independiente e Imparcial'],
+        statNum1: 'Múltiples', statLabels: ['Aseguradoras en FL','Áreas Servidas en SWFL','Tipos de Cobertura','Independiente e Imparcial'],
         hiwLabel: 'El Proceso',
         hiwTitle: 'Obtener Cobertura Es<br><em>Más Fácil de Lo Que Piensas</em>',
         hiwTitles: ['Solicita Tu Cotización Gratis','Bruno Compara Aseguradoras','Tú Eliges — Sin Presión'],
@@ -2500,7 +2500,7 @@ const LANG = {
             'Bruno te presenta las opciones en lenguaje claro. Tú decides. Sin tácticas de venta, sin tarifas ocultas, sin obligaciones.'
         ],
         carriersP: 'Empresas calificadas. Asesoramiento independiente. Tus mejores opciones.',
-        carriersNote: '+ 20 aseguradoras adicionales de primer nivel — las comparamos todas para encontrar tu mejor tarifa.',
+        carriersNote: 'Además de otras aseguradoras en nuestra red — comparamos las opciones que se ajustan a tu cobertura y presupuesto.',
         whyLabel: 'Por Qué Elegirnos',
         whyTitle: 'La Diferencia<br><em>Signature Trust</em>',
         whyBoxQuote: '"Mi compromiso es encontrarte la cobertura que realmente se ajusta — no solo cualquier póliza, sino la correcta. Esa es la promesa de Signature Trust."',
@@ -2646,6 +2646,7 @@ function setLanguage(lang) {
 
     // STATS
     $$('.stat-label').forEach((el, i) => { if (t.statLabels[i]) el.textContent = t.statLabels[i]; });
+    const sn1 = document.getElementById('statNum1'); if (sn1) sn1.textContent = t.statNum1;
 
     // HOW IT WORKS
     setTxt('#how-it-works .section-label', t.hiwLabel);
