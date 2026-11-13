@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -68,10 +68,10 @@
         "@type": "FAQPage",
         "publisher": {"@id": "https://signaturetrustfl.com/#agency"},
         "mainEntity": [
-          {"@type": "Question", "name": "Is flood insurance required if I live on a canal in Cape Coral?", "acceptedAnswer": {"@type": "Answer", "text": "Most Cape Coral canal properties are in FEMA Special Flood Hazard Areas (Zone AE). If you have a federally-backed mortgage on a property in these zones, flood insurance is legally required. Even without a mortgage, canal exposure means your financial risk is real — a single flood event can cause tens of thousands in damages not covered by homeowners insurance."}},
-          {"@type": "Question", "name": "How much does flood insurance cost in Cape Coral?", "acceptedAnswer": {"@type": "Answer", "text": "Flood insurance rates in Cape Coral vary based on your FEMA flood zone, elevation certificate, property value, and chosen deductible. NFIP rates are federally set, while private flood carriers may offer lower premiums for properties with favorable elevations. Bruno compares both NFIP and private options to find coverage that fits your specific address."}},
-          {"@type": "Question", "name": "Can you insure my boat or watercraft in Cape Coral?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. With over 400 miles of canals, Cape Coral has one of the highest concentrations of boat owners in Florida. Bruno can help with watercraft insurance — covering damage, liability, and uninsured boater coverage for boats, jet skis, and other watercraft."}},
-          {"@type": "Question", "name": "I just bought a new construction in Cape Coral. What insurance do I need?", "acceptedAnswer": {"@type": "Answer", "text": "New constructions in Cape Coral need homeowners insurance from day one of occupancy. Depending on your flood zone, a separate flood policy is likely required by your lender. If you're still in the building phase, builder's risk insurance protects the structure during construction. Bruno guides you through the right sequence so you're never unprotected."}}
+          {"@type": "Question", "name": "Is flood insurance required if I live on a canal in Cape Coral?", "acceptedAnswer": {"@type": "Answer", "text": "Most Cape Coral canal properties are in FEMA Special Flood Hazard Areas (Zone AE). If you have a federally-backed mortgage on a property in these zones, flood insurance is legally required. Even without a mortgage, canal exposure means your financial risk is real — a single flood event can cause tens of thousands in damages that homeowners insurance will not cover. Flood is always a separate policy."}},
+          {"@type": "Question", "name": "How much does flood insurance cost in Cape Coral?", "acceptedAnswer": {"@type": "Answer", "text": "Flood insurance rates in Cape Coral depend on your FEMA flood zone, the elevation of your structure (measured by an elevation certificate), the property value, and your chosen deductible. NFIP rates are federally set, while private flood carriers often offer lower premiums for properties with favorable elevations. Bruno compares both NFIP and private options to find coverage that fits your specific address."}},
+          {"@type": "Question", "name": "Can you insure my boat or watercraft in Cape Coral?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. With direct canal access to the Gulf, Cape Coral residents are among the most active boating communities in Florida. Watercraft insurance covers physical damage to your boat, liability if you're responsible for an accident on the water, and uninsured boater coverage — both on canals and in open Gulf waters. Ask Bruno about bundling boat coverage with your home or auto for potential discounts."}},
+          {"@type": "Question", "name": "I just bought a new construction in Cape Coral. What insurance do I need?", "acceptedAnswer": {"@type": "Answer", "text": "New constructions in Cape Coral typically need homeowners insurance from the first day of occupancy — and if your lender requires it, a separate flood policy as well. If the home is still under construction, builder's risk insurance protects the structure during the build phase. Bruno guides you through the right sequence of coverage so you're never left unprotected at any stage of the process."}}
         ]
       }
     ]
@@ -507,7 +507,7 @@
         <div class="footer-bottom">
             <p class="footer-copy" id="fCopy">&copy; <span id="footerYear">2026</span> Signature Trust Insurance. All rights reserved.</p>
             <div style="display:flex;gap:12px;align-items:center"><a href="/privacy-policy" style="font-family:var(--font-sans);font-size:11px;color:rgba(200,196,187,.35);text-decoration:none">Privacy Policy</a><span style="color:rgba(200,196,187,.15);font-size:10px">&middot;</span><a href="/terms-and-conditions" style="font-family:var(--font-sans);font-size:11px;color:rgba(200,196,187,.35);text-decoration:none">Terms &amp; Conditions</a></div>
-            <p class="footer-license" id="fLicense">Bruno Garcia &middot; Licensed Insurance Agent &middot; State of Florida</p>
+            <p class="footer-license" id="fLicense">Bruno Garcia &middot; Licensed Insurance Agent &middot; State of Florida &middot; FL License #G339614</p>
         </div>
     </div>
 </footer>
@@ -583,7 +583,7 @@ const LANG = {
         ctaBtn1:'Get a Free Quote', ctaBtn2:'WhatsApp Us',
         fHours:'Mon – Fri · 11:00 am – 5:00 pm<br>Sat – Sun · Closed',
         fCopy:'© 2026 Signature Trust Insurance. All rights reserved.',
-        fLicense:'Bruno Garcia · Licensed Insurance Agent · State of Florida',
+        fLicense:'Bruno Garcia · Licensed Insurance Agent · State of Florida · FL License #G339614',
         optType:['Select…','Flood Insurance','Home Insurance','Auto Insurance','Boat / Watercraft','Other / Not Sure']
     },
     es: {
@@ -621,7 +621,7 @@ const LANG = {
         ctaBtn1:'Cotización Gratis', ctaBtn2:'Escríbenos por WhatsApp',
         fHours:'Lun – Vie · 11:00 am – 5:00 pm<br>Sáb – Dom · Cerrado',
         fCopy:'© 2026 Signature Trust Insurance. Todos los derechos reservados.',
-        fLicense:'Bruno Garcia · Agente de Seguros Licenciado · Estado de Florida',
+        fLicense:'Bruno Garcia · Agente de Seguros Licenciado · Estado de Florida · Licencia FL #G339614',
         optType:['Seleccionar…','Seguro de Inundación','Seguro de Hogar','Seguro de Auto','Bote / Embarcación','Otro / No Estoy Seguro']
     }
 };
@@ -664,7 +664,7 @@ function setLanguage(lang) {
     setT('fHours',t.fHours); setT('fCopy',t.fCopy); setT('fLicense',t.fLicense);
     const fTypeSel = document.getElementById('fType');
     if (fTypeSel) t.optType.forEach((txt, i) => { if (fTypeSel.options[i]) fTypeSel.options[i].text = txt; });
-    document.documentElement.lang=lang;(function(){var e=lang==='es';var _h=function(id,v){var el=document.getElementById(id);if(el)el.innerHTML=v;};var _t=function(id,v){var el=document.getElementById(id);if(el)el.textContent=v;};_h('fHours',e?'Lun – Vie ·  11:00 am – 5:00 pm<br>Sáb – Dom ·  Cerrado':'Mon – Fri ·  11:00 am – 5:00 pm<br>Sat – Sun ·  Closed');_t('fHours24',e?'Disponible en línea 24/7 — obtén cotización en cualquier momento, incluso fines de semana.':'Available online 24/7 — get a quote anytime, including weekends.');_h('fTagline',e?'“Cobertura con Confianza.<br>Servicio para Ti.”':'“Coverage Built on Trust.<br>Service Built for You.”');_t('fCol1',e?'Coberturas':'Coverage');_t('fCol2',e?'Áreas de Servicio':'Service Areas');_t('fCol3',e?'Centro de Ayuda':'Help Center');_h('fCopy','© <span id="footerYear">'+new Date().getFullYear()+'</span> Signature Trust Insurance. '+(e?'Todos los derechos reservados.':'All rights reserved.'));_t('fLicense',e?'Bruno Garcia · Agente de Seguros Licenciado · Estado de Florida':'Bruno Garcia · Licensed Insurance Agent · State of Florida');})();
+    document.documentElement.lang=lang;(function(){var e=lang==='es';var _h=function(id,v){var el=document.getElementById(id);if(el)el.innerHTML=v;};var _t=function(id,v){var el=document.getElementById(id);if(el)el.textContent=v;};_h('fHours',e?'Lun – Vie ·  11:00 am – 5:00 pm<br>Sáb – Dom ·  Cerrado':'Mon – Fri ·  11:00 am – 5:00 pm<br>Sat – Sun ·  Closed');_t('fHours24',e?'Disponible en línea 24/7 — obtén cotización en cualquier momento, incluso fines de semana.':'Available online 24/7 — get a quote anytime, including weekends.');_h('fTagline',e?'“Cobertura con Confianza.<br>Servicio para Ti.”':'“Coverage Built on Trust.<br>Service Built for You.”');_t('fCol1',e?'Coberturas':'Coverage');_t('fCol2',e?'Áreas de Servicio':'Service Areas');_t('fCol3',e?'Centro de Ayuda':'Help Center');_h('fCopy','© <span id="footerYear">'+new Date().getFullYear()+'</span> Signature Trust Insurance. '+(e?'Todos los derechos reservados.':'All rights reserved.'));_t('fLicense',e?'Bruno Garcia · Agente de Seguros Licenciado · Estado de Florida · Licencia FL #G339614':'Bruno Garcia · Licensed Insurance Agent · State of Florida · FL License #G339614');})();
     var _nl=document.querySelectorAll('.nav-links a');var _nt=lang==='es'?['Coberturas','Cómo Funciona','Nosotros','Ayuda','Preguntas','Contacto']:['Coverage','How It Works','About','Help','FAQ','Contact'];_nl.forEach(function(a,i){if(_nt[i])a.textContent=_nt[i];});
 }
 setLanguage(localStorage.getItem('lang') || 'en');

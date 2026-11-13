@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -68,10 +68,10 @@
         "@type": "FAQPage",
         "publisher": {"@id": "https://signaturetrustfl.com/#agency"},
         "mainEntity": [
-          {"@type": "Question", "name": "My Marco Island home is only occupied seasonally. Does that affect my coverage?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — significantly. Standard homeowners policies often have vacancy or unoccupancy clauses that can limit or void coverage if the property is unoccupied for 30-60 days or more. Seasonal and snowbird properties require specific endorsements or specialty carriers that understand secondary home exposure. Bruno ensures your Marco Island coverage is valid year-round, even when you're not there."}},
-          {"@type": "Question", "name": "What does my condo association policy cover vs. my personal policy on Marco Island?", "acceptedAnswer": {"@type": "Answer", "text": "Condo association master policies typically cover the building structure and common areas, but individual unit interiors — including your flooring, cabinets, appliances, and personal belongings — are your responsibility. An HO-6 (condo unit owners) policy fills these gaps. Bruno reviews your association's master policy against what you own to make sure there are no coverage gaps."}},
-          {"@type": "Question", "name": "Is flood insurance required for waterfront property on Marco Island?", "acceptedAnswer": {"@type": "Answer", "text": "Most waterfront and near-waterfront properties on Marco Island are in FEMA high-risk flood zones. If you have a federally-backed mortgage, flood insurance is required. Even without a mortgage, the financial exposure from a single storm surge event on a high-value coastal property makes flood insurance essential — not optional."}},
-          {"@type": "Question", "name": "How does windstorm insurance work on Marco Island?", "acceptedAnswer": {"@type": "Answer", "text": "Marco Island's coastal location means windstorm deductibles are typically 2–10% of your dwelling coverage value — not a flat dollar amount. On a $1 million home, a 5% windstorm deductible means you pay the first $50,000 out of pocket before insurance kicks in. Understanding this before a storm — not during the claims process — is critical. Bruno walks you through your windstorm deductible structure and what it means for your specific property."}}
+          {"@type": "Question", "name": "My Marco Island home is only occupied seasonally. Does that affect my coverage?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — significantly. Standard homeowners policies often have vacancy or unoccupancy clauses that can limit or void coverage if the property is unoccupied for 30–60 days or more. Seasonal and snowbird properties require specific endorsements or specialty carriers that understand secondary home exposure. Bruno ensures your Marco Island coverage is valid year-round, even when you're not there."}},
+          {"@type": "Question", "name": "What does my condo association policy cover vs. my personal policy?", "acceptedAnswer": {"@type": "Answer", "text": "Condo association master policies typically cover the building structure and common areas, but individual unit interiors — including your flooring, cabinets, appliances, and personal belongings — are your responsibility. An HO-6 (condo unit owners) policy fills these gaps. Bruno reviews your association's master policy against what you own inside your unit to make sure there are no coverage gaps."}},
+          {"@type": "Question", "name": "Is flood insurance required for waterfront property on Marco Island?", "acceptedAnswer": {"@type": "Answer", "text": "Most waterfront and near-waterfront properties on Marco Island are in FEMA high-risk flood zones. If you have a federally-backed mortgage, flood insurance is legally required. Even without a mortgage, the financial exposure from a single storm surge event on a high-value coastal property makes flood insurance essential — not optional. Private flood carriers often offer better terms for elevated properties."}},
+          {"@type": "Question", "name": "How does windstorm insurance work on Marco Island?", "acceptedAnswer": {"@type": "Answer", "text": "Marco Island's coastal location means windstorm deductibles are typically 2–10% of your dwelling coverage value — not a flat dollar amount. On a $1 million home, a 5% windstorm deductible means you pay the first $50,000 out of pocket before insurance responds. Understanding this before a storm — not during the claims process — is critical. Bruno walks you through your windstorm deductible structure and what it means financially for your specific property."}}
         ]
       }
     ]
@@ -507,7 +507,7 @@
         <div class="footer-bottom">
             <p class="footer-copy" id="fCopy">&copy; <span id="footerYear">2026</span> Signature Trust Insurance. All rights reserved.</p>
             <div style="display:flex;gap:12px;align-items:center"><a href="/privacy-policy" style="font-family:var(--font-sans);font-size:11px;color:rgba(200,196,187,.35);text-decoration:none">Privacy Policy</a><span style="color:rgba(200,196,187,.15);font-size:10px">&middot;</span><a href="/terms-and-conditions" style="font-family:var(--font-sans);font-size:11px;color:rgba(200,196,187,.35);text-decoration:none">Terms &amp; Conditions</a></div>
-            <p class="footer-license" id="fLicense">Bruno Garcia &middot; Licensed Insurance Agent &middot; State of Florida</p>
+            <p class="footer-license" id="fLicense">Bruno Garcia &middot; Licensed Insurance Agent &middot; State of Florida &middot; FL License #G339614</p>
         </div>
     </div>
 </footer>
@@ -583,7 +583,7 @@ const LANG = {
         ctaBtn1:'Get a Free Quote', ctaBtn2:'WhatsApp Us',
         fHours:'Mon – Fri · 11:00 am – 5:00 pm<br>Sat – Sun · Closed',
         fCopy:'© 2026 Signature Trust Insurance. All rights reserved.',
-        fLicense:'Bruno Garcia · Licensed Insurance Agent · State of Florida',
+        fLicense:'Bruno Garcia · Licensed Insurance Agent · State of Florida · FL License #G339614',
         optType:['Select…','Home Insurance','Flood Insurance','Condo (HO-6)','Umbrella','Other / Not Sure']
     },
     es: {
@@ -621,7 +621,7 @@ const LANG = {
         ctaBtn1:'Cotización Gratis', ctaBtn2:'Escríbenos por WhatsApp',
         fHours:'Lun – Vie · 11:00 am – 5:00 pm<br>Sáb – Dom · Cerrado',
         fCopy:'© 2026 Signature Trust Insurance. Todos los derechos reservados.',
-        fLicense:'Bruno Garcia · Agente de Seguros Licenciado · Estado de Florida',
+        fLicense:'Bruno Garcia · Agente de Seguros Licenciado · Estado de Florida · Licencia FL #G339614',
         optType:['Seleccionar…','Seguro de Hogar','Seguro de Inundación','Condominio (HO-6)','Paraguas','Otro / No Estoy Seguro']
     }
 };
@@ -664,7 +664,7 @@ function setLanguage(lang) {
     setT('fHours',t.fHours); setT('fCopy',t.fCopy); setT('fLicense',t.fLicense);
     const fTypeSel = document.getElementById('fType');
     if (fTypeSel) t.optType.forEach((txt, i) => { if (fTypeSel.options[i]) fTypeSel.options[i].text = txt; });
-    document.documentElement.lang=lang;(function(){var e=lang==='es';var _h=function(id,v){var el=document.getElementById(id);if(el)el.innerHTML=v;};var _t=function(id,v){var el=document.getElementById(id);if(el)el.textContent=v;};_h('fHours',e?'Lun – Vie ·  11:00 am – 5:00 pm<br>Sáb – Dom ·  Cerrado':'Mon – Fri ·  11:00 am – 5:00 pm<br>Sat – Sun ·  Closed');_t('fHours24',e?'Disponible en línea 24/7 — obtén cotización en cualquier momento, incluso fines de semana.':'Available online 24/7 — get a quote anytime, including weekends.');_h('fTagline',e?'“Cobertura con Confianza.<br>Servicio para Ti.”':'“Coverage Built on Trust.<br>Service Built for You.”');_t('fCol1',e?'Coberturas':'Coverage');_t('fCol2',e?'Áreas de Servicio':'Service Areas');_t('fCol3',e?'Centro de Ayuda':'Help Center');_h('fCopy','© <span id="footerYear">'+new Date().getFullYear()+'</span> Signature Trust Insurance. '+(e?'Todos los derechos reservados.':'All rights reserved.'));_t('fLicense',e?'Bruno Garcia · Agente de Seguros Licenciado · Estado de Florida':'Bruno Garcia · Licensed Insurance Agent · State of Florida');})();
+    document.documentElement.lang=lang;(function(){var e=lang==='es';var _h=function(id,v){var el=document.getElementById(id);if(el)el.innerHTML=v;};var _t=function(id,v){var el=document.getElementById(id);if(el)el.textContent=v;};_h('fHours',e?'Lun – Vie ·  11:00 am – 5:00 pm<br>Sáb – Dom ·  Cerrado':'Mon – Fri ·  11:00 am – 5:00 pm<br>Sat – Sun ·  Closed');_t('fHours24',e?'Disponible en línea 24/7 — obtén cotización en cualquier momento, incluso fines de semana.':'Available online 24/7 — get a quote anytime, including weekends.');_h('fTagline',e?'“Cobertura con Confianza.<br>Servicio para Ti.”':'“Coverage Built on Trust.<br>Service Built for You.”');_t('fCol1',e?'Coberturas':'Coverage');_t('fCol2',e?'Áreas de Servicio':'Service Areas');_t('fCol3',e?'Centro de Ayuda':'Help Center');_h('fCopy','© <span id="footerYear">'+new Date().getFullYear()+'</span> Signature Trust Insurance. '+(e?'Todos los derechos reservados.':'All rights reserved.'));_t('fLicense',e?'Bruno Garcia · Agente de Seguros Licenciado · Estado de Florida · Licencia FL #G339614':'Bruno Garcia · Licensed Insurance Agent · State of Florida · FL License #G339614');})();
     var _nl=document.querySelectorAll('.nav-links a');var _nt=lang==='es'?['Coberturas','Cómo Funciona','Nosotros','Ayuda','Preguntas','Contacto']:['Coverage','How It Works','About','Help','FAQ','Contact'];_nl.forEach(function(a,i){if(_nt[i])a.textContent=_nt[i];});
 }
 setLanguage(localStorage.getItem('lang') || 'en');

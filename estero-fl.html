@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -41,7 +41,7 @@
         "@id": "https://signaturetrustfl.com/#agency",
         "name": "Signature Trust Insurance",
         "description": "Independent insurance agency serving Estero and Lee County. Home, flood and auto insurance for master-planned communities and new construction. Bilingual English and Spanish.",
-        "url": "https://www.signaturetrustfl.com",
+        "url": "https://signaturetrustfl.com/estero-fl",
         "telephone": "+12398502268",
         "email": "bruno@signaturetrustfl.com",
         "address": {
@@ -70,9 +70,9 @@
         "@type": "FAQPage",
         "publisher": {"@id": "https://signaturetrustfl.com/#agency"},
         "mainEntity": [
-          {"@type": "Question", "name": "Do I need flood insurance in Estero, FL?", "acceptedAnswer": {"@type": "Answer", "text": "Flood risk in Estero varies by location. Properties near Estero Bay, the Estero River, or low-lying areas within master-planned communities can fall within FEMA flood zones. If your lender requires it, flood insurance is mandatory — but even without a mortgage requirement, Estero's proximity to the Gulf and its flat terrain mean standard homeowners insurance is not enough on its own. Flood is always a separate policy."}},
-          {"@type": "Question", "name": "I bought a new construction home in Estero. What insurance do I need?", "acceptedAnswer": {"@type": "Answer", "text": "New construction homes in Estero need homeowners insurance from day one of occupancy. If your lender requires it and your property is in a flood zone, a separate flood policy is also needed. Some buyers also opt for builder's risk insurance during construction to protect the structure before occupancy. Bruno guides you through the right sequence so you're never left unprotected."}},
-          {"@type": "Question", "name": "Does my HOA master policy cover me in Estero communities like Miromar Lakes or Pelican Sound?", "acceptedAnswer": {"@type": "Answer", "text": "HOA master policies in Estero's gated communities typically cover common areas and building exteriors — not your individual home's interior, personal belongings, or personal liability. You still need your own homeowners policy. Bruno reviews your community's master policy with you to identify exactly what coverage you still need."}},
+          {"@type": "Question", "name": "Do I need flood insurance in Estero, FL?", "acceptedAnswer": {"@type": "Answer", "text": "Flood risk in Estero varies by location. Properties near Estero Bay, the Estero River, or low-lying areas within master-planned communities can fall within FEMA flood zones. If your lender requires it, flood insurance is mandatory. Even without a lender requirement, Estero's flat terrain and proximity to the Gulf mean standard homeowners insurance is not enough on its own — flood is always a separate policy."}},
+          {"@type": "Question", "name": "I bought a new construction home in Estero. What insurance do I need?", "acceptedAnswer": {"@type": "Answer", "text": "New construction homes in Estero need homeowners insurance from day one of occupancy. If your lender requires it and your property is in a flood zone, a separate flood policy is also needed. Some buyers also carry builder's risk insurance during construction to protect the structure before move-in. Bruno guides you through the right sequence so there's no gap in coverage at any stage."}},
+          {"@type": "Question", "name": "Does my HOA master policy cover me in communities like Miromar Lakes or Pelican Sound?", "acceptedAnswer": {"@type": "Answer", "text": "HOA master policies in Estero's gated communities typically cover common areas and building exteriors — not your individual home's interior, personal belongings, or personal liability. You still need your own homeowners policy to cover what the master policy leaves out. Bruno reviews your community's master policy with you to identify exactly what coverage you still need."}},
           {"@type": "Question", "name": "Can you bundle home and auto insurance in Estero?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. As an independent agent, Bruno shops multiple carriers to find home and auto coverage options for Estero residents. Bundling home and auto with the same carrier often results in meaningful discounts on both policies — Bruno compares the numbers to make sure bundling actually saves you money before recommending it."}}
         ]
       }
@@ -523,7 +523,7 @@
         <div class="footer-bottom">
             <p class="footer-copy" id="fCopy">&copy; <span id="footerYear">2026</span> Signature Trust Insurance. All rights reserved.</p>
             <div style="display:flex;gap:12px;align-items:center"><a href="/privacy-policy" style="font-family:var(--font-sans);font-size:11px;color:rgba(200,196,187,.35);text-decoration:none">Privacy Policy</a><span style="color:rgba(200,196,187,.15);font-size:10px">&middot;</span><a href="/terms-and-conditions" style="font-family:var(--font-sans);font-size:11px;color:rgba(200,196,187,.35);text-decoration:none">Terms &amp; Conditions</a></div>
-            <p class="footer-license" id="fLicense">Bruno Garcia &middot; Licensed Insurance Agent &middot; State of Florida</p>
+            <p class="footer-license" id="fLicense">Bruno Garcia &middot; Licensed Insurance Agent &middot; State of Florida &middot; FL License #G339614</p>
         </div>
     </div>
 </footer>
@@ -601,7 +601,7 @@ const LANG = {
         ctaBtn1:'Get a Free Quote', ctaBtn2:'WhatsApp Us',
         fHours:'Mon – Fri · 11:00 am – 5:00 pm<br>Sat – Sun · Closed',
         fCopy:'© 2026 Signature Trust Insurance. All rights reserved.',
-        fLicense:'Bruno Garcia · Licensed Insurance Agent · State of Florida',
+        fLicense:'Bruno Garcia · Licensed Insurance Agent · State of Florida · FL License #G339614',
         optType:['Select…','Auto Insurance','Home / Condo Insurance','Flood Insurance','Commercial Insurance','Health Insurance','Boat / Watercraft','Other / Not Sure']
     },
     es: {
@@ -641,7 +641,7 @@ const LANG = {
         ctaBtn1:'Cotización Gratis', ctaBtn2:'Escríbenos por WhatsApp',
         fHours:'Lun – Vie · 11:00 am – 5:00 pm<br>Sáb – Dom · Cerrado',
         fCopy:'© 2026 Signature Trust Insurance. Todos los derechos reservados.',
-        fLicense:'Bruno Garcia · Agente de Seguros Licenciado · Estado de Florida',
+        fLicense:'Bruno Garcia · Agente de Seguros Licenciado · Estado de Florida · Licencia FL #G339614',
         optType:['Seleccionar…','Seguro de Auto','Seguro de Hogar / Condo','Seguro de Inundación','Seguro Comercial','Seguro de Salud','Bote / Embarcación','Otro / No Estoy Seguro']
     }
 };
@@ -686,7 +686,7 @@ function setLanguage(lang) {
     setT('fHours',t.fHours); setT('fCopy',t.fCopy); setT('fLicense',t.fLicense);
     const fTypeSel = document.getElementById('fType');
     if (fTypeSel) t.optType.forEach((txt, i) => { if (fTypeSel.options[i]) fTypeSel.options[i].text = txt; });
-    document.documentElement.lang=lang;(function(){var e=lang==='es';var _h=function(id,v){var el=document.getElementById(id);if(el)el.innerHTML=v;};var _t=function(id,v){var el=document.getElementById(id);if(el)el.textContent=v;};_h('fHours',e?'Lun – Vie ·  11:00 am – 5:00 pm<br>Sáb – Dom ·  Cerrado':'Mon – Fri ·  11:00 am – 5:00 pm<br>Sat – Sun ·  Closed');_t('fHours24',e?'Disponible en línea 24/7 — obtén cotización en cualquier momento, incluso fines de semana.':'Available online 24/7 — get a quote anytime, including weekends.');_h('fTagline',e?'“Cobertura con Confianza.<br>Servicio para Ti.”':'“Coverage Built on Trust.<br>Service Built for You.”');_t('fCol1',e?'Coberturas':'Coverage');_t('fCol2',e?'Áreas de Servicio':'Service Areas');_t('fCol3',e?'Centro de Ayuda':'Help Center');_h('fCopy','© <span id="footerYear">'+new Date().getFullYear()+'</span> Signature Trust Insurance. '+(e?'Todos los derechos reservados.':'All rights reserved.'));_t('fLicense',e?'Bruno Garcia · Agente de Seguros Licenciado · Estado de Florida':'Bruno Garcia · Licensed Insurance Agent · State of Florida');})();
+    document.documentElement.lang=lang;(function(){var e=lang==='es';var _h=function(id,v){var el=document.getElementById(id);if(el)el.innerHTML=v;};var _t=function(id,v){var el=document.getElementById(id);if(el)el.textContent=v;};_h('fHours',e?'Lun – Vie ·  11:00 am – 5:00 pm<br>Sáb – Dom ·  Cerrado':'Mon – Fri ·  11:00 am – 5:00 pm<br>Sat – Sun ·  Closed');_t('fHours24',e?'Disponible en línea 24/7 — obtén cotización en cualquier momento, incluso fines de semana.':'Available online 24/7 — get a quote anytime, including weekends.');_h('fTagline',e?'“Cobertura con Confianza.<br>Servicio para Ti.”':'“Coverage Built on Trust.<br>Service Built for You.”');_t('fCol1',e?'Coberturas':'Coverage');_t('fCol2',e?'Áreas de Servicio':'Service Areas');_t('fCol3',e?'Centro de Ayuda':'Help Center');_h('fCopy','© <span id="footerYear">'+new Date().getFullYear()+'</span> Signature Trust Insurance. '+(e?'Todos los derechos reservados.':'All rights reserved.'));_t('fLicense',e?'Bruno Garcia · Agente de Seguros Licenciado · Estado de Florida · Licencia FL #G339614':'Bruno Garcia · Licensed Insurance Agent · State of Florida · FL License #G339614');})();
     var _nl=document.querySelectorAll('.nav-links a');var _nt=lang==='es'?['Coberturas','Cómo Funciona','Nosotros','Ayuda','Preguntas','Contacto']:['Coverage','How It Works','About','Help','FAQ','Contact'];_nl.forEach(function(a,i){if(_nt[i])a.textContent=_nt[i];});
 }
 setLanguage(localStorage.getItem('lang') || 'en');

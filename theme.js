@@ -60,21 +60,6 @@ function toggleTheme() {
             .catch(function () { cb(null); });
     }
 
-    /* ---- patch JSON-LD aggregateRating live ---- */
-    function patchLd(ra, co) {
-        document.querySelectorAll('script[type="application/ld+json"]').forEach(function (s) {
-            try {
-                var o = JSON.parse(s.textContent), a = Array.isArray(o) ? o : [o];
-                a.forEach(function (i) {
-                    if (i['@type'] === 'InsuranceAgency') {
-                        i.aggregateRating = { '@type':'AggregateRating', ratingValue:ra.toFixed(1), reviewCount:String(co), bestRating:'5', worstRating:'1' };
-                    }
-                });
-                s.textContent = JSON.stringify(Array.isArray(o) ? a : a[0]);
-            } catch (_) {}
-        });
-    }
-
     /* ---- build carousel HTML string ---- */
     function buildHtml(data, lang) {
         var es  = lang === 'es';
@@ -190,7 +175,6 @@ function toggleTheme() {
             if (!data || !data.rating) { el.innerHTML = ''; return; }
         }
 
-        patchLd(data.rating, data.userRatingCount || 0);
         var html = buildHtml(data, lang);
         if (!html) return;
         el.innerHTML = html;

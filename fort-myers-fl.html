@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -68,10 +68,10 @@
         "@type": "FAQPage",
         "publisher": {"@id": "https://signaturetrustfl.com/#agency"},
         "mainEntity": [
-          {"@type": "Question", "name": "How have insurance rates changed in Fort Myers after Hurricane Ian?", "acceptedAnswer": {"@type": "Answer", "text": "Hurricane Ian caused significant market disruptions in Lee County. Several insurers exited Florida, pushing more homeowners to Citizens Insurance. An independent agent can shop multiple carriers to find competitive alternatives before Citizens becomes your only option."}},
-          {"@type": "Question", "name": "Do I need flood insurance in Fort Myers?", "acceptedAnswer": {"@type": "Answer", "text": "Most of Fort Myers is in FEMA flood zones due to proximity to the Caloosahatchee River, San Carlos Bay, and low-lying areas. If you have a federally-backed mortgage and live in a high-risk zone, flood insurance is required. Even outside required zones, Ian showed that flood risk is real throughout Lee County."}},
-          {"@type": "Question", "name": "Can you help me if my insurance company dropped me after Hurricane Ian?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Many Lee County homeowners received non-renewal notices after Ian. As an independent agent, Bruno works with multiple admitted and surplus lines carriers to find coverage for properties that standard insurers have declined."}},
-          {"@type": "Question", "name": "Do you insure commercial properties and businesses in Fort Myers?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Signature Trust serves businesses along the US-41 corridor and throughout Lee County — commercial property, general liability, business owners policies (BOP), and commercial auto."}}
+          {"@type": "Question", "name": "How have insurance rates changed in Fort Myers after Hurricane Ian?", "acceptedAnswer": {"@type": "Answer", "text": "Hurricane Ian permanently changed Lee County's insurance market. Several major carriers exited Florida, reducing competition and pushing rates up significantly. Citizens Insurance became the insurer of last resort for many homeowners. As an independent agent, Bruno shops multiple carriers — including surplus lines — to find options for your specific property."}},
+          {"@type": "Question", "name": "Do I need flood insurance in Fort Myers?", "acceptedAnswer": {"@type": "Answer", "text": "If you have a federally-backed mortgage and your property is in a FEMA high-risk flood zone, flood insurance is legally required. But even outside required zones, Ian showed that storm surge and inland flooding can reach areas never before considered at risk. Flood coverage is always a separate policy from homeowners — and often worth carrying regardless of your zone."}},
+          {"@type": "Question", "name": "My insurer dropped me after Ian. Can you help?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Many Lee County homeowners received non-renewal notices after Hurricane Ian. As an independent agent, Bruno has access to multiple admitted and surplus lines carriers. Even for properties that standard insurers have declined, alternatives exist — including specialty markets — that can provide real coverage. The sooner you start, the more options remain available before a lapse occurs."}},
+          {"@type": "Question", "name": "Do you insure businesses in the Fort Myers area?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Signature Trust serves businesses throughout Lee County — from the US-41 corridor to downtown Fort Myers and Cape Coral. We offer commercial property, general liability, business owners policies (BOP), commercial auto, and umbrella coverage. Post-Ian reconstruction has made commercial insurance especially important for businesses that suffered physical damage or business interruption losses."}}
         ]
       }
     ]
@@ -548,7 +548,7 @@
         <div class="footer-bottom">
             <p class="footer-copy" id="fCopy">&copy; <span id="footerYear">2026</span> Signature Trust Insurance. All rights reserved.</p>
             <div style="display:flex;gap:12px;align-items:center"><a href="/privacy-policy" style="font-family:var(--font-sans);font-size:11px;color:rgba(200,196,187,.35);text-decoration:none">Privacy Policy</a><span style="color:rgba(200,196,187,.15);font-size:10px">&middot;</span><a href="/terms-and-conditions" style="font-family:var(--font-sans);font-size:11px;color:rgba(200,196,187,.35);text-decoration:none">Terms &amp; Conditions</a></div>
-            <p class="footer-license" id="fLicense">Bruno Garcia &middot; Licensed Insurance Agent &middot; State of Florida</p>
+            <p class="footer-license" id="fLicense">Bruno Garcia &middot; Licensed Insurance Agent &middot; State of Florida &middot; FL License #G339614</p>
         </div>
     </div>
 </footer>
@@ -625,7 +625,7 @@ const LANG = {
         ctaBtn1:'Get a Free Quote', ctaBtn2:'WhatsApp Us',
         fHours:'Mon – Fri · 11:00 am – 5:00 pm<br>Sat – Sun · Closed',
         fCopy:'© 2026 Signature Trust Insurance. All rights reserved.',
-        fLicense:'Bruno Garcia · Licensed Insurance Agent · State of Florida',
+        fLicense:'Bruno Garcia · Licensed Insurance Agent · State of Florida · FL License #G339614',
         areasLabel:'Fort Myers Neighborhoods',
         areasTitle:'Your Neighborhood.<br><em>Your Coverage.</em>',
         areasSub:'Fort Myers is not one market — it is a collection of distinct communities, each with its own exposure after Ian. Bruno serves them all.',
@@ -672,7 +672,7 @@ const LANG = {
         ctaBtn1:'Cotización Gratis', ctaBtn2:'Escríbenos por WhatsApp',
         fHours:'Lun – Vie · 11:00 am – 5:00 pm<br>Sáb – Dom · Cerrado',
         fCopy:'© 2026 Signature Trust Insurance. Todos los derechos reservados.',
-        fLicense:'Bruno Garcia · Agente de Seguros Licenciado · Estado de Florida',
+        fLicense:'Bruno Garcia · Agente de Seguros Licenciado · Estado de Florida · Licencia FL #G339614',
         areasLabel:'Barrios de Fort Myers',
         areasTitle:'Tu Barrio.<br><em>Tu Cobertura.</em>',
         areasSub:'Fort Myers no es un solo mercado — es una colección de comunidades distintas, cada una con su propia exposición después de Ian. Bruno las sirve a todas.',
@@ -730,7 +730,7 @@ function setLanguage(lang) {
     setT('fHours', t.fHours); setT('fCopy', t.fCopy); setT('fLicense', t.fLicense);
     const fTypeSel = document.getElementById('fType');
     if (fTypeSel) t.optType.forEach((txt, i) => { if (fTypeSel.options[i]) fTypeSel.options[i].text = txt; });
-    document.documentElement.lang=lang;(function(){var e=lang==='es';var _h=function(id,v){var el=document.getElementById(id);if(el)el.innerHTML=v;};var _t=function(id,v){var el=document.getElementById(id);if(el)el.textContent=v;};_h('fHours',e?'Lun – Vie ·  11:00 am – 5:00 pm<br>Sáb – Dom ·  Cerrado':'Mon – Fri ·  11:00 am – 5:00 pm<br>Sat – Sun ·  Closed');_t('fHours24',e?'Disponible en línea 24/7 — obtén cotización en cualquier momento, incluso fines de semana.':'Available online 24/7 — get a quote anytime, including weekends.');_h('fTagline',e?'“Cobertura con Confianza.<br>Servicio para Ti.”':'“Coverage Built on Trust.<br>Service Built for You.”');_t('fCol1',e?'Coberturas':'Coverage');_t('fCol2',e?'Áreas de Servicio':'Service Areas');_t('fCol3',e?'Centro de Ayuda':'Help Center');_h('fCopy','© <span id="footerYear">'+new Date().getFullYear()+'</span> Signature Trust Insurance. '+(e?'Todos los derechos reservados.':'All rights reserved.'));_t('fLicense',e?'Bruno Garcia · Agente de Seguros Licenciado · Estado de Florida':'Bruno Garcia · Licensed Insurance Agent · State of Florida');})();
+    document.documentElement.lang=lang;(function(){var e=lang==='es';var _h=function(id,v){var el=document.getElementById(id);if(el)el.innerHTML=v;};var _t=function(id,v){var el=document.getElementById(id);if(el)el.textContent=v;};_h('fHours',e?'Lun – Vie ·  11:00 am – 5:00 pm<br>Sáb – Dom ·  Cerrado':'Mon – Fri ·  11:00 am – 5:00 pm<br>Sat – Sun ·  Closed');_t('fHours24',e?'Disponible en línea 24/7 — obtén cotización en cualquier momento, incluso fines de semana.':'Available online 24/7 — get a quote anytime, including weekends.');_h('fTagline',e?'“Cobertura con Confianza.<br>Servicio para Ti.”':'“Coverage Built on Trust.<br>Service Built for You.”');_t('fCol1',e?'Coberturas':'Coverage');_t('fCol2',e?'Áreas de Servicio':'Service Areas');_t('fCol3',e?'Centro de Ayuda':'Help Center');_h('fCopy','© <span id="footerYear">'+new Date().getFullYear()+'</span> Signature Trust Insurance. '+(e?'Todos los derechos reservados.':'All rights reserved.'));_t('fLicense',e?'Bruno Garcia · Agente de Seguros Licenciado · Estado de Florida · Licencia FL #G339614':'Bruno Garcia · Licensed Insurance Agent · State of Florida · FL License #G339614');})();
     var _nl=document.querySelectorAll('.nav-links a');var _nt=lang==='es'?['Coberturas','Cómo Funciona','Nosotros','Ayuda','Preguntas','Contacto']:['Coverage','How It Works','About','Help','FAQ','Contact'];_nl.forEach(function(a,i){if(_nt[i])a.textContent=_nt[i];});
 }
 
